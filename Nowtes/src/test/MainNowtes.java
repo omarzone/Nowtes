@@ -15,7 +15,8 @@ public class MainNowtes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODOS SALUDEN AL REY DE LOS PERDEDORES
+        System.out.println("ola");
     }
     
 }
