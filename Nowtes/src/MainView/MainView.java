@@ -42,7 +42,6 @@ public class MainView extends javax.swing.JFrame {
         setTitle("Nowtes");
         setIconImages(null);
         setLocation(new java.awt.Point(0, 0));
-        setPreferredSize(new java.awt.Dimension(1120, 710));
 
         btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnInicio.setText("Inicio");
