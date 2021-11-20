@@ -5,6 +5,7 @@
  */
 package MainView;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,8 +21,14 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
      */
     public MainView() {
         initComponents();
-        Contenedor.add(addNote);
-        btnInicio.addActionListener(this);
+        setVisible(true);
+        AddNote addNote = new AddNote();
+        
+        addNote.setSize(1200,780);
+        Contenedor.removeAll();
+        Contenedor.add(addNote, BorderLayout.CENTER);
+        Contenedor.revalidate();
+        Contenedor.repaint();
     }
 
     /**
@@ -67,6 +74,8 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnInicio.setText("Inicio");
         btnInicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnInicio.setBorderPainted(false);
+        btnInicio.setContentAreaFilled(false);
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioActionPerformed(evt);
@@ -140,7 +149,11 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-       Contenedor.add(addNote);
+       //TODO 
+        Contenedor.removeAll();
+        Contenedor.add(addNote, BorderLayout.CENTER);
+        Contenedor.revalidate();
+        Contenedor.repaint();
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
@@ -201,7 +214,7 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         Object evt = e.getSource();
         
         if(evt.equals(btnInicio)){
-            Contenedor.add(addNote);
+            
         }
         
     }
