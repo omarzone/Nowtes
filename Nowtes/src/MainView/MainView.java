@@ -3,19 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package MainView;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author PC GOOSE
  */
-public class MainView extends javax.swing.JFrame {
-
+public class MainView extends javax.swing.JFrame implements ActionListener{
+    
+    AddNote addNote = new AddNote();
     /**
      * Creates new form MainView
      */
     public MainView() {
         initComponents();
+        Contenedor.add(addNote);
+        btnInicio.addActionListener(this);
     }
 
     /**
@@ -27,6 +33,7 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Contenedor = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btnInicio = new javax.swing.JButton();
         btnHistorial = new javax.swing.JButton();
@@ -42,6 +49,20 @@ public class MainView extends javax.swing.JFrame {
         setTitle("Nowtes");
         setIconImages(null);
         setLocation(new java.awt.Point(0, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout ContenedorLayout = new javax.swing.GroupLayout(Contenedor);
+        Contenedor.setLayout(ContenedorLayout);
+        ContenedorLayout.setHorizontalGroup(
+            ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 830, Short.MAX_VALUE)
+        );
+        ContenedorLayout.setVerticalGroup(
+            ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 830, 730));
 
         btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnInicio.setText("Inicio");
@@ -113,24 +134,13 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap(239, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(841, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        // TODO add your handling code here:
+       Contenedor.add(addNote);
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
@@ -173,6 +183,7 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Contenedor;
     private javax.swing.JButton btnConfiguration;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnHistorial;
@@ -184,4 +195,17 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object evt = e.getSource();
+        
+        if(evt.equals(btnInicio)){
+            Contenedor.add(addNote);
+        }
+        
+    }
+
+    
+        
 }
