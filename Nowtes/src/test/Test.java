@@ -5,6 +5,8 @@
  */
 package test;
 
+import MainView.MainView;
+
 /**
  *
  * @author PC GOOSE
@@ -16,8 +18,9 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MainView vistaPrincipal = new MainView();
         
-        System.out.println("Hola");
+       
     }
     
 }

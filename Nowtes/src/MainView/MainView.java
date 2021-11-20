@@ -15,20 +15,18 @@ import java.awt.event.ActionListener;
  */
 public class MainView extends javax.swing.JFrame implements ActionListener{
     
-    AddNote addNote = new AddNote();
+    AddNote addNotePanel = new AddNote();
     /**
      * Creates new form MainView
      */
     public MainView() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         setVisible(true);
-        AddNote addNote = new AddNote();
+        btnConfiguration.addActionListener(this);
         
-        addNote.setSize(1200,780);
-        Contenedor.removeAll();
-        Contenedor.add(addNote, BorderLayout.CENTER);
-        Contenedor.revalidate();
-        Contenedor.repaint();
+        
     }
 
     /**
@@ -58,18 +56,9 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         setLocation(new java.awt.Point(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout ContenedorLayout = new javax.swing.GroupLayout(Contenedor);
-        Contenedor.setLayout(ContenedorLayout);
-        ContenedorLayout.setHorizontalGroup(
-            ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
-        );
-        ContenedorLayout.setVerticalGroup(
-            ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 830, 730));
+        Contenedor.setPreferredSize(new java.awt.Dimension(840, 730));
+        Contenedor.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1010, 860));
 
         btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnInicio.setText("Inicio");
@@ -85,6 +74,8 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         btnHistorial.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnHistorial.setText("Historial");
         btnHistorial.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnHistorial.setBorderPainted(false);
+        btnHistorial.setContentAreaFilled(false);
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistorialActionPerformed(evt);
@@ -94,11 +85,15 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         btnHelp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnHelp.setText("Ayuda");
         btnHelp.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnHelp.setBorderPainted(false);
+        btnHelp.setContentAreaFilled(false);
         btnHelp.setPreferredSize(new java.awt.Dimension(97, 34));
 
         btnConfiguration.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnConfiguration.setText("Configuración");
         btnConfiguration.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnConfiguration.setBorderPainted(false);
+        btnConfiguration.setContentAreaFilled(false);
         btnConfiguration.setPreferredSize(new java.awt.Dimension(180, 34));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -124,21 +119,21 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(132, 132, 132)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(btnInicio)
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(btnHistorial)
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(btnConfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnConfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(239, Short.MAX_VALUE))
         );
@@ -150,10 +145,8 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
        //TODO 
-        Contenedor.removeAll();
-        Contenedor.add(addNote, BorderLayout.CENTER);
-        Contenedor.revalidate();
-        Contenedor.repaint();
+       Contenedor.removeAll();
+       Contenedor.updateUI();
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
@@ -213,8 +206,9 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Object evt = e.getSource();
         
-        if(evt.equals(btnInicio)){
-            
+        if(evt.equals(btnConfiguration)){
+            Contenedor.add(addNotePanel);
+            Contenedor.updateUI();
         }
         
     }
