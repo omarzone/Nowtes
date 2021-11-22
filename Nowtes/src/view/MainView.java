@@ -20,10 +20,10 @@ public class MainView extends javax.swing.JFrame {
         
         
         //Codigo para probar el panel PendingNotes
-        jPanel2.removeAll();
+//        jPanel2.removeAll();
         jPanel2.add(test);
-        jPanel2.revalidate();
-        jPanel2.repaint();
+//        jPanel2.revalidate();
+//        jPanel2.repaint();
         // Finaliza codigo para probar el panel PendingNotes
     }
 
@@ -181,7 +181,7 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1157, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
