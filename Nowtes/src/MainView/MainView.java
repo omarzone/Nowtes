@@ -168,8 +168,7 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
        //TODO 
-       Contenedor.removeAll();
-       Contenedor.updateUI();
+      
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
@@ -234,8 +233,7 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         Object evt = e.getSource();
         
         if(evt.equals(btnConfiguration)){
-            Contenedor.add(addNotePanel);
-            Contenedor.updateUI();
+            
         }
         
     }
