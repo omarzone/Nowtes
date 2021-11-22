@@ -5,6 +5,9 @@
  */
 package view;
 
+import view.CompletedNotes.CompletedNotesPanel;
+import view.PendingNotes.PendingNotesPanel;
+
 /**
  *
  * @author PC
@@ -16,7 +19,7 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
-        PendingNotesPanel test = new PendingNotesPanel();
+        CompletedNotesPanel test = new CompletedNotesPanel();
         
         
         //Codigo para probar el panel PendingNotes
