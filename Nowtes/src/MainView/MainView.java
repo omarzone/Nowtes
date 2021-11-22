@@ -5,7 +5,7 @@
  */
 package MainView;
 
-import java.awt.BorderLayout;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -56,56 +56,77 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         setLocation(new java.awt.Point(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Contenedor.setBackground(null);
+        Contenedor.setFocusable(false);
         Contenedor.setPreferredSize(new java.awt.Dimension(840, 730));
         Contenedor.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1010, 860));
+        getContentPane().add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 930, 730));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnInicio.setBackground(new java.awt.Color(255, 255, 255));
         btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnInicio.setForeground(new java.awt.Color(31, 72, 126));
         btnInicio.setText("Inicio");
         btnInicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnInicio.setBorderPainted(false);
-        btnInicio.setContentAreaFilled(false);
+        btnInicio.setFocusable(false);
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioActionPerformed(evt);
             }
         });
 
+        btnHistorial.setBackground(new java.awt.Color(255, 255, 255));
         btnHistorial.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnHistorial.setForeground(new java.awt.Color(31, 72, 126));
         btnHistorial.setText("Historial");
         btnHistorial.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnHistorial.setBorderPainted(false);
-        btnHistorial.setContentAreaFilled(false);
+        btnHistorial.setFocusable(false);
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistorialActionPerformed(evt);
             }
         });
 
+        btnHelp.setBackground(new java.awt.Color(255, 255, 255));
         btnHelp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnHelp.setForeground(new java.awt.Color(31, 72, 126));
         btnHelp.setText("Ayuda");
         btnHelp.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnHelp.setBorderPainted(false);
-        btnHelp.setContentAreaFilled(false);
+        btnHelp.setFocusable(false);
         btnHelp.setPreferredSize(new java.awt.Dimension(97, 34));
 
+        btnConfiguration.setBackground(new java.awt.Color(255, 255, 255));
         btnConfiguration.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnConfiguration.setForeground(new java.awt.Color(31, 72, 126));
         btnConfiguration.setText("Configuración");
         btnConfiguration.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnConfiguration.setBorderPainted(false);
-        btnConfiguration.setContentAreaFilled(false);
+        btnConfiguration.setFocusable(false);
         btnConfiguration.setPreferredSize(new java.awt.Dimension(180, 34));
+        btnConfiguration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigurationActionPerformed(evt);
+            }
+        });
+
+        jSeparator1.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator2.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator3.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator4.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator5.setBackground(new java.awt.Color(31, 72, 126));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addComponent(jSeparator2))
-                .addContainerGap())
             .addComponent(btnConfiguration, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
             .addComponent(btnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -113,6 +134,8 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
             .addComponent(jSeparator3)
             .addComponent(jSeparator4)
             .addComponent(jSeparator5)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,11 +145,11 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -152,6 +175,10 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHistorialActionPerformed
+
+    private void btnConfigurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigurationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfigurationActionPerformed
 
     /**
      * @param args the command line arguments
