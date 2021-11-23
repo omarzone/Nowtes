@@ -5,29 +5,51 @@
  */
 package view;
 
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import view.CompletedNotes.CompletedNotesPanel;
+import view.EditNote.EditNote;
+import view.Help.Help;
 import view.PendingNotes.PendingNotesPanel;
+import view.Settings.Settings;
+import view.addNote.AddNote;
+
 
 /**
  *
- * @author PC
+ * @author PC GOOSE
  */
-public class MainView extends javax.swing.JFrame {
-
+public class MainView extends javax.swing.JFrame implements ActionListener{
+    
+    AddNote addNotePanel = new AddNote();
+    PendingNotesPanel pendingNotes = new PendingNotesPanel();
+    CompletedNotesPanel completedNotes = new CompletedNotesPanel();
+    EditNote editNote = new EditNote();
+    Settings settings = new Settings();
+    Help help = new Help();
+    
+    
     /**
      * Creates new form MainView
      */
     public MainView() {
         initComponents();
-        PendingNotesPanel test = new PendingNotesPanel();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        setVisible(true);
+        btnConfiguration.addActionListener(this);
+        Contenedor.add(pendingNotes);
         
         
-        //Codigo para probar el panel PendingNotes
-//        jPanel2.removeAll();
-        jPanel2.add(test);
-//        jPanel2.revalidate();
-//        jPanel2.repaint();
-        // Finaliza codigo para probar el panel PendingNotes
+        btnInicio.addActionListener(this);
+        btnHistorial.addActionListener(this);
+        btnHelp.addActionListener(this);
+        btnConfiguration.addActionListener(this);
+        
+        
+        
     }
 
     /**
@@ -39,172 +61,146 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Contenedor = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        CustomSeparator = new javax.swing.JPanel();
+        btnInicio = new javax.swing.JButton();
+        btnHistorial = new javax.swing.JButton();
+        btnHelp = new javax.swing.JButton();
+        btnConfiguration = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        CustomSeparator1 = new javax.swing.JPanel();
+        jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
-        CustomSeparator2 = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
-        jButton4 = new javax.swing.JButton();
-        CustomSeparator3 = new javax.swing.JPanel();
         jSeparator5 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nowtes");
-        setPreferredSize(new java.awt.Dimension(1209, 727));
+        setIconImages(null);
+        setLocation(new java.awt.Point(0, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Contenedor.setBackground(null);
+        Contenedor.setFocusable(false);
+        Contenedor.setPreferredSize(new java.awt.Dimension(840, 730));
+        Contenedor.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 930, 730));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 5));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setForeground(new java.awt.Color(31, 72, 126));
-        jButton1.setText("Inicio");
-        jButton1.setBorderPainted(false);
-        jButton1.setFocusable(false);
-        jButton1.setPreferredSize(new java.awt.Dimension(160, 40));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnInicio.setBackground(new java.awt.Color(255, 255, 255));
+        btnInicio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnInicio.setForeground(new java.awt.Color(31, 72, 126));
+        btnInicio.setText("Inicio");
+        btnInicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnInicio.setBorderPainted(false);
+        btnInicio.setFocusable(false);
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInicioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
 
-        CustomSeparator.setBackground(new java.awt.Color(255, 255, 255));
-        CustomSeparator.setPreferredSize(new java.awt.Dimension(140, 9));
-
-        javax.swing.GroupLayout CustomSeparatorLayout = new javax.swing.GroupLayout(CustomSeparator);
-        CustomSeparator.setLayout(CustomSeparatorLayout);
-        CustomSeparatorLayout.setHorizontalGroup(
-            CustomSeparatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-        );
-        CustomSeparatorLayout.setVerticalGroup(
-            CustomSeparatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CustomSeparatorLayout.createSequentialGroup()
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(CustomSeparator);
-
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setForeground(new java.awt.Color(31, 72, 126));
-        jButton2.setText("Historial");
-        jButton2.setBorderPainted(false);
-        jButton2.setFocusable(false);
-        jButton2.setPreferredSize(new java.awt.Dimension(160, 40));
-        jPanel1.add(jButton2);
-
-        CustomSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-        CustomSeparator1.setPreferredSize(new java.awt.Dimension(140, 9));
-
-        javax.swing.GroupLayout CustomSeparator1Layout = new javax.swing.GroupLayout(CustomSeparator1);
-        CustomSeparator1.setLayout(CustomSeparator1Layout);
-        CustomSeparator1Layout.setHorizontalGroup(
-            CustomSeparator1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-        );
-        CustomSeparator1Layout.setVerticalGroup(
-            CustomSeparator1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CustomSeparator1Layout.createSequentialGroup()
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(CustomSeparator1);
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setForeground(new java.awt.Color(31, 72, 126));
-        jButton3.setText("Ayuda");
-        jButton3.setBorderPainted(false);
-        jButton3.setFocusable(false);
-        jButton3.setPreferredSize(new java.awt.Dimension(160, 40));
-        jPanel1.add(jButton3);
-
-        CustomSeparator2.setBackground(new java.awt.Color(255, 255, 255));
-        CustomSeparator2.setPreferredSize(new java.awt.Dimension(140, 9));
-
-        javax.swing.GroupLayout CustomSeparator2Layout = new javax.swing.GroupLayout(CustomSeparator2);
-        CustomSeparator2.setLayout(CustomSeparator2Layout);
-        CustomSeparator2Layout.setHorizontalGroup(
-            CustomSeparator2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-        );
-        CustomSeparator2Layout.setVerticalGroup(
-            CustomSeparator2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CustomSeparator2Layout.createSequentialGroup()
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(CustomSeparator2);
-
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setForeground(new java.awt.Color(31, 72, 126));
-        jButton4.setText("Configuración");
-        jButton4.setBorderPainted(false);
-        jButton4.setFocusable(false);
-        jButton4.setPreferredSize(new java.awt.Dimension(160, 40));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnHistorial.setBackground(new java.awt.Color(255, 255, 255));
+        btnHistorial.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnHistorial.setForeground(new java.awt.Color(31, 72, 126));
+        btnHistorial.setText("Historial");
+        btnHistorial.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnHistorial.setBorderPainted(false);
+        btnHistorial.setFocusable(false);
+        btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnHistorialActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
 
-        CustomSeparator3.setBackground(new java.awt.Color(255, 255, 255));
-        CustomSeparator3.setPreferredSize(new java.awt.Dimension(140, 9));
+        btnHelp.setBackground(new java.awt.Color(255, 255, 255));
+        btnHelp.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnHelp.setForeground(new java.awt.Color(31, 72, 126));
+        btnHelp.setText("Ayuda");
+        btnHelp.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnHelp.setBorderPainted(false);
+        btnHelp.setFocusable(false);
+        btnHelp.setPreferredSize(new java.awt.Dimension(97, 34));
 
-        javax.swing.GroupLayout CustomSeparator3Layout = new javax.swing.GroupLayout(CustomSeparator3);
-        CustomSeparator3.setLayout(CustomSeparator3Layout);
-        CustomSeparator3Layout.setHorizontalGroup(
-            CustomSeparator3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        btnConfiguration.setBackground(new java.awt.Color(255, 255, 255));
+        btnConfiguration.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnConfiguration.setForeground(new java.awt.Color(31, 72, 126));
+        btnConfiguration.setText("Configuración");
+        btnConfiguration.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnConfiguration.setBorderPainted(false);
+        btnConfiguration.setFocusable(false);
+        btnConfiguration.setPreferredSize(new java.awt.Dimension(180, 34));
+        btnConfiguration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigurationActionPerformed(evt);
+            }
+        });
+
+        jSeparator1.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator2.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator3.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator4.setBackground(new java.awt.Color(31, 72, 126));
+
+        jSeparator5.setBackground(new java.awt.Color(31, 72, 126));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnConfiguration, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(btnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator3)
+            .addComponent(jSeparator4)
+            .addComponent(jSeparator5)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
-        CustomSeparator3Layout.setVerticalGroup(
-            CustomSeparator3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CustomSeparator3Layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(CustomSeparator3);
-
-        jPanel2.setBackground(new java.awt.Color(130, 156, 188));
-        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 5));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnConfiguration, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(239, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+       //TODO 
+      
+    }//GEN-LAST:event_btnInicioActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnHistorialActionPerformed
+
+    private void btnConfigurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigurationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfigurationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,20 +237,81 @@ public class MainView extends javax.swing.JFrame {
         });
     }
 
+    public JButton getBtnConfiguration() {
+        return btnConfiguration;
+    }
+
+    public JButton getBtnHelp() {
+        return btnHelp;
+    }
+
+    public JButton getBtnHistorial() {
+        return btnHistorial;
+    }
+
+    public JButton getBtnInicio() {
+        return btnInicio;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CustomSeparator;
-    private javax.swing.JPanel CustomSeparator1;
-    private javax.swing.JPanel CustomSeparator2;
-    private javax.swing.JPanel CustomSeparator3;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JPanel Contenedor;
+    private javax.swing.JButton btnConfiguration;
+    private javax.swing.JButton btnHelp;
+    private javax.swing.JButton btnHistorial;
+    private javax.swing.JButton btnInicio;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object evt = e.getSource();
+        if(evt.equals(btnInicio)){
+           Contenedor.removeAll();
+           Contenedor.add(pendingNotes);
+           help.setVisible(false);
+           pendingNotes.setVisible(true);
+           addNotePanel.setVisible(false);
+           completedNotes.setVisible(false);
+           editNote.setVisible(false);
+           settings.setVisible(false);
+        }else if(evt.equals(btnHistorial)){
+           Contenedor.removeAll();
+           Contenedor.add(completedNotes);
+           help.setVisible(false);
+           pendingNotes.setVisible(false);
+           addNotePanel.setVisible(false);
+           completedNotes.setVisible(true);
+           editNote.setVisible(false);
+           settings.setVisible(false);
+        }else if(evt.equals(btnConfiguration)){
+           Contenedor.removeAll();
+           Contenedor.add(settings);
+           help.setVisible(false);
+           pendingNotes.setVisible(false);
+           addNotePanel.setVisible(false);
+           completedNotes.setVisible(false);
+           editNote.setVisible(false);
+           settings.setVisible(true);
+        }
+        else if(evt.equals(btnHelp)){
+           Contenedor.removeAll();
+           Contenedor.add(help);
+           help.setVisible(true);
+           pendingNotes.setVisible(false);
+           addNotePanel.setVisible(false);
+           completedNotes.setVisible(false);
+           editNote.setVisible(false);
+           settings.setVisible(false);
+        }
+           
+    }
+
+    
+        
 }
