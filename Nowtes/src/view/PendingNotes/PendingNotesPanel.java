@@ -5,11 +5,15 @@
  */
 package view.PendingNotes;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author PC
  */
-public class PendingNotesPanel extends javax.swing.JPanel {
+public class PendingNotesPanel extends javax.swing.JPanel implements ActionListener {
 
     /**
      * Creates new form PendingNotes
@@ -19,6 +23,8 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         PendingNotesItem test = new PendingNotesItem();
 
         ContentPanel.add(test);
+        
+        btnAddNote.addActionListener(this);
     }
 
     /**
@@ -135,9 +141,13 @@ public class PendingNotesPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btnAddNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNoteActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnAddNoteActionPerformed
 
+    public JButton getBtnAddNote() {
+        return btnAddNote;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ContentPanel;
@@ -147,4 +157,13 @@ public class PendingNotesPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+@Override
+    public void actionPerformed(ActionEvent e) {
+        Object evt = e.getSource();
+        if(evt.equals(btnAddNote)){
+           
+        }
+           
+    }
 }

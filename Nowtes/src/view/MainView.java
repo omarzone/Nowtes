@@ -48,6 +48,8 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
         btnHelp.addActionListener(this);
         btnConfiguration.addActionListener(this);
         
+        pendingNotes.getBtnAddNote().addActionListener(this);
+        
         
         
     }
@@ -305,6 +307,17 @@ public class MainView extends javax.swing.JFrame implements ActionListener{
            help.setVisible(true);
            pendingNotes.setVisible(false);
            addNotePanel.setVisible(false);
+           completedNotes.setVisible(false);
+           editNote.setVisible(false);
+           settings.setVisible(false);
+        }
+        else if(evt.equals(pendingNotes.getBtnAddNote())){
+            Contenedor.removeAll();
+            Contenedor.add(addNotePanel);
+            Contenedor.updateUI();
+           help.setVisible(false);
+           pendingNotes.setVisible(false);
+           addNotePanel.setVisible(true);
            completedNotes.setVisible(false);
            editNote.setVisible(false);
            settings.setVisible(false);
