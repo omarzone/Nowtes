@@ -170,7 +170,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCancel">
+            <Component class="javax.swing.JButton" name="btnDeleteData">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="6b" green="5b" red="fe" type="rgb"/>

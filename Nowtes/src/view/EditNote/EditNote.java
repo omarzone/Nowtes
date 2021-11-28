@@ -136,7 +136,7 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
         btnSave.setBackground(new java.awt.Color(31, 72, 126));
         btnSave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
-        btnSave.setText("Cancelar");
+        btnSave.setText("Guardar");
         btnSave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
         roundedBorders1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 80, 30));
 

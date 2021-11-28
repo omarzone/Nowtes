@@ -35,7 +35,7 @@ public class Settings extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btnCancel = new javax.swing.JButton();
+        btnDeleteData = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jRadioButton1 = new javax.swing.JRadioButton();
 
@@ -91,12 +91,12 @@ public class Settings extends javax.swing.JPanel {
         jLabel6.setText("Borrar datos");
         roundedBorders1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
-        btnCancel.setBackground(new java.awt.Color(254, 91, 107));
-        btnCancel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnCancel.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancel.setText("Borrar datos ");
-        btnCancel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedBorders1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 40));
+        btnDeleteData.setBackground(new java.awt.Color(254, 91, 107));
+        btnDeleteData.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDeleteData.setForeground(new java.awt.Color(255, 255, 255));
+        btnDeleteData.setText("Borrar datos ");
+        btnDeleteData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
+        roundedBorders1.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 40));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         roundedBorders1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
@@ -124,7 +124,7 @@ public class Settings extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
-    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnDeleteData;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
