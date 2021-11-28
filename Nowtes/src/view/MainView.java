@@ -6,9 +6,11 @@ import view.PendingNotes.PendingNotesPanel;
 public class MainView extends javax.swing.JFrame {
 
     PendingNotesPanel pendingNotes = new PendingNotesPanel();
+    int xMouse, yMouse;
     public MainView() {
         initComponents();
         this.setResizable(false);
+        
         jPanel1.add(pendingNotes);
 
         
@@ -40,10 +42,21 @@ public class MainView extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         HeaderPanel.setBackground(new java.awt.Color(98, 144, 200));
         HeaderPanel.setForeground(new java.awt.Color(98, 144, 200));
+        HeaderPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                HeaderPanelMouseDragged(evt);
+            }
+        });
+        HeaderPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                HeaderPanelMousePressed(evt);
+            }
+        });
         HeaderPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title_app.setOpaque(false);
@@ -173,6 +186,17 @@ public class MainView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void HeaderPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_HeaderPanelMousePressed
+
+    private void HeaderPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_HeaderPanelMouseDragged
 
     /**
      * @param args the command line arguments
