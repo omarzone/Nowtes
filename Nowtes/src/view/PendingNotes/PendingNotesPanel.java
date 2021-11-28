@@ -1,11 +1,36 @@
 package view.PendingNotes;
 
+import Model.Note;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
 public class PendingNotesPanel extends javax.swing.JPanel {
 
 
     public PendingNotesPanel() {
         initComponents();
+                
+        //Test CustomRenderList
+        Note note1 = new Note("Titulo", "Descripccion", "29/20/20",1,true,false,"29/10/10"); 
+        Note note2 = new Note("Titulo2", "Descripccion", "29/20/20",1,true,false,"29/10/10"); 
+        Note note3 = new Note("Titulo3", "Descripccion", "29/20/20",1,true,false,"29/10/10");
+        Note note4 = new Note("Titulo4", "Descripccion", "29/20/20",1,true,false,"29/10/10"); 
+        Note note5 = new Note("Titulo5", "Descripccion", "29/20/20",1,true,false,"29/10/10"); 
+        Note note6 = new Note("Titulo6", "Descripccion", "29/20/20",1,true,false,"29/10/10"); 
+
+        //Crear modelo y agregamos elementos
+        DefaultListModel<Note> listModel = new DefaultListModel<>();
+        listModel.addElement(note1);
+        listModel.addElement(note2);
+        listModel.addElement(note3);
+        listModel.addElement(note4);
+        listModel.addElement(note5);
+        listModel.addElement(note6);
         
+        JList<Note> lista = new JList<>(listModel);
+        lista.setCellRenderer(new PendingNotesItem());
+        ContentPanel.add(new JScrollPane(lista));
     }
 
     @SuppressWarnings("unchecked")
@@ -19,7 +44,6 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         btnSearch = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         ContentPanel = new javax.swing.JPanel();
-        pendingNotesItem2 = new view.PendingNotes.PendingNotesItem();
 
         setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,9 +107,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1020, -1));
 
         ContentPanel.setOpaque(false);
-        ContentPanel.setLayout(new java.awt.GridLayout(4, 1, 0, 10));
-        ContentPanel.add(pendingNotesItem2);
-
+        ContentPanel.setLayout(new java.awt.CardLayout());
         add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 69, 1020, 565));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -101,7 +123,6 @@ public class PendingNotesPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAddNote;
     private javax.swing.JLabel btnSearch;
     private javax.swing.JLabel jLabel1;
-    private view.PendingNotes.PendingNotesItem pendingNotesItem2;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
