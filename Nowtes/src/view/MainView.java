@@ -1,19 +1,25 @@
 package view;
 
+import javax.swing.JPanel;
 import view.CompletedNotes.CompleteNotesPanel;
+import view.Help.Help;
 import view.PendingNotes.PendingNotesItem;
 import view.PendingNotes.PendingNotesPanel;
+import view.Settings.Settings;
 
 public class MainView extends javax.swing.JFrame {
 
     PendingNotesPanel pendingNotes = new PendingNotesPanel();
     CompleteNotesPanel completeNotes = new CompleteNotesPanel();
+    Help helpView = new Help(); 
+    Settings settingsView = new Settings();
     int xMouse, yMouse;
     public MainView() {
         initComponents();
         this.setResizable(false);
         
         jPanel1.add(pendingNotes);
+      
 
         
         
@@ -99,7 +105,7 @@ public class MainView extends javax.swing.JFrame {
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(Content, java.awt.BorderLayout.CENTER);
@@ -110,21 +116,41 @@ public class MainView extends javax.swing.JFrame {
         btnHome.setForeground(new java.awt.Color(31, 72, 126));
         btnHome.setText("Inicio");
         btnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHomeMouseClicked(evt);
+            }
+        });
 
         btnHistory.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnHistory.setForeground(new java.awt.Color(31, 72, 126));
         btnHistory.setText("Historial");
         btnHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHistoryMouseClicked(evt);
+            }
+        });
 
         btnHelp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnHelp.setForeground(new java.awt.Color(31, 72, 126));
         btnHelp.setText("Ayuda");
         btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHelpMouseClicked(evt);
+            }
+        });
 
         btnSettings.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSettings.setForeground(new java.awt.Color(31, 72, 126));
         btnSettings.setText("Configuración");
         btnSettings.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSettings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSettingsMouseClicked(evt);
+            }
+        });
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo_small.png"))); // NOI18N
 
@@ -181,7 +207,7 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(btnSettings)
                 .addGap(35, 35, 35)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         getContentPane().add(Menu, java.awt.BorderLayout.LINE_START);
@@ -199,6 +225,24 @@ public class MainView extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_HeaderPanelMouseDragged
+
+    private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
+        switchPanels(pendingNotes);
+        
+        
+    }//GEN-LAST:event_btnHomeMouseClicked
+
+    private void btnHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistoryMouseClicked
+        switchPanels(completeNotes);
+    }//GEN-LAST:event_btnHistoryMouseClicked
+
+    private void btnHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseClicked
+        switchPanels(helpView);
+    }//GEN-LAST:event_btnHelpMouseClicked
+
+    private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
+        switchPanels(settingsView);
+    }//GEN-LAST:event_btnSettingsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -236,7 +280,12 @@ public class MainView extends javax.swing.JFrame {
         });
     }
     
-    
+    public void  switchPanels(JPanel panel){
+        jPanel1.removeAll();
+        jPanel1.add(panel);
+        jPanel1.repaint();
+        jPanel1.revalidate();
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
