@@ -24,10 +24,10 @@ public class CompleteNotesItem extends javax.swing.JPanel {
         note_description = new javax.swing.JTextArea();
         DatePanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        note_date = new javax.swing.JLabel();
         StatusPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        note_status = new javax.swing.JLabel();
         ActionsPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         IconsRowPanel = new javax.swing.JPanel();
@@ -66,12 +66,12 @@ public class CompleteNotesItem extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(29, 52, 97));
         jLabel4.setText("Fecha");
 
-        jLabel5.setBackground(new java.awt.Color(153, 212, 172));
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("28/abril/2021");
-        jLabel5.setOpaque(true);
+        note_date.setBackground(new java.awt.Color(153, 212, 172));
+        note_date.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        note_date.setForeground(new java.awt.Color(29, 52, 97));
+        note_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        note_date.setText("28/abril/2021");
+        note_date.setOpaque(true);
 
         javax.swing.GroupLayout DatePanelLayout = new javax.swing.GroupLayout(DatePanel);
         DatePanel.setLayout(DatePanelLayout);
@@ -79,7 +79,7 @@ public class CompleteNotesItem extends javax.swing.JPanel {
             DatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addComponent(note_date, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
@@ -92,7 +92,7 @@ public class CompleteNotesItem extends javax.swing.JPanel {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(note_date, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -104,12 +104,12 @@ public class CompleteNotesItem extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(29, 52, 97));
         jLabel2.setText("Estatus");
 
-        jLabel3.setBackground(new java.awt.Color(153, 212, 172));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Finalizado");
-        jLabel3.setOpaque(true);
+        note_status.setBackground(new java.awt.Color(153, 212, 172));
+        note_status.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        note_status.setForeground(new java.awt.Color(29, 52, 97));
+        note_status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        note_status.setText("Finalizado");
+        note_status.setOpaque(true);
 
         javax.swing.GroupLayout StatusPanelLayout = new javax.swing.GroupLayout(StatusPanel);
         StatusPanel.setLayout(StatusPanelLayout);
@@ -117,7 +117,7 @@ public class CompleteNotesItem extends javax.swing.JPanel {
             StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StatusPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(note_status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
@@ -130,7 +130,7 @@ public class CompleteNotesItem extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(note_status, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -203,12 +203,12 @@ public class CompleteNotesItem extends javax.swing.JPanel {
     private javax.swing.JLabel btnDeleteNote;
     private javax.swing.JLabel btnViewNote;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel note_date;
     private javax.swing.JTextArea note_description;
+    private javax.swing.JLabel note_status;
     private javax.swing.JLabel note_title;
     // End of variables declaration//GEN-END:variables
 }
