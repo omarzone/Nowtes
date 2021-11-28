@@ -1,18 +1,12 @@
 package view.PendingNotes;
 
-import Model.Note;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JTextArea;
-import javax.swing.ListCellRenderer;
 
 
-public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRenderer<Note> {
+public class PendingNotesItem extends javax.swing.JPanel {
 
     public PendingNotesItem() {
         initComponents();
@@ -29,10 +23,10 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         note_description = new javax.swing.JTextArea();
         DatePanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        note_date = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         StatusPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        note_status = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         ActionsPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         IconsRowPanel = new javax.swing.JPanel();
@@ -48,7 +42,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
 
         note_title.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         note_title.setForeground(new java.awt.Color(29, 52, 97));
-        note_title.setText("Title");
+        note_title.setText("Diseñar el prototipo de la app");
         DataPanel.add(note_title);
 
         note_description.setEditable(false);
@@ -57,7 +51,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         note_description.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         note_description.setForeground(new java.awt.Color(31, 72, 126));
         note_description.setRows(2);
-        note_description.setText("Description");
+        note_description.setText("La tarea consiste en dibujar los primeros diseños de nuestra app para entregársela\nal profesor. El diseño se deberá guardar en PDF y enviárselo por correo sin olvidar..");
         note_description.setBorder(null);
         jScrollPane1.setViewportView(note_description);
         note_description.setHighlighter(null);
@@ -72,12 +66,12 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         jLabel4.setForeground(new java.awt.Color(29, 52, 97));
         jLabel4.setText("Fecha");
 
-        note_date.setBackground(new java.awt.Color(153, 212, 172));
-        note_date.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        note_date.setForeground(new java.awt.Color(29, 52, 97));
-        note_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        note_date.setText("date");
-        note_date.setOpaque(true);
+        jLabel5.setBackground(new java.awt.Color(153, 212, 172));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(29, 52, 97));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("28/abril/2021");
+        jLabel5.setOpaque(true);
 
         javax.swing.GroupLayout DatePanelLayout = new javax.swing.GroupLayout(DatePanel);
         DatePanel.setLayout(DatePanelLayout);
@@ -85,7 +79,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
             DatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(note_date, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
@@ -98,7 +92,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(note_date, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -110,12 +104,12 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         jLabel2.setForeground(new java.awt.Color(29, 52, 97));
         jLabel2.setText("Estatus");
 
-        note_status.setBackground(new java.awt.Color(245, 223, 83));
-        note_status.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        note_status.setForeground(new java.awt.Color(29, 52, 97));
-        note_status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        note_status.setText("status");
-        note_status.setOpaque(true);
+        jLabel3.setBackground(new java.awt.Color(245, 223, 83));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(29, 52, 97));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("En progreso");
+        jLabel3.setOpaque(true);
 
         javax.swing.GroupLayout StatusPanelLayout = new javax.swing.GroupLayout(StatusPanel);
         StatusPanel.setLayout(StatusPanelLayout);
@@ -123,7 +117,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
             StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StatusPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(note_status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
@@ -136,7 +130,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(note_status, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -205,22 +199,6 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height);//paint border
      }
 
-    public void setNote_date(JLabel note_date) {
-        this.note_date = note_date;
-    }
-
-    public void setNote_description(JTextArea note_description) {
-        this.note_description = note_description;
-    }
-
-    public void setNote_status(JLabel note_status) {
-        this.note_status = note_status;
-    }
-
-    public void setNote_title(JLabel note_title) {
-        this.note_title = note_title;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ActionsPanel;
     private javax.swing.JPanel DataPanel;
@@ -231,22 +209,12 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
     private javax.swing.JLabel btnEditNote;
     private javax.swing.JLabel btnViewNote;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel note_date;
     private javax.swing.JTextArea note_description;
-    private javax.swing.JLabel note_status;
     private javax.swing.JLabel note_title;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public Component getListCellRendererComponent(JList<? extends Note> list, Note note, int index, boolean isSelected, boolean cellHasFocus) {
-        
-        note_title.setText(note.getTitle());
-        note_description.setText(note.getDescription());
-        note_date.setText(note.getDate());
-        //note_status.setText(note.get)
-        return this;
-    }
 }
