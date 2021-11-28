@@ -1,14 +1,15 @@
-package view.PendingNotes;
+package view.CompletedNotes;
 
+import view.PendingNotes.*;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
 
-public class PendingNotesItem extends javax.swing.JPanel {
+public class CompleteNotesItem extends javax.swing.JPanel {
 
-    public PendingNotesItem() {
+    public CompleteNotesItem() {
         initComponents();
         jScrollPane1.setBorder(null);
     }
@@ -30,7 +31,6 @@ public class PendingNotesItem extends javax.swing.JPanel {
         ActionsPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         IconsRowPanel = new javax.swing.JPanel();
-        btnEditNote = new javax.swing.JLabel();
         btnDeleteNote = new javax.swing.JLabel();
         btnViewNote = new javax.swing.JLabel();
 
@@ -104,11 +104,11 @@ public class PendingNotesItem extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(29, 52, 97));
         jLabel2.setText("Estatus");
 
-        jLabel3.setBackground(new java.awt.Color(245, 223, 83));
+        jLabel3.setBackground(new java.awt.Color(153, 212, 172));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(29, 52, 97));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("En progreso");
+        jLabel3.setText("Finalizado");
         jLabel3.setOpaque(true);
 
         javax.swing.GroupLayout StatusPanelLayout = new javax.swing.GroupLayout(StatusPanel);
@@ -143,11 +143,7 @@ public class PendingNotesItem extends javax.swing.JPanel {
         jLabel6.setText("Acción");
 
         IconsRowPanel.setOpaque(false);
-        IconsRowPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
-
-        btnEditNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/baseline_edit_black_24dp.png"))); // NOI18N
-        btnEditNote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        IconsRowPanel.add(btnEditNote);
+        IconsRowPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 19, 0));
 
         btnDeleteNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/baseline_delete_black_24dp.png"))); // NOI18N
         btnDeleteNote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -206,7 +202,6 @@ public class PendingNotesItem extends javax.swing.JPanel {
     private javax.swing.JPanel IconsRowPanel;
     private javax.swing.JPanel StatusPanel;
     private javax.swing.JLabel btnDeleteNote;
-    private javax.swing.JLabel btnEditNote;
     private javax.swing.JLabel btnViewNote;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

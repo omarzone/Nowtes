@@ -31,10 +31,10 @@ public class MainView extends javax.swing.JFrame {
         Content = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         Menu = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        btnHome = new javax.swing.JLabel();
+        btnHistory = new javax.swing.JLabel();
+        btnHelp = new javax.swing.JLabel();
+        btnSettings = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -104,25 +104,25 @@ public class MainView extends javax.swing.JFrame {
 
         Menu.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(31, 72, 126));
-        jLabel1.setText("Inicio");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(31, 72, 126));
+        btnHome.setText("Inicio");
+        btnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(31, 72, 126));
-        jLabel2.setText("Historial");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHistory.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnHistory.setForeground(new java.awt.Color(31, 72, 126));
+        btnHistory.setText("Historial");
+        btnHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(31, 72, 126));
-        jLabel3.setText("Ayuda");
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHelp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnHelp.setForeground(new java.awt.Color(31, 72, 126));
+        btnHelp.setText("Ayuda");
+        btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(31, 72, 126));
-        jLabel4.setText("Configuración");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSettings.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSettings.setForeground(new java.awt.Color(31, 72, 126));
+        btnSettings.setText("Configuración");
+        btnSettings.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo_small.png"))); // NOI18N
 
@@ -136,18 +136,18 @@ public class MainView extends javax.swing.JFrame {
                         .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MenuLayout.createSequentialGroup()
                                 .addGap(64, 64, 64)
-                                .addComponent(jLabel4))
+                                .addComponent(btnSettings))
                             .addGroup(MenuLayout.createSequentialGroup()
                                 .addGap(96, 96, 96)
-                                .addComponent(jLabel3))
+                                .addComponent(btnHelp))
                             .addGroup(MenuLayout.createSequentialGroup()
                                 .addGap(90, 90, 90)
-                                .addComponent(jLabel2))
+                                .addComponent(btnHistory))
                             .addGroup(MenuLayout.createSequentialGroup()
                                 .addGap(101, 101, 101)
                                 .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1))))
+                                    .addComponent(btnHome))))
                         .addGap(0, 67, Short.MAX_VALUE))
                     .addGroup(MenuLayout.createSequentialGroup()
                         .addContainerGap()
@@ -164,19 +164,19 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addComponent(logo)
                 .addGap(81, 81, 81)
-                .addComponent(jLabel1)
+                .addComponent(btnHome)
                 .addGap(26, 26, 26)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jLabel2)
+                .addComponent(btnHistory)
                 .addGap(31, 31, 31)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel3)
+                .addComponent(btnHelp)
                 .addGap(34, 34, 34)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(btnSettings)
                 .addGap(35, 35, 35)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(125, Short.MAX_VALUE))
@@ -242,11 +242,11 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JPanel Menu;
     private javax.swing.JPanel WindowActions;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel btnHelp;
+    private javax.swing.JLabel btnHistory;
+    private javax.swing.JLabel btnHome;
+    private javax.swing.JLabel btnSettings;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

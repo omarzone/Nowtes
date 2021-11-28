@@ -14,12 +14,12 @@ public class PendingNotesPanel extends javax.swing.JPanel {
 
         HeadPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnAddNote = new javax.swing.JButton();
         SearchPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JLabel();
+        txtSearch = new javax.swing.JTextField();
         ContentPanel = new javax.swing.JPanel();
-        pendingNotesItem1 = new view.PendingNotes.PendingNotesItem();
+        pendingNotesItem2 = new view.PendingNotes.PendingNotesItem();
 
         setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -30,29 +30,29 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Pendientes");
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/add_icon.png"))); // NOI18N
-        jButton1.setText("Nueva nota");
-        jButton1.setFocusable(false);
-        jButton1.setIconTextGap(5);
-        jButton1.setMargin(new java.awt.Insets(5, 5, 5, 14));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddNote.setBackground(new java.awt.Color(0, 0, 0));
+        btnAddNote.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddNote.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/add_icon.png"))); // NOI18N
+        btnAddNote.setText("Nueva nota");
+        btnAddNote.setFocusable(false);
+        btnAddNote.setIconTextGap(5);
+        btnAddNote.setMargin(new java.awt.Insets(5, 5, 5, 14));
+        btnAddNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAddNoteActionPerformed(evt);
             }
         });
 
         SearchPanel.setOpaque(false);
         SearchPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/search.png"))); // NOI18N
-        SearchPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/search.png"))); // NOI18N
+        SearchPanel.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        SearchPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 330, 36));
+        txtSearch.setBackground(new java.awt.Color(255, 255, 255));
+        txtSearch.setBorder(null);
+        SearchPanel.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 330, 36));
 
         javax.swing.GroupLayout HeadPanelLayout = new javax.swing.GroupLayout(HeadPanel);
         HeadPanel.setLayout(HeadPanelLayout);
@@ -64,7 +64,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addComponent(btnAddNote))
         );
         HeadPanelLayout.setVerticalGroup(
             HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,7 +74,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
                     .addGroup(HeadPanelLayout.createSequentialGroup()
                         .addGroup(HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jButton1))
+                            .addComponent(btnAddNote))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(SearchPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
                 .addContainerGap())
@@ -84,24 +84,24 @@ public class PendingNotesPanel extends javax.swing.JPanel {
 
         ContentPanel.setOpaque(false);
         ContentPanel.setLayout(new java.awt.GridLayout(4, 1, 0, 10));
-        ContentPanel.add(pendingNotesItem1);
+        ContentPanel.add(pendingNotesItem2);
 
         add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 69, 1020, 565));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAddNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNoteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAddNoteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
     private javax.swing.JPanel SearchPanel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAddNote;
+    private javax.swing.JLabel btnSearch;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private view.PendingNotes.PendingNotesItem pendingNotesItem1;
+    private view.PendingNotes.PendingNotesItem pendingNotesItem2;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
