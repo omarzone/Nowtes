@@ -44,15 +44,20 @@ public class PendingNotesPanel extends javax.swing.JPanel {
             }
         });
 
-        SearchPanel.setOpaque(false);
+        SearchPanel.setBackground(new java.awt.Color(255, 255, 255));
+        SearchPanel.setPreferredSize(new java.awt.Dimension(365, 42));
         SearchPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/search.png"))); // NOI18N
-        SearchPanel.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        btnSearch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/search (4).png"))); // NOI18N
+        btnSearch.setFocusable(false);
+        btnSearch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SearchPanel.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         txtSearch.setBackground(new java.awt.Color(255, 255, 255));
         txtSearch.setBorder(null);
-        SearchPanel.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 330, 36));
+        txtSearch.setCaretColor(new java.awt.Color(31, 72, 126));
+        SearchPanel.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 40));
 
         javax.swing.GroupLayout HeadPanelLayout = new javax.swing.GroupLayout(HeadPanel);
         HeadPanel.setLayout(HeadPanelLayout);
@@ -63,21 +68,19 @@ public class PendingNotesPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAddNote))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE)
+                .addComponent(btnAddNote)
+                .addContainerGap())
         );
         HeadPanelLayout.setVerticalGroup(
             HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HeadPanelLayout.createSequentialGroup()
-                        .addGroup(HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(btnAddNote))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(SearchPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnAddNote)
+                    .addComponent(jLabel1)
+                    .addComponent(SearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1020, -1));

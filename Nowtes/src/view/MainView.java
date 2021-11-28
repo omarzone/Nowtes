@@ -46,7 +46,6 @@ public class MainView extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
         logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,7 +100,7 @@ public class MainView extends javax.swing.JFrame {
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1043, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,6 +113,7 @@ public class MainView extends javax.swing.JFrame {
 
         btnHome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnHome.setForeground(new java.awt.Color(31, 72, 126));
+        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnHome.setText("Inicio");
         btnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,8 +124,10 @@ public class MainView extends javax.swing.JFrame {
 
         btnHistory.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnHistory.setForeground(new java.awt.Color(31, 72, 126));
+        btnHistory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnHistory.setText("Historial");
         btnHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHistory.setIconTextGap(0);
         btnHistory.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnHistoryMouseClicked(evt);
@@ -134,6 +136,7 @@ public class MainView extends javax.swing.JFrame {
 
         btnHelp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnHelp.setForeground(new java.awt.Color(31, 72, 126));
+        btnHelp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnHelp.setText("Ayuda");
         btnHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHelp.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -144,6 +147,7 @@ public class MainView extends javax.swing.JFrame {
 
         btnSettings.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSettings.setForeground(new java.awt.Color(31, 72, 126));
+        btnSettings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSettings.setText("Configuración");
         btnSettings.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSettings.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,55 +163,41 @@ public class MainView extends javax.swing.JFrame {
         MenuLayout.setHorizontalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MenuLayout.createSequentialGroup()
-                        .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MenuLayout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(btnSettings))
-                            .addGroup(MenuLayout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addComponent(btnHelp))
-                            .addGroup(MenuLayout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addComponent(btnHistory))
-                            .addGroup(MenuLayout.createSequentialGroup()
-                                .addGap(101, 101, 101)
-                                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnHome))))
-                        .addGap(0, 67, Short.MAX_VALUE))
-                    .addGroup(MenuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator1)
-                            .addComponent(jSeparator3)
-                            .addComponent(jSeparator4))))
+                    .addComponent(btnHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHistory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator3)
+                    .addComponent(btnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSettings, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(MenuLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(60, 60, 60)
                 .addComponent(logo)
-                .addGap(81, 81, 81)
-                .addComponent(btnHome)
-                .addGap(26, 26, 26)
+                .addGap(58, 58, 58)
+                .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(btnHistory)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(btnHelp)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSettings)
-                .addGap(35, 35, 35)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(187, Short.MAX_VALUE))
         );
 
         getContentPane().add(Menu, java.awt.BorderLayout.LINE_START);
@@ -305,7 +295,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel title_app;
     // End of variables declaration//GEN-END:variables

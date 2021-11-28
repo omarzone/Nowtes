@@ -55,16 +55,16 @@ public class Settings extends javax.swing.JPanel {
         HeadPanelLayout.setHorizontalGroup(
             HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel5)
-                .addContainerGap(814, Short.MAX_VALUE))
+                .addContainerGap(800, Short.MAX_VALUE))
         );
         HeadPanelLayout.setVerticalGroup(
             HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HeadPanelLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeadPanelLayout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1020, -1));
@@ -108,16 +108,19 @@ public class Settings extends javax.swing.JPanel {
         ContentPanel.setLayout(ContentPanelLayout);
         ContentPanelLayout.setHorizontalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(roundedBorders1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
+            .addGroup(ContentPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         ContentPanelLayout.setVerticalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentPanelLayout.createSequentialGroup()
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
 
-        add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 1020, -1));
+        add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 1020, 600));
     }// </editor-fold>//GEN-END:initComponents
 
 

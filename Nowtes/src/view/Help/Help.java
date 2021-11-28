@@ -29,10 +29,10 @@ public class Help extends javax.swing.JPanel {
 
         HeadPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        ContentPanel = new javax.swing.JPanel();
         roundedBorders1 = new view.components.RoundedBorders();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        txtVideo = new javax.swing.JLabel();
+        ContentPanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(130, 156, 188));
         setForeground(new java.awt.Color(102, 153, 255));
@@ -47,21 +47,38 @@ public class Help extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ayuda");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Video_Ayuda.jpg"))); // NOI18N
+        jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        roundedBorders1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 840, 420));
+
+        txtVideo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtVideo.setForeground(new java.awt.Color(0, 0, 0));
+        txtVideo.setText("¿Como funciona Nowtes?");
+        roundedBorders1.add(txtVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+
         javax.swing.GroupLayout HeadPanelLayout = new javax.swing.GroupLayout(HeadPanel);
         HeadPanel.setLayout(HeadPanelLayout);
         HeadPanelLayout.setHorizontalGroup(
             HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addContainerGap(924, Short.MAX_VALUE))
+                .addGroup(HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(HeadPanelLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(HeadPanelLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel5)))
+                .addGap(20, 20, 20))
         );
         HeadPanelLayout.setVerticalGroup(
             HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
         add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1020, -1));
@@ -69,27 +86,15 @@ public class Help extends javax.swing.JPanel {
         ContentPanel.setBackground(new java.awt.Color(255, 255, 255));
         ContentPanel.setOpaque(false);
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Video_Ayuda.jpg"))); // NOI18N
-        jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        roundedBorders1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("¿Como funciona Nowtes?");
-        roundedBorders1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
-
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
         ContentPanelLayout.setHorizontalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(roundedBorders1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 1020, Short.MAX_VALUE)
         );
         ContentPanelLayout.setVerticalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContentPanelLayout.createSequentialGroup()
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 643, Short.MAX_VALUE)
         );
 
         add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 1020, -1));
@@ -101,8 +106,8 @@ public class Help extends javax.swing.JPanel {
     public javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private view.components.RoundedBorders roundedBorders1;
+    private javax.swing.JLabel txtVideo;
     // End of variables declaration//GEN-END:variables
 }
