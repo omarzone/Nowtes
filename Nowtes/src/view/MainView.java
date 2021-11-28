@@ -1,11 +1,13 @@
 package view;
 
+import view.CompletedNotes.CompleteNotesPanel;
 import view.PendingNotes.PendingNotesItem;
 import view.PendingNotes.PendingNotesPanel;
 
 public class MainView extends javax.swing.JFrame {
 
     PendingNotesPanel pendingNotes = new PendingNotesPanel();
+    CompleteNotesPanel completeNotes = new CompleteNotesPanel();
     int xMouse, yMouse;
     public MainView() {
         initComponents();
