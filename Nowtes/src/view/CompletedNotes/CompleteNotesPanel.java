@@ -3,8 +3,8 @@ package view.CompletedNotes;
 import view.PendingNotes.*;
 
 public class CompleteNotesPanel extends javax.swing.JPanel {
-
-
+    
+    
     public CompleteNotesPanel() {
         initComponents();
         
@@ -17,7 +17,6 @@ public class CompleteNotesPanel extends javax.swing.JPanel {
         HeadPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
-        completeNotesItem1 = new view.CompletedNotes.CompleteNotesItem();
 
         setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,8 +48,6 @@ public class CompleteNotesPanel extends javax.swing.JPanel {
 
         ContentPanel.setOpaque(false);
         ContentPanel.setLayout(new java.awt.GridLayout(4, 1, 0, 10));
-        ContentPanel.add(completeNotesItem1);
-
         add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 69, 1020, 565));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -58,7 +55,6 @@ public class CompleteNotesPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
-    private view.CompletedNotes.CompleteNotesItem completeNotesItem1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

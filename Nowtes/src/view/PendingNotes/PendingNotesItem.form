@@ -41,7 +41,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="61" green="34" red="1d" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Dise&#xf1;ar el prototipo de la app"/>
+            <Property name="text" type="java.lang.String" value="Title"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -65,7 +65,7 @@
                   <Color blue="7e" green="48" red="1f" type="rgb"/>
                 </Property>
                 <Property name="rows" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="La tarea consiste en dibujar los primeros dise&#xf1;os de nuestra app para entreg&#xe1;rsela&#xa;al profesor. El dise&#xf1;o se deber&#xe1; guardar en PDF y envi&#xe1;rselo por correo sin olvidar.."/>
+                <Property name="text" type="java.lang.String" value="Description"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -88,7 +88,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel5" pref="100" max="32767" attributes="0"/>
+                  <Component id="note_date" pref="100" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -104,7 +104,7 @@
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel5" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="note_date" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -122,7 +122,7 @@
             <Property name="text" type="java.lang.String" value="Fecha"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="note_date">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ac" green="d4" red="99" type="rgb"/>
@@ -134,7 +134,7 @@
               <Color blue="61" green="34" red="1d" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="28/abril/2021"/>
+            <Property name="text" type="java.lang.String" value="date"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
@@ -150,7 +150,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel3" max="32767" attributes="0"/>
+                  <Component id="note_status" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -166,7 +166,7 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="note_status" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -184,7 +184,7 @@
             <Property name="text" type="java.lang.String" value="Estatus"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="note_status">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="53" green="df" red="f5" type="rgb"/>
@@ -196,7 +196,7 @@
               <Color blue="61" green="34" red="1d" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="En progreso"/>
+            <Property name="text" type="java.lang.String" value="status"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
