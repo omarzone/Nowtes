@@ -4,13 +4,23 @@ import Model.Note;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import DAONote.DAONote;
+
 
 public class PendingNotesPanel extends javax.swing.JPanel {
-
-
+   DAONote xd = new DAONote();
+   
+   
     public PendingNotesPanel() {
         initComponents();
+        Note note7 = new Note();
+        
+        xd.getData(note7);
+        
+        
                 
+        
+        
         //Test CustomRenderList
         Note note1 = new Note("Titulo", "Descripccion", "29/20/20",1,true,false,"29/10/10"); 
         Note note2 = new Note("Titulo2", "Descripccion", "29/20/20",1,true,false,"29/10/10"); 
@@ -27,6 +37,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         listModel.addElement(note4);
         listModel.addElement(note5);
         listModel.addElement(note6);
+        listModel.addElement(note7);
         
         JList<Note> lista = new JList<>(listModel);
         lista.setCellRenderer(new PendingNotesItem());
@@ -128,4 +139,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+
+    
+
 }

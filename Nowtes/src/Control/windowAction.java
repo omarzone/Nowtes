@@ -5,10 +5,12 @@
  */
 package Control;
 
+import view.MainView;
 /**
  *
  * @author PC GOOSE
  */
-public class windowAction {
+public class windowAction extends MainView{
+    
     
 }
