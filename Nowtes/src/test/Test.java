@@ -5,6 +5,8 @@
  */
 package test;
 import view.MainView;
+import Control.CntrlPendingPanel;
+import Control.CntrlMain;
 /**
  *
  * @author PC GOOSE
@@ -16,8 +18,11 @@ public class Test {
      */
     public static void main(String[] args) {
        MainView xd = new MainView();
-       xd.setVisible(true);
+       CntrlPendingPanel pendingPanel = new CntrlPendingPanel(xd);
+       CntrlMain menuControl = new CntrlMain(xd);
        
+       xd.setVisible(true);
+       xd.setLocationRelativeTo(null);
     }
     
 }

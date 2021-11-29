@@ -10,7 +10,13 @@ import view.MainView;
  *
  * @author PC GOOSE
  */
-public class windowAction extends MainView{
+public class CntrlMainView extends MainView{
+    private MainView mainView;
+    
+    public CntrlMainView(MainView mainView){
+        this.mainView = mainView;
+    }
+    
     
     
 }

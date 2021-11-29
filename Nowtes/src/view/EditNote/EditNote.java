@@ -108,7 +108,6 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
         jTextArea2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea2.setRows(5);
-        jTextArea2.setText("La tarea consiste en dibujar los primeros diseños de nuestra app para entregársela \nal profesor. El diseño se deberá guardar en PDF y enviárselo por correo sin olvidar\nagregar a todos los integrantes del equipo en el documento.\n\n- Correo para enviar    profesor@correo.uady.mx\n- Agregar portada al documento\n- Agregar la paleta de colores que se usó en el diseño.\n\n");
         jTextArea2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -117,12 +116,12 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
         jTextField3.setBackground(new java.awt.Color(130, 156, 188));
         jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("Diseñar el prototipo de la app");
         jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
         roundedBorders1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 680, 40));
 
         jComboBox1.setBackground(new java.awt.Color(130, 156, 188));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "baja", "media", "alta" }));
         jComboBox1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
         roundedBorders1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, -1));
 

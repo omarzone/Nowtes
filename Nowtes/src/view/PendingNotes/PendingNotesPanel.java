@@ -5,6 +5,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import DAONote.DAONote;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 
 public class PendingNotesPanel extends javax.swing.JPanel {
@@ -140,6 +142,14 @@ public class PendingNotesPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 
-    
+    public JButton getBtnAddNote() {
+        return btnAddNote;
+    }
 
+    public JLabel getBtnSearch() {
+        return btnSearch;
+    }
+
+    
+    
 }

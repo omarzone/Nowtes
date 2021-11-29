@@ -16,10 +16,10 @@ import java.util.logging.Logger;
  * @author PC GOOSE
  */
 public class Conexion {
-    private final String BASE = "nowtes";
-    private final String USER = "FredyDB";
-    private final String PASSWORD = "Happynegra14&";
-    private final String URL = "jdbc:mysql://localhost:3306/nowtes";
+    private final String BASE = "sql5454888";
+    private final String USER = "sql5454888";
+    private final String PASSWORD = "YrD34AYsft";
+    private final String URL = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5454888";
     private Connection con = null;
     
     

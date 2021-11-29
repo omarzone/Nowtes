@@ -1,5 +1,6 @@
 package view;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.CompletedNotes.CompleteNotesPanel;
 import view.Help.Help;
@@ -9,7 +10,7 @@ import view.Settings.Settings;
 
 public class MainView extends javax.swing.JFrame {
 
-    PendingNotesPanel pendingNotes = new PendingNotesPanel();
+    private PendingNotesPanel pendingNotes = new PendingNotesPanel();
     CompleteNotesPanel completeNotes = new CompleteNotesPanel();
     Help helpView = new Help(); 
     Settings settingsView = new Settings();
@@ -18,7 +19,7 @@ public class MainView extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         
-        jPanel1.add(pendingNotes);
+        MainContent.add(pendingNotes);
       
 
         
@@ -33,11 +34,11 @@ public class MainView extends javax.swing.JFrame {
         title_app = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         WindowActions = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        MinimizeWindow = new javax.swing.JLabel();
+        MaximizeWindow = new javax.swing.JLabel();
+        CloseWindow = new javax.swing.JLabel();
         Content = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        MainContent = new javax.swing.JPanel();
         Menu = new javax.swing.JPanel();
         btnHome = new javax.swing.JLabel();
         btnHistory = new javax.swing.JLabel();
@@ -77,34 +78,42 @@ public class MainView extends javax.swing.JFrame {
         HeaderPanel.add(title_app, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
 
         WindowActions.setOpaque(false);
-        WindowActions.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 8));
+        WindowActions.setPreferredSize(new java.awt.Dimension(150, 30));
+        WindowActions.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/line.png"))); // NOI18N
-        WindowActions.add(jLabel8);
+        MinimizeWindow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MinimizeWindow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/line.png"))); // NOI18N
+        MinimizeWindow.setPreferredSize(new java.awt.Dimension(30, 30));
+        WindowActions.add(MinimizeWindow);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/minimize.png"))); // NOI18N
-        WindowActions.add(jLabel9);
+        MaximizeWindow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MaximizeWindow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/minimize.png"))); // NOI18N
+        MaximizeWindow.setPreferredSize(new java.awt.Dimension(30, 30));
+        WindowActions.add(MaximizeWindow);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/exit.png"))); // NOI18N
-        WindowActions.add(jLabel10);
+        CloseWindow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CloseWindow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/exit.png"))); // NOI18N
+        CloseWindow.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        CloseWindow.setPreferredSize(new java.awt.Dimension(35, 30));
+        WindowActions.add(CloseWindow);
 
-        HeaderPanel.add(WindowActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 0, 110, 30));
+        HeaderPanel.add(WindowActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, 110, 30));
 
         getContentPane().add(HeaderPanel, java.awt.BorderLayout.PAGE_START);
 
         Content.setBackground(new java.awt.Color(130, 156, 188));
 
-        jPanel1.setOpaque(false);
+        MainContent.setOpaque(false);
 
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
+            .addComponent(MainContent, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainContent, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
         );
 
         getContentPane().add(Content, java.awt.BorderLayout.CENTER);
@@ -197,7 +206,7 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(Menu, java.awt.BorderLayout.LINE_START);
@@ -271,31 +280,71 @@ public class MainView extends javax.swing.JFrame {
     }
     
     public void  switchPanels(JPanel panel){
-        jPanel1.removeAll();
-        jPanel1.add(panel);
-        jPanel1.repaint();
-        jPanel1.revalidate();
+        MainContent.removeAll();
+        MainContent.add(panel);
+        MainContent.repaint();
+        MainContent.revalidate();
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CloseWindow;
     private javax.swing.JPanel Content;
     private javax.swing.JPanel HeaderPanel;
+    private javax.swing.JPanel MainContent;
+    private javax.swing.JLabel MaximizeWindow;
     private javax.swing.JPanel Menu;
+    private javax.swing.JLabel MinimizeWindow;
     private javax.swing.JPanel WindowActions;
     private javax.swing.JLabel btnHelp;
     private javax.swing.JLabel btnHistory;
     private javax.swing.JLabel btnHome;
     private javax.swing.JLabel btnSettings;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel title_app;
     // End of variables declaration//GEN-END:variables
+
+    public JPanel getMainContent() {
+        return MainContent;
+    }
+
+    public JLabel getBtnHelp() {
+        return btnHelp;
+    }
+
+    public JLabel getBtnHistory() {
+        return btnHistory;
+    }
+
+    public JLabel getBtnHome() {
+        return btnHome;
+    }
+
+    public JLabel getBtnSettings() {
+        return btnSettings;
+    }
+
+    
+    public PendingNotesPanel getPendingNotePanel(){
+        return this.pendingNotes;
+    }
+
+    public JLabel getCloseWindow() {
+        return CloseWindow;
+    }
+
+    public JLabel getMaximizeWindow() {
+        return MaximizeWindow;
+    }
+
+    public JLabel getMinimizeWindow() {
+        return MinimizeWindow;
+    }
+
+    
+    
 }
