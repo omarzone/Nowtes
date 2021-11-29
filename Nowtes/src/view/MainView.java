@@ -50,6 +50,7 @@ public class MainView extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Nowtes");
         setUndecorated(true);
         setResizable(false);
 

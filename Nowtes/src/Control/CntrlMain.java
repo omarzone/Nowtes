@@ -8,6 +8,7 @@ package Control;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
 import view.MainView;
 /**
  *
@@ -20,6 +21,7 @@ public class CntrlMain extends MainView implements MouseListener{
     public CntrlMain(MainView mainView){
         this.mainView = mainView;
         
+        
         mainView.getMinimizeWindow().addMouseListener(this);
         mainView.getCloseWindow().addMouseListener(this);
     }
@@ -27,7 +29,7 @@ public class CntrlMain extends MainView implements MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         if(mainView.getCloseWindow() == e.getSource()){
-            mainView.dispose();
+           mainView.dispatchEvent(new WindowEvent(mainView, WindowEvent.WINDOW_CLOSING));
         }
         
         if(mainView.getMinimizeWindow() == e.getSource()){
@@ -73,4 +75,6 @@ public class CntrlMain extends MainView implements MouseListener{
            mainView.getMinimizeWindow().setBackground(null);
        }
     }    
+
+  
 }
