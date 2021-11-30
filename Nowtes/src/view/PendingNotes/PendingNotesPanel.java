@@ -158,7 +158,8 @@ public class PendingNotesPanel extends javax.swing.JPanel {
     public PendingNotesItem getPendingNotesItem1() {
         return pendingNotesItem1;
     }
-
+    
+    
     
     
 }

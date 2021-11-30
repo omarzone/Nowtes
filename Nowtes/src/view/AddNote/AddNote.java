@@ -8,13 +8,14 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import javax.swing.JButton;
 
 
 /**
  *
  * @author PC GOOSE
  */
-public class AddNote extends javax.swing.JPanel implements ActionListener{
+public class AddNote extends javax.swing.JPanel{
 
     /**
      * Creates new form AddNote
@@ -22,10 +23,11 @@ public class AddNote extends javax.swing.JPanel implements ActionListener{
     public AddNote() {
         initComponents();
         
-        btnGuardar.addActionListener(this);
-        btnCancelar.addActionListener(this); 
+        
     }
 
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -258,18 +260,14 @@ public class AddNote extends javax.swing.JPanel implements ActionListener{
     public JDateChooser getOptionDate(){
         return optionDate;
     }
-    
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(btnGuardar == e.getSource()){
-           SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
-           String date = dcn.format(optionDate.getDate());
-            System.out.println(date);
-        }
-        
-        
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
     }
+    
+    
+    
+   
     
     
     

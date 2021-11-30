@@ -1,26 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Control;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowEvent;
+import javax.swing.JPanel;
+import view.CompletedNotes.CompleteNotesPanel;
+import view.Help.Help;
 import view.MainView;
-/**
- *
- * @author PC GOOSE
- */
-public class CntrlMain extends MainView implements MouseListener{
+import view.PendingNotes.PendingNotesPanel;
+import view.Settings.Settings;
 
+
+public class CntrlMain extends MainView implements MouseListener, MouseMotionListener{
+    private int xMouse, yMouse;
     private MainView mainView;
+    
+    private PendingNotesPanel pendingNotes = new PendingNotesPanel();
+    private CompleteNotesPanel completeNotes = new CompleteNotesPanel();
+    private Help helpView = new Help(); 
+    private Settings settingsView = new Settings();
+     
+    
     
     public CntrlMain(MainView mainView){
         this.mainView = mainView;
-        
+        mainView.getMainContent().add(pendingNotes);
         
         mainView.getMinimizeWindow().addMouseListener(this);
         mainView.getCloseWindow().addMouseListener(this);
@@ -35,11 +42,29 @@ public class CntrlMain extends MainView implements MouseListener{
         if(mainView.getMinimizeWindow() == e.getSource()){
             mainView.setState(mainView.ICONIFIED);
         }
+        
+        if(mainView.getBtnHome() == e.getSource()){
+            switchPanels(pendingNotes);
+        }
+        
+        if(mainView.getBtnHelp() == e.getSource()){
+            switchPanels(helpView);
+        }
+        
+        if(mainView.getBtnHistory() == e.getSource()){
+            switchPanels(completeNotes);
+        }
+        
+        if(mainView.getBtnSettings() == e.getSource()){
+            switchPanels(settingsView);
+        }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        //No implementar alguna accion aqui, la aplicacion se muere.
+        
+        xMouse = e.getX();
+        yMouse = e.getY();
     }
 
     @Override
@@ -74,7 +99,39 @@ public class CntrlMain extends MainView implements MouseListener{
            mainView.getMinimizeWindow().setOpaque(false);
            mainView.getMinimizeWindow().setBackground(null);
        }
-    }    
+    } 
+    
+    
+    public void  switchPanels(JPanel panel){
+        mainView.getMainContent().removeAll();
+        mainView.getMainContent().add(panel);
+        mainView.getMainContent().repaint();
+        mainView.getMainContent().revalidate();
+    }
 
-  
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        if(mainView.getHeaderPanel() == e.getSource()){
+            int x = e.getXOnScreen();
+            int y = e.getYOnScreen();
+            mainView.setLocation(x - xMouse, y - yMouse);
+        }
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    public PendingNotesPanel getPendingNotesPanel(){
+        
+        return pendingNotes;
+    }
+
+    public MainView getMainView() {
+        return mainView;
+    }
+    
+    
 }

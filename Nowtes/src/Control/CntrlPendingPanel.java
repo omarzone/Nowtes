@@ -1,51 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Control;
-
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.PendingNotes.PendingNotesPanel;
-import view.addNote.AddNote;
 import view.MainView;
 
+import view.addNote.AddNote;
 
-/**
- *
- * @author PC GOOSE
- */
-public class CntrlPendingPanel extends PendingNotesPanel implements ActionListener{
-    AddNote addNotePanel = new AddNote();
+public class CntrlPendingPanel extends CntrlMain implements ActionListener {
+
+    private AddNote addNotePanel = new AddNote();
     
-    MainView mainView;
-    PendingNotesPanel pendingNotes = new PendingNotesPanel();
-    
-    
-    public CntrlPendingPanel(MainView mainView){
-        //this.pendingNotes = pendingNotes;
-        this.mainView = mainView;
-        
-        mainView.getPendingNotePanel().getBtnAddNote().addActionListener(this);
-        
-       
+    public CntrlPendingPanel() {
         
         
+
+        this.getPendingNotesPanel().getBtnAddNote().addActionListener(this);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(mainView.getPendingNotePanel().getBtnAddNote() == e.getSource()){
-            mainView.getMainContent().removeAll();
-            mainView.getMainContent().add(addNotePanel);
-            mainView.getMainContent().repaint();
-            mainView.getMainContent().revalidate();
+        if (getPendingNotesPanel().getBtnAddNote() == e.getSource()) {
+            getMainView().getMainContent().removeAll();
+            getMainView().getMainContent().add(addNotePanel);
+            getMainView().getMainContent().repaint();
+            getMainView().getMainContent().revalidate();
         }
     }
-    
-    
-    
-    
+
+    public AddNote getAddNotePanel() {
+
+        return this.addNotePanel;
+    }
+
 }

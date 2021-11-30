@@ -9,17 +9,18 @@ import view.PendingNotes.PendingNotesPanel;
 import view.Settings.Settings;
 
 public class MainView extends javax.swing.JFrame {
+    
+   
 
-    private PendingNotesPanel pendingNotes = new PendingNotesPanel();
-    CompleteNotesPanel completeNotes = new CompleteNotesPanel();
-    Help helpView = new Help(); 
-    Settings settingsView = new Settings();
-    int xMouse, yMouse;
+   
+    
+    
+   
     public MainView() {
         initComponents();
         this.setResizable(false);
         
-        MainContent.add(pendingNotes);
+        //MainContent.add(pendingNotes);
       
 
         
@@ -216,32 +217,29 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HeaderPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
+       //NO AGREGUEN NADA PORQUE ELIMINA SYSTEM32
     }//GEN-LAST:event_HeaderPanelMousePressed
 
     private void HeaderPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - xMouse, y - yMouse);
+        //NO AGREGUEN NADA PORQUE ELIMINA SYSTEM32
     }//GEN-LAST:event_HeaderPanelMouseDragged
 
     private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
-        switchPanels(pendingNotes);
+        //NO AGREGUEN NADA PORQUE ELIMINA SYSTEM32
         
         
     }//GEN-LAST:event_btnHomeMouseClicked
 
     private void btnHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistoryMouseClicked
-        switchPanels(completeNotes);
+        //NO AGREGUEN NADA PORQUE ELIMINA SYSTEM32
     }//GEN-LAST:event_btnHistoryMouseClicked
 
     private void btnHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseClicked
-        switchPanels(helpView);
+        //NO AGREGUEN NADA PORQUE ELIMINA SYSTEM32
     }//GEN-LAST:event_btnHelpMouseClicked
 
     private void btnSettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSettingsMouseClicked
-        switchPanels(settingsView);
+        //NO AGREGUEN NADA PORQUE ELIMINA SYSTEM32
     }//GEN-LAST:event_btnSettingsMouseClicked
 
     /**
@@ -280,12 +278,7 @@ public class MainView extends javax.swing.JFrame {
         });
     }
     
-    public void  switchPanels(JPanel panel){
-        MainContent.removeAll();
-        MainContent.add(panel);
-        MainContent.repaint();
-        MainContent.revalidate();
-    }
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -329,11 +322,6 @@ public class MainView extends javax.swing.JFrame {
         return btnSettings;
     }
 
-    
-    public PendingNotesPanel getPendingNotePanel(){
-        return this.pendingNotes;
-    }
-
     public JLabel getCloseWindow() {
         return CloseWindow;
     }
@@ -344,6 +332,10 @@ public class MainView extends javax.swing.JFrame {
 
     public JLabel getMinimizeWindow() {
         return MinimizeWindow;
+    }
+
+    public JPanel getHeaderPanel() {
+        return HeaderPanel;
     }
 
     

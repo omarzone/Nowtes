@@ -8,23 +8,28 @@ import view.MainView;
 import Control.CntrlPendingPanel;
 import Control.CntrlMain;
 import Control.CntrlPendingNotesItem;
+import Control.CntrlAddNote;
 /**
  *
  * @author PC GOOSE
  */
+
 public class Test {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       MainView xd = new MainView();
-       CntrlPendingPanel pendingPanel = new CntrlPendingPanel(xd);
-       CntrlMain menuControl = new CntrlMain(xd);
-       CntrlPendingNotesItem pendingNotesItem = new CntrlPendingNotesItem(xd);
+       MainView mainView = new MainView();
+       //CntrlPendingPanel pendingPanel = new CntrlPendingPanel(xd);
+       //CntrlMain menuControl = new CntrlMain(xd);
+       //CntrlPendingNotesItem pendingNotesItem = new CntrlPendingNotesItem(xd);
+       //CntrlAddNote addNote = new CntrlAddNote(xd, pendingPanel);
        
-       xd.setVisible(true);
-       xd.setLocationRelativeTo(null);
+       
+       CntrlMain cntrlMain = new CntrlMain(mainView);
+       mainView.setVisible(true);
+       mainView.setLocationRelativeTo(null);
     }
     
 }
