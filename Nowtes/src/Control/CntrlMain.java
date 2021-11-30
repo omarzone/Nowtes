@@ -22,13 +22,11 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     private Help helpView = new Help();
     private Settings settingsView = new Settings();
     
-    public CntrlMain(){
     
-    }
 
     public CntrlMain(MainView mainView) {
         this.mainView = mainView;
-        //mainView.getMainContent().add(pendingNotes);
+        mainView.getMainContent().add(pendingNotes);
         
         //Listeners para windows Actions
         mainView.getMinimizeWindow().addMouseListener(this);
@@ -139,7 +137,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
     public PendingNotesPanel getPendingNotesPanel() {
 
-        return pendingNotes;
+        return this.pendingNotes;
     }
 
     public MainView getMainView() {

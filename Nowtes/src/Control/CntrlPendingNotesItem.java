@@ -15,33 +15,53 @@ import view.MainView;
  *
  * @author polilxd
  */
-public class CntrlPendingNotesItem extends CntrlMain {
-
-    private MainView mainView;
+public class CntrlPendingNotesItem implements MouseListener{
+    
+    CntrlMain cntrlMain;
+    CntrlPendingPanel cntrlPendingPanel;
     EditNote addEditNote = new EditNote();
 
-    public CntrlPendingNotesItem(MainView mainView) {
-        super(mainView);
-        this.mainView = mainView;
-
-        getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote().addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                CustomMouseClicked(evt);
-            }
-        });
+    public CntrlPendingNotesItem(CntrlPendingPanel cntrlPendingPanel, CntrlMain cntrlMain) {
+        //super(mainView);
+        this.cntrlMain = cntrlMain;
+        this.cntrlPendingPanel = cntrlPendingPanel;
+        
+        cntrlPendingPanel.getNoteItem().getBtnEditNote().addMouseListener(this);
+        
 
     }
 
-    public void CustomMouseClicked(MouseEvent e) {
-        if (getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote() == e.getSource()) {
+   
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if (cntrlPendingPanel.getNoteItem().getBtnEditNote() == e.getSource()) {
 
-            getMainView().getMainContent().removeAll();
-            getMainView().getMainContent().add(addEditNote);
-            getMainView().getMainContent().repaint();
-            getMainView().getMainContent().revalidate();
+            cntrlMain.getMainView().getMainContent().removeAll();
+            cntrlMain.getMainView().getMainContent().add(addEditNote);
+            cntrlMain.getMainView().getMainContent().repaint();
+            cntrlMain.getMainView().getMainContent().revalidate();
 
         }
+    }
 
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

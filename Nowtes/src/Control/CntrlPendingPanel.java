@@ -2,30 +2,32 @@ package Control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.MainView;
+import Control.CntrlMain;
 
 import view.addNote.AddNote;
+import view.PendingNotes.PendingNotesItem;
 
-public class CntrlPendingPanel extends CntrlMain implements ActionListener {
+public class CntrlPendingPanel implements ActionListener {
 
     private AddNote addNotePanel = new AddNote();
+    private CntrlMain cntrlMain;
     
-    public CntrlPendingPanel(MainView mainView) {
-        super(mainView);
-        
+    public CntrlPendingPanel(CntrlMain cntrlMain) {
+       this.cntrlMain = cntrlMain;
+       
 
-        getPendingNotesPanel().getBtnAddNote().addActionListener(this);
+        cntrlMain.getPendingNotesPanel().getBtnAddNote().addActionListener(this);
         
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (getPendingNotesPanel().getBtnAddNote() == e.getSource()) {
-            getMainView().getMainContent().removeAll();
-            getMainView().getMainContent().add(addNotePanel);
-            getMainView().getMainContent().repaint();
-            getMainView().getMainContent().revalidate();
+        if (cntrlMain.getPendingNotesPanel().getBtnAddNote() == e.getSource()) {
+            cntrlMain.getMainView().getMainContent().removeAll();
+            cntrlMain.getMainView().getMainContent().add(this.addNotePanel);
+            cntrlMain.getMainView().getMainContent().repaint();
+            cntrlMain.getMainView().getMainContent().revalidate();
         }
     }
 
@@ -34,4 +36,8 @@ public class CntrlPendingPanel extends CntrlMain implements ActionListener {
         return this.addNotePanel;
     }
 
+    
+    public PendingNotesItem getNoteItem(){
+        return cntrlMain.getPendingNotesPanel().getPendingNotesItem1();
+    }
 }
