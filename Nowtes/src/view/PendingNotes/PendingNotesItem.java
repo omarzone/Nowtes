@@ -221,6 +221,20 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         this.note_title = note_title;
     }
 
+    public JLabel getBtnDeleteNote() {
+        return btnDeleteNote;
+    }
+
+    public JLabel getBtnEditNote() {
+        return btnEditNote;
+    }
+
+    public JLabel getBtnViewNote() {
+        return btnViewNote;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ActionsPanel;
     private javax.swing.JPanel DataPanel;
@@ -240,6 +254,8 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
     private javax.swing.JLabel note_title;
     // End of variables declaration//GEN-END:variables
 
+    
+    
     @Override
     public Component getListCellRendererComponent(JList<? extends Note> list, Note note, int index, boolean isSelected, boolean cellHasFocus) {
         
