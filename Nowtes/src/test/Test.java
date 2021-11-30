@@ -7,6 +7,7 @@ package test;
 import view.MainView;
 import Control.CntrlPendingPanel;
 import Control.CntrlMain;
+import Control.CntrlPendingNotesItem;
 /**
  *
  * @author PC GOOSE
@@ -20,6 +21,7 @@ public class Test {
        MainView xd = new MainView();
        CntrlPendingPanel pendingPanel = new CntrlPendingPanel(xd);
        CntrlMain menuControl = new CntrlMain(xd);
+       CntrlPendingNotesItem pendingNotesItem = new CntrlPendingNotesItem(xd);
        
        xd.setVisible(true);
        xd.setLocationRelativeTo(null);

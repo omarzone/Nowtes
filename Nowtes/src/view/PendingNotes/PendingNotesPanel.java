@@ -43,7 +43,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         
         JList<Note> lista = new JList<>(listModel);
         lista.setCellRenderer(new PendingNotesItem());
-        ContentPanel.add(new JScrollPane(lista));
+       // ContentPanel.add(new JScrollPane(lista));
     }
 
     @SuppressWarnings("unchecked")
@@ -57,6 +57,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         btnSearch = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         ContentPanel = new javax.swing.JPanel();
+        pendingNotesItem1 = new view.PendingNotes.PendingNotesItem();
 
         setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,7 +92,6 @@ public class PendingNotesPanel extends javax.swing.JPanel {
         btnSearch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SearchPanel.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
-        txtSearch.setBackground(new java.awt.Color(255, 255, 255));
         txtSearch.setBorder(null);
         txtSearch.setCaretColor(new java.awt.Color(31, 72, 126));
         SearchPanel.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 40));
@@ -124,9 +124,12 @@ public class PendingNotesPanel extends javax.swing.JPanel {
 
         ContentPanel.setOpaque(false);
         ContentPanel.setLayout(new java.awt.CardLayout());
+        ContentPanel.add(pendingNotesItem1, "card2");
+
         add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 69, 1020, 565));
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void btnAddNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNoteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddNoteActionPerformed
@@ -139,15 +142,21 @@ public class PendingNotesPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAddNote;
     private javax.swing.JLabel btnSearch;
     private javax.swing.JLabel jLabel1;
+    private view.PendingNotes.PendingNotesItem pendingNotesItem1;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 
+    
     public JButton getBtnAddNote() {
         return btnAddNote;
     }
 
     public JLabel getBtnSearch() {
         return btnSearch;
+    }
+
+    public PendingNotesItem getPendingNotesItem1() {
+        return pendingNotesItem1;
     }
 
     

@@ -12,12 +12,14 @@ import view.PendingNotes.PendingNotesPanel;
 import view.addNote.AddNote;
 import view.MainView;
 
+
 /**
  *
  * @author PC GOOSE
  */
 public class CntrlPendingPanel extends PendingNotesPanel implements ActionListener{
     AddNote addNotePanel = new AddNote();
+    
     MainView mainView;
     PendingNotesPanel pendingNotes = new PendingNotesPanel();
     
