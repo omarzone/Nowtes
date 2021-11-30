@@ -28,6 +28,8 @@ public class Test {
        
        
        CntrlMain cntrlMain = new CntrlMain(mainView);
+       CntrlPendingPanel cntrlPendingPanel = new CntrlPendingPanel(mainView);
+       CntrlPendingNotesItem test = new CntrlPendingNotesItem(mainView);
        mainView.setVisible(true);
        mainView.setLocationRelativeTo(null);
     }

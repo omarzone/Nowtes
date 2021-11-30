@@ -10,11 +10,12 @@ public class CntrlPendingPanel extends CntrlMain implements ActionListener {
 
     private AddNote addNotePanel = new AddNote();
     
-    public CntrlPendingPanel() {
-        
+    public CntrlPendingPanel(MainView mainView) {
+        super(mainView);
         
 
-        this.getPendingNotesPanel().getBtnAddNote().addActionListener(this);
+        getPendingNotesPanel().getBtnAddNote().addActionListener(this);
+        
 
     }
 

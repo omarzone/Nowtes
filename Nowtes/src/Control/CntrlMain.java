@@ -1,4 +1,3 @@
-
 package Control;
 
 import java.awt.Color;
@@ -13,96 +12,110 @@ import view.MainView;
 import view.PendingNotes.PendingNotesPanel;
 import view.Settings.Settings;
 
+public class CntrlMain implements MouseListener, MouseMotionListener {
 
-public class CntrlMain extends MainView implements MouseListener, MouseMotionListener{
     private int xMouse, yMouse;
     private MainView mainView;
-    
+
     private PendingNotesPanel pendingNotes = new PendingNotesPanel();
     private CompleteNotesPanel completeNotes = new CompleteNotesPanel();
-    private Help helpView = new Help(); 
+    private Help helpView = new Help();
     private Settings settingsView = new Settings();
-     
     
+    public CntrlMain(){
     
-    public CntrlMain(MainView mainView){
+    }
+
+    public CntrlMain(MainView mainView) {
         this.mainView = mainView;
-        mainView.getMainContent().add(pendingNotes);
+        //mainView.getMainContent().add(pendingNotes);
         
+        //Listeners para windows Actions
         mainView.getMinimizeWindow().addMouseListener(this);
         mainView.getCloseWindow().addMouseListener(this);
+        
+        //Listeners para botones menu
+        mainView.getBtnHelp().addMouseListener(this);
+        mainView.getBtnHome().addMouseListener(this);
+        mainView.getBtnHistory().addMouseListener(this);
+        mainView.getBtnSettings().addMouseListener(this);
+        
+        //Listeners para el panel superior
+        mainView.getHeaderPanel().addMouseListener(this);
+        mainView.getHeaderPanel().addMouseMotionListener(this);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(mainView.getCloseWindow() == e.getSource()){
-           mainView.dispatchEvent(new WindowEvent(mainView, WindowEvent.WINDOW_CLOSING));
+        if (mainView.getCloseWindow() == e.getSource()) {
+            mainView.dispatchEvent(new WindowEvent(mainView, WindowEvent.WINDOW_CLOSING));
         }
-        
-        if(mainView.getMinimizeWindow() == e.getSource()){
+
+        if (mainView.getMinimizeWindow() == e.getSource()) {
             mainView.setState(mainView.ICONIFIED);
         }
-        
-        if(mainView.getBtnHome() == e.getSource()){
+
+        if (mainView.getBtnHome() == e.getSource()) {
             switchPanels(pendingNotes);
         }
-        
-        if(mainView.getBtnHelp() == e.getSource()){
+
+        if (mainView.getBtnHelp() == e.getSource()) {
             switchPanels(helpView);
         }
-        
-        if(mainView.getBtnHistory() == e.getSource()){
+
+        if (mainView.getBtnHistory() == e.getSource()) {
             switchPanels(completeNotes);
         }
-        
-        if(mainView.getBtnSettings() == e.getSource()){
+
+        if (mainView.getBtnSettings() == e.getSource()) {
             switchPanels(settingsView);
         }
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
+        if (mainView.getHeaderPanel() == e.getSource()) {
+            xMouse = e.getX();
+            yMouse = e.getY();
+            
+            System.out.println(xMouse + " " + yMouse  );
+        }
         
-        xMouse = e.getX();
-        yMouse = e.getY();
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-         //No implementar alguna accion aqui, la aplicacion se muere
+        //No implementar alguna accion aqui, la aplicacion se muere
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-       if(mainView.getCloseWindow() == e.getSource()){
-           mainView.getCloseWindow().setOpaque(true);
-           mainView.getCloseWindow().setBackground(new Color(237,66,69));
-       }
-       
-       if(mainView.getMinimizeWindow() == e.getSource()){
-           mainView.getMinimizeWindow().setOpaque(true);
-           mainView.getMinimizeWindow().setBackground(new Color(145,176,213));
-       }
-       
-       
+        if (mainView.getCloseWindow() == e.getSource()) {
+            mainView.getCloseWindow().setOpaque(true);
+            mainView.getCloseWindow().setBackground(new Color(237, 66, 69));
+        }
+
+        if (mainView.getMinimizeWindow() == e.getSource()) {
+            mainView.getMinimizeWindow().setOpaque(true);
+            mainView.getMinimizeWindow().setBackground(new Color(145, 176, 213));
+        }
 
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-       if(mainView.getCloseWindow() == e.getSource()){
-           mainView.getCloseWindow().setOpaque(false);
-           mainView.getCloseWindow().setBackground(null);
-       }
-       
-       if(mainView.getMinimizeWindow() == e.getSource()){
-           mainView.getMinimizeWindow().setOpaque(false);
-           mainView.getMinimizeWindow().setBackground(null);
-       }
-    } 
-    
-    
-    public void  switchPanels(JPanel panel){
+        if (mainView.getCloseWindow() == e.getSource()) {
+            mainView.getCloseWindow().setOpaque(false);
+            mainView.getCloseWindow().setBackground(null);
+        }
+
+        if (mainView.getMinimizeWindow() == e.getSource()) {
+            mainView.getMinimizeWindow().setOpaque(false);
+            mainView.getMinimizeWindow().setBackground(null);
+        }
+    }
+
+    public void switchPanels(JPanel panel) {
         mainView.getMainContent().removeAll();
         mainView.getMainContent().add(panel);
         mainView.getMainContent().repaint();
@@ -111,27 +124,26 @@ public class CntrlMain extends MainView implements MouseListener, MouseMotionLis
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        if(mainView.getHeaderPanel() == e.getSource()){
+        if (mainView.getHeaderPanel() == e.getSource()) {
             int x = e.getXOnScreen();
             int y = e.getYOnScreen();
+            
             mainView.setLocation(x - xMouse, y - yMouse);
         }
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //No implementar alguna accion aqui, la aplicacion se muere
     }
 
-    
-    public PendingNotesPanel getPendingNotesPanel(){
-        
+    public PendingNotesPanel getPendingNotesPanel() {
+
         return pendingNotes;
     }
 
     public MainView getMainView() {
         return mainView;
     }
-    
-    
+
 }
