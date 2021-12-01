@@ -2,29 +2,12 @@ package view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import view.CompletedNotes.CompleteNotesPanel;
-import view.Help.Help;
-import view.PendingNotes.PendingNotesItem;
-import view.PendingNotes.PendingNotesPanel;
-import view.Settings.Settings;
 
 public class MainView extends javax.swing.JFrame {
-    
-   
 
-   
-    
-    
-   
     public MainView() {
         initComponents();
         this.setResizable(false);
-        
-        //MainContent.add(pendingNotes);
-      
-
-        
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -242,9 +225,7 @@ public class MainView extends javax.swing.JFrame {
         //NO AGREGUEN NADA PORQUE ELIMINA SYSTEM32
     }//GEN-LAST:event_btnSettingsMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

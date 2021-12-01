@@ -14,14 +14,13 @@ public class Note {
 
     }
 
-    public Note(String title, String description, String date, int priority, boolean autoDelete, boolean status, String modDate) {
+    public Note(String title, String description, String date, int priority, boolean autoDelete, boolean status) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.priority = priority;
         this.autoDelete = autoDelete;
         this.status = status;
-        this.modDate = modDate;
     }
 
     public String getTitle() {
@@ -64,12 +63,20 @@ public class Note {
         this.status = status;
     }
 
-    public String getModDate() {
-        return modDate;
+    public int getParseStatus() {
+        if (!status) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 
-    public void setModDate(String modDate) {
-        this.modDate = modDate;
+    public int getParseAutoDelete() {
+        if (!autoDelete) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 
     @Override

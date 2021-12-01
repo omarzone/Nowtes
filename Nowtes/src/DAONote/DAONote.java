@@ -11,44 +11,86 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import Model.Note;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-/**
- *
- * @author PC GOOSE
- */
-public class DAONote extends Conexion{
-    
-        public void getData(Note nota){
-         PreparedStatement ps = null;
-         Connection con = (Connection)getConnection();
-         ResultSet rs = null;
-        
-        String sql = "SELECT * FROM note WHERE id=?";
-        
-        try{
-            ps = con.prepareStatement(sql);
-            ps.setString(1, "1");
-            rs = ps.executeQuery();
-            
-            if(rs.next()){
-                nota.setTitle(rs.getString("title"));
-                nota.setDescription(rs.getString("description"));
-                nota.setStatus(rs.getBoolean("status"));
-                nota.setDate(String.valueOf(rs.getDate("date")));
-                nota.setPriority(rs.getInt("priority"));
-                nota.setAutoDelete(rs.getBoolean("autodelete"));
-                
-                //Posible error aqui
-            } 
-        }catch(SQLException e){
-            System.err.println(e);
-        }finally{
-            try{
-                con.close();
-            }catch(SQLException e){
-                System.err.println(e);
-            }
+
+public class DAONote extends DAOMain<Note> {
+
+    public int add(Note e) throws SQLException {
+        int numRows = 0;
+        Connection con = getConnection();
+
+        String query = "INSERT INTO note (title, description, status, priority, autodelete, date)"
+                + "VALUES ("
+                + e.getTitle()
+                + ",'"
+                + e.getDescription()
+                + "',"
+                + e.getParseStatus()
+                + "',"
+                + e.getPriority()
+                + "',"
+                + e.getParseAutoDelete()
+                + "',"
+                + e.getDate()
+                + ")";
+
+        Statement statement = con.createStatement();
+        numRows = statement.executeUpdate(query);
+        statement.close();
+        closeConnection(con);
+        return numRows;
+    }
+
+    public int delete(String condition) throws SQLException {
+        int numRows = 0;
+        Connection con = getConnection();
+
+        String query = "DELETE FROM note WHERE " + condition;
+
+        Statement statement = con.createStatement();
+        numRows = statement.executeUpdate(query);
+        statement.close();
+        closeConnection(con);
+        return numRows;
+    }
+
+    public int modify(Note e, String condition) throws SQLException {
+        int numRows = 0;
+        Connection con = getConnection();
+
+        String orden = "UPDATE note SET "
+                + " title='" + e.getTitle() + "',"
+                + "description " + e.getDescription() + "',"
+                + "status = " + e.getParseStatus() + "',"
+                + "priority = " + e.getPriority() + "',"
+                + "autodelete = " + e.getParseAutoDelete() + "',"
+                + "date = " + e.getDate()
+                + " WHERE " + condition;
+
+        Statement sentencia = con.createStatement();
+        numRows = sentencia.executeUpdate(orden);
+        sentencia.close();
+        closeConnection(con);
+        return numRows;
+    }
+
+    public ArrayList<Note> query(String condition) throws SQLException {
+        ArrayList<Note> list = new ArrayList<Note>();
+        Note e;
+        Connection con = getConnection();
+        String orden = "SELECT * FROM note "
+                + (condition == null || condition.length() == 0 ? "" : "WHERE " + condition);
+        Statement statement = con.createStatement();
+        ResultSet rs = statement.executeQuery(orden);
+        while (rs.next()) {
+            e = new Note(rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("autoDelete"),rs.getBoolean("status"));
+            list.add(e);
         }
-        }
-        
+        statement.close();
+        closeConnection(con);
+        return list;
+    }
+
 }

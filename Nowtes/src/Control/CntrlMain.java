@@ -17,10 +17,12 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     private int xMouse, yMouse;
     private MainView mainView;
 
-    private PendingNotesPanel pendingNotes = new PendingNotesPanel();
-    private CompleteNotesPanel completeNotes = new CompleteNotesPanel();
+    private PendingNotesPanel pendingNotesView = new PendingNotesPanel();
+    private CompleteNotesPanel completeNotesView = new CompleteNotesPanel();
     private Help helpView = new Help();
     private Settings settingsView = new Settings();
+    
+    private CntrlPendingPanel cntrlPendingPanel;
     
     public CntrlMain(){
     
@@ -28,7 +30,14 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
     public CntrlMain(MainView mainView) {
         this.mainView = mainView;
-        //mainView.getMainContent().add(pendingNotes);
+        
+        if(cntrlPendingPanel == null){
+                System.out.println("Controlador CntrlPendingPanel inicializado");
+                cntrlPendingPanel = new CntrlPendingPanel(this,pendingNotesView);
+            
+            }
+        mainView.getMainContent().add(pendingNotesView);
+        
         
         //Listeners para windows Actions
         mainView.getMinimizeWindow().addMouseListener(this);
@@ -56,7 +65,13 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         }
 
         if (mainView.getBtnHome() == e.getSource()) {
-            switchPanels(pendingNotes);
+            if(cntrlPendingPanel == null){
+                System.out.println("Controlador CntrlPendingPanel inicializado");
+                cntrlPendingPanel = new CntrlPendingPanel(this,pendingNotesView);
+            
+            }
+            switchPanels(pendingNotesView);
+            
         }
 
         if (mainView.getBtnHelp() == e.getSource()) {
@@ -64,7 +79,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         }
 
         if (mainView.getBtnHistory() == e.getSource()) {
-            switchPanels(completeNotes);
+            switchPanels(completeNotesView);
         }
 
         if (mainView.getBtnSettings() == e.getSource()) {
@@ -78,7 +93,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
             xMouse = e.getX();
             yMouse = e.getY();
             
-            System.out.println(xMouse + " " + yMouse  );
+            
         }
         
     }
@@ -139,7 +154,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
     public PendingNotesPanel getPendingNotesPanel() {
 
-        return pendingNotes;
+        return pendingNotesView;
     }
 
     public MainView getMainView() {

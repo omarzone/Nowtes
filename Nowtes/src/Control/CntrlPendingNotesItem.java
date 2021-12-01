@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Control;
 
 import java.awt.event.MouseEvent;
@@ -11,37 +6,63 @@ import view.PendingNotes.PendingNotesItem;
 import view.EditNote.EditNote;
 import view.MainView;
 
-/**
- *
- * @author polilxd
- */
-public class CntrlPendingNotesItem extends CntrlMain {
+public class CntrlPendingNotesItem implements MouseListener {
 
-    private MainView mainView;
-    EditNote addEditNote = new EditNote();
+    private CntrlMain cntrlMain;
+    private EditNote addEditNote = new EditNote();
 
-    public CntrlPendingNotesItem(MainView mainView) {
-        super(mainView);
-        this.mainView = mainView;
+    public CntrlPendingNotesItem(CntrlMain cntrlMain) {
 
-        getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote().addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                CustomMouseClicked(evt);
-            }
-        });
+        this.cntrlMain = cntrlMain;
+
+       // cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote().addMouseListener(this);
+        //cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnViewNote().addMouseListener(this);
+       // cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnDeleteNote().addMouseListener(this);
 
     }
 
-    public void CustomMouseClicked(MouseEvent e) {
-        if (getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote() == e.getSource()) {
+    @Override
+    public void mouseClicked(MouseEvent e) {
+//        if (cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote() == e.getSource()) {
+//
+//            cntrlMain.getMainView().getMainContent().removeAll();
+//            cntrlMain.getMainView().getMainContent().add(addEditNote);
+//            cntrlMain.getMainView().getMainContent().repaint();
+//            cntrlMain.getMainView().getMainContent().revalidate();
+//
+//        }
+//
+//        if (cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnViewNote() == e.getSource()) {
+//
+//            System.out.println("Accion del boton ViewNote");
+//
+//        }
+//
+//        if (cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnDeleteNote() == e.getSource()) {
+//
+//            System.out.println("Accion del boton DeleteNote");
+//
+//        }
+    }
 
-            getMainView().getMainContent().removeAll();
-            getMainView().getMainContent().add(addEditNote);
-            getMainView().getMainContent().repaint();
-            getMainView().getMainContent().revalidate();
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
-        }
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

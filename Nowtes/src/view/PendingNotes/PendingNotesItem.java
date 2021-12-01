@@ -263,6 +263,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         note_description.setText(note.getDescription());
         note_date.setText(note.getDate());
         //note_status.setText(note.get)
+        
         return this;
     }
 }
