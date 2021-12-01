@@ -7,9 +7,12 @@ package Control;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import view.AlertDialog.AlertDialog;
+import view.CompletedNote.ViewCompleteNote;
 import view.PendingNotes.PendingNotesItem;
 import view.EditNote.EditNote;
 import view.MainView;
+
 
 /**
  *
@@ -20,14 +23,18 @@ public class CntrlPendingNotesItem implements MouseListener{
     CntrlMain cntrlMain;
     CntrlPendingPanel cntrlPendingPanel;
     EditNote addEditNote = new EditNote();
-
+    AlertDialog alertDialog = new AlertDialog();
+    CntrlAlertDialog cntrlAlertDialog;
+    ViewCompleteNote viewCompleteNote = new ViewCompleteNote();
+    
     public CntrlPendingNotesItem(CntrlPendingPanel cntrlPendingPanel, CntrlMain cntrlMain) {
         //super(mainView);
         this.cntrlMain = cntrlMain;
         this.cntrlPendingPanel = cntrlPendingPanel;
         
         cntrlPendingPanel.getNoteItem().getBtnEditNote().addMouseListener(this);
-        
+        cntrlPendingPanel.getNoteItem().getBtnDeleteNote().addMouseListener(this);
+        cntrlPendingPanel.getNoteItem().getBtnViewNote().addMouseListener(this);
 
     }
 
@@ -42,6 +49,28 @@ public class CntrlPendingNotesItem implements MouseListener{
             cntrlMain.getMainView().getMainContent().revalidate();
 
         }
+        
+        if ( cntrlPendingPanel.getNoteItem().getBtnDeleteNote() == e.getSource()){
+            if(cntrlAlertDialog == null){
+               cntrlAlertDialog = new CntrlAlertDialog(alertDialog);
+                
+            }
+            
+            alertDialog.setVisible(true);
+            alertDialog.setLocationRelativeTo(null);
+            
+            
+        }
+        
+        if (cntrlPendingPanel.getNoteItem().getBtnViewNote() == e.getSource()) {
+
+            cntrlMain.getMainView().getMainContent().removeAll();
+            cntrlMain.getMainView().getMainContent().add(viewCompleteNote);
+            cntrlMain.getMainView().getMainContent().repaint();
+            cntrlMain.getMainView().getMainContent().revalidate();
+
+        }
+        
     }
 
     @Override

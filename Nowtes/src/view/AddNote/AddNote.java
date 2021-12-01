@@ -127,7 +127,7 @@ public class AddNote extends javax.swing.JPanel {
         roundedBorders1.add(cmbPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
 
         optionDate.setBackground(new java.awt.Color(130, 156, 188));
-        roundedBorders1.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
+        roundedBorders1.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 140, -1));
 
         cbEndedTask.setForeground(new java.awt.Color(0, 0, 0));
         cbEndedTask.setText("Borrar la tarea al cambiar el estado por \"Finalizada\"     ");

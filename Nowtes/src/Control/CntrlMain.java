@@ -140,6 +140,12 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         return this.pendingNotes;
     }
 
+    public Settings getSettingsView() {
+        return settingsView;
+    }
+    
+    
+
     public MainView getMainView() {
         return mainView;
     }

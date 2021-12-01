@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Model.Note;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.AddNote.AddNote;
@@ -15,7 +16,7 @@ import view.AddNote.AddNote;
  * @author polilxd
  */
 public class CntrlAddNote implements ActionListener {
-    
+    private Note note;
     private CntrlMain cntrlMain;
     private CntrlPendingPanel cntrlPendingPanel;
     private AddNote addNotePanel;
@@ -33,7 +34,10 @@ public class CntrlAddNote implements ActionListener {
     public void actionPerformed(ActionEvent e) {
       if(addNotePanel.getBtnCancelar() == e.getSource()){
             cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
-            System.out.println("xd");
+      }
+      
+      if(addNotePanel.getBtnGuardar() == e.getSource()){
+          note = new Note(addNotePanel.getTxtTitulo());
       }
     }
     

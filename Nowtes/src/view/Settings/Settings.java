@@ -5,6 +5,10 @@
  */
 package view.Settings;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+
 /**
  *
  * @author polilxd
@@ -146,4 +150,18 @@ public class Settings extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private view.components.RoundedBorders roundedBorders1;
     // End of variables declaration//GEN-END:variables
+
+    public JRadioButton getBtnDarkTheme() {
+        return btnDarkTheme;
+    }
+
+    public JButton getBtnDeleteData() {
+        return btnDeleteData;
+    }
+
+    public JComboBox<String> getCbmPriority() {
+        return cbmPriority;
+    }
+
+    
 }
