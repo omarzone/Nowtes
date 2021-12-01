@@ -2,13 +2,12 @@ package Control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Control.CntrlMain;
-
-import view.addNote.AddNote;
+import view.AddNote.AddNote;
 import view.PendingNotes.PendingNotesItem;
 
-public class CntrlPendingPanel implements ActionListener {
 
+public class CntrlPendingPanel implements ActionListener {
+    private CntrlAddNote cntrlAddNote;
     private AddNote addNotePanel = new AddNote();
     private CntrlMain cntrlMain;
     
@@ -28,6 +27,10 @@ public class CntrlPendingPanel implements ActionListener {
             cntrlMain.getMainView().getMainContent().add(this.addNotePanel);
             cntrlMain.getMainView().getMainContent().repaint();
             cntrlMain.getMainView().getMainContent().revalidate();
+            
+            if(cntrlAddNote == null){
+                cntrlAddNote = new CntrlAddNote(this, cntrlMain);
+            }
         }
     }
 

@@ -36,8 +36,8 @@ public class Settings extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnDeleteData = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        cbmPriority = new javax.swing.JComboBox<>();
+        btnDarkTheme = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(130, 156, 188));
         setOpaque(false);
@@ -96,13 +96,18 @@ public class Settings extends javax.swing.JPanel {
         btnDeleteData.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteData.setText("Borrar datos ");
         btnDeleteData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedBorders1.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 40));
+        roundedBorders1.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 130, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        roundedBorders1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        cbmPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por prioridad", "Por fecha" }));
+        cbmPriority.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbmPriorityActionPerformed(evt);
+            }
+        });
+        roundedBorders1.add(cbmPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
-        jRadioButton1.setText("Desactivado");
-        roundedBorders1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        btnDarkTheme.setText("Desactivado");
+        roundedBorders1.add(btnDarkTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
@@ -123,18 +128,22 @@ public class Settings extends javax.swing.JPanel {
         add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 1020, 600));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbmPriorityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmPriorityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbmPriorityActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
+    private javax.swing.JRadioButton btnDarkTheme;
     private javax.swing.JButton btnDeleteData;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbmPriority;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton jRadioButton1;
     private view.components.RoundedBorders roundedBorders1;
     // End of variables declaration//GEN-END:variables
 }
