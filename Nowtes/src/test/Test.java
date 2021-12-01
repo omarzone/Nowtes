@@ -9,6 +9,9 @@ import Control.CntrlPendingPanel;
 import Control.CntrlMain;
 import Control.CntrlPendingNotesItem;
 import Control.CntrlAddNote;
+import Control.CntrlAlertDialog;
+import Control.CntrlSettings;
+import view.AlertDialog.AlertDialog;
 /**
  *
  * @author PC GOOSE
@@ -21,6 +24,7 @@ public class Test {
      */
     public static void main(String[] args) {
        MainView mainView = new MainView();
+       AlertDialog alertDialogView = new AlertDialog();
        //CntrlPendingPanel pendingPanel = new CntrlPendingPanel(xd);
        //CntrlMain menuControl = new CntrlMain(xd);
        //CntrlPendingNotesItem pendingNotesItem = new CntrlPendingNotesItem(xd);
@@ -30,6 +34,8 @@ public class Test {
        CntrlMain cntrlMain = new CntrlMain(mainView);
        CntrlPendingPanel cntrlPendingPanel = new CntrlPendingPanel(cntrlMain);
        CntrlPendingNotesItem test = new CntrlPendingNotesItem(cntrlPendingPanel, cntrlMain);
+       CntrlSettings settings = new CntrlSettings(cntrlMain);
+       
        mainView.setVisible(true);
        mainView.setLocationRelativeTo(null);
     }
