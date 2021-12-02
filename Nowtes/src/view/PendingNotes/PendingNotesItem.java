@@ -14,9 +14,12 @@ import javax.swing.ListCellRenderer;
 
 public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRenderer<Note> {
 
-    public PendingNotesItem() {
+    public PendingNotesItem(Note note) {
         initComponents();
         jScrollPane1.setBorder(null);
+        note_title.setText(note.getTitle());
+        note_description.setText(note.getDescription());
+        note_date.setText(note.getDate());
     }
 
     @SuppressWarnings("unchecked")
@@ -231,6 +234,22 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
 
     public JLabel getBtnViewNote() {
         return btnViewNote;
+    }
+
+    public JLabel getNote_date() {
+        return note_date;
+    }
+
+    public JTextArea getNote_description() {
+        return note_description;
+    }
+
+    public JLabel getNote_status() {
+        return note_status;
+    }
+
+    public JLabel getNote_title() {
+        return note_title;
     }
     
     

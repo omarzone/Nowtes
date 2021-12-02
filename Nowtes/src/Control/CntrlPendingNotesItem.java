@@ -10,39 +10,40 @@ public class CntrlPendingNotesItem implements MouseListener {
 
     private CntrlMain cntrlMain;
     private EditNote addEditNote = new EditNote();
+    private PendingNotesItem pendingNotesItemView;
 
-    public CntrlPendingNotesItem(CntrlMain cntrlMain) {
+    public CntrlPendingNotesItem(CntrlMain cntrlMain, PendingNotesItem pendingNotesItemView) {
 
         this.cntrlMain = cntrlMain;
-
-       // cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote().addMouseListener(this);
-        //cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnViewNote().addMouseListener(this);
-       // cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnDeleteNote().addMouseListener(this);
+        this.pendingNotesItemView = pendingNotesItemView;
+        pendingNotesItemView.getBtnEditNote().addMouseListener(this);
+        pendingNotesItemView.getBtnViewNote().addMouseListener(this);
+        pendingNotesItemView.getBtnDeleteNote().addMouseListener(this);
 
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-//        if (cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnEditNote() == e.getSource()) {
-//
-//            cntrlMain.getMainView().getMainContent().removeAll();
-//            cntrlMain.getMainView().getMainContent().add(addEditNote);
-//            cntrlMain.getMainView().getMainContent().repaint();
-//            cntrlMain.getMainView().getMainContent().revalidate();
-//
-//        }
-//
-//        if (cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnViewNote() == e.getSource()) {
-//
-//            System.out.println("Accion del boton ViewNote");
-//
-//        }
-//
-//        if (cntrlMain.getPendingNotesPanel().getPendingNotesItem1().getBtnDeleteNote() == e.getSource()) {
-//
-//            System.out.println("Accion del boton DeleteNote");
-//
-//        }
+        if (pendingNotesItemView.getBtnEditNote() == e.getSource()) {
+
+            cntrlMain.getMainView().getMainContent().removeAll();
+            cntrlMain.getMainView().getMainContent().add(addEditNote);
+            cntrlMain.getMainView().getMainContent().repaint();
+            cntrlMain.getMainView().getMainContent().revalidate();
+
+        }
+
+        if (pendingNotesItemView.getBtnViewNote() == e.getSource()) {
+
+            System.out.println("Accion del boton ViewNote: " + pendingNotesItemView.getNote_title().getText());
+
+        }
+
+        if (pendingNotesItemView.getBtnDeleteNote() == e.getSource()) {
+
+            System.out.println("Accion del boton DeleteNote: " + pendingNotesItemView.getNote_title().getText());;
+
+        }
     }
 
     @Override

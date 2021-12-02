@@ -2,17 +2,21 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import view.PendingNotes.PendingNotesItem;
 
 import view.PendingNotes.PendingNotesPanel;
 
 import view.addNote.AddNote;
+import view.components.CustomScrollBar;
+import view.components.ScrollBarUI;
 
 public class CntrlPendingPanel implements ActionListener {
 
@@ -21,7 +25,8 @@ public class CntrlPendingPanel implements ActionListener {
     private CntrlMain cntrlMain;
 
     private CntrlPendingNotesItem cntrlPendingNotesItem;
-    private DefaultListModel<Note> listModel = new DefaultListModel<>();
+    //private DefaultListModel<Note> listModel = new DefaultListModel<>();
+    private ArrayList<Note> notesList = new ArrayList<Note>();
 
     public CntrlPendingPanel(CntrlMain cntrlMain, PendingNotesPanel pendingNotesView) {
 
@@ -29,36 +34,11 @@ public class CntrlPendingPanel implements ActionListener {
         this.cntrlMain = cntrlMain;
 
         System.out.println("Controlador CntrlPendingNotesItem inicializado");
-        this.cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain);
+        //this.cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain);
         pendingNotesView.getBtnAddNote().addActionListener(this);
 
         //Nuevo
-        ArrayList<Note> notesList = new ArrayList<Note>();
-
-        DAONote daoNote = new DAONote();
-        try {
-            notesList = daoNote.query(null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        for (Note note : notesList) {
-            listModel.addElement(note);
-        }
-        
-        
-        JList<Note> lista = new JList<>(listModel);
-        lista.setOpaque(false);
-        lista.setBorder(null);
-       // lista.setFixedCellHeight(130);
-        lista.setCellRenderer(new PendingNotesItem());
-        JScrollPane scrollListNotes = new JScrollPane(lista);
-        scrollListNotes.setOpaque(false);
-        scrollListNotes.getViewport().setOpaque(false);
-        scrollListNotes.setViewportBorder(null);
-        //scrollListNotes.setViewport(lista);
-        pendingNotesView.getContentPanel().add(scrollListNotes);
-
+        generateData();
     }
 
     @Override
@@ -74,6 +54,50 @@ public class CntrlPendingPanel implements ActionListener {
     public AddNote getAddNotePanel() {
 
         return this.addNotePanel;
+    }
+
+    public void generateData() {
+        //Realizamos la consulta a la base de datos
+        DAONote daoNote = new DAONote();
+        try {
+            notesList = daoNote.query(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        //Creamos el scroll y seteamos propiedades
+        JScrollPane scrollListNotes = new JScrollPane();
+        scrollListNotes.setOpaque(false);
+        scrollListNotes.getViewport().setOpaque(false);
+        scrollListNotes.setViewportBorder(null);
+        scrollListNotes.setBorder(null);
+        scrollListNotes.setVerticalScrollBar(new CustomScrollBar());
+
+        //Creamos el Panel y el gridLayout  que estara dentro del scroll
+        JPanel gridNotePanel = new JPanel();
+        gridNotePanel.setOpaque(false);
+        GridLayout gridLayoutNotes = new GridLayout();
+        gridLayoutNotes.setColumns(1);
+        gridLayoutNotes.setVgap(15);
+        gridLayoutNotes.setRows(notesList.size());
+
+        //gridNotePanel.setLayout(new GridLayout(notesList.size(), 1, 0, 15));
+        gridNotePanel.setLayout(gridLayoutNotes);
+
+        //Por cada item en el arraylist, agregamos un row al gridNotePanel
+        for (Note note : notesList) {
+            
+            PendingNotesItem noteItemView = new PendingNotesItem(note);
+            CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain,noteItemView);
+            gridNotePanel.add(noteItemView);
+        }
+        
+        
+        //seteamos la vista que estara dentro del scroll
+        scrollListNotes.setViewportView(gridNotePanel);
+        
+        //Agregamos el scroll al ContentPanel
+        pendingNotesView.getContentPanel().add(scrollListNotes);
     }
 
 }
