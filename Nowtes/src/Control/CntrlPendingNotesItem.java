@@ -12,13 +12,14 @@ import view.ViewCompleteNote.ViewCompleteNote;
 public class CntrlPendingNotesItem implements MouseListener {
     
     private CntrlMain cntrlMain;
-    private EditNote addEditNote = new EditNote();
+    private EditNote editNotePanel = new EditNote();
     private PendingNotesItem pendingNotesItemView;
     private Note note;
     private AlertDialog alertDialog = new AlertDialog();
     private CntrlAlertDialog cntrlAlertDialog;
     private ViewCompleteNote viewCompleteNote = new ViewCompleteNote();
     private CntrlViewCompleteNote cntrlViewCompleteNote;
+    private CntrlEditNote cntrlEditNote;
     
 
     public CntrlPendingNotesItem(CntrlMain cntrlMain, PendingNotesItem pendingNotesItemView, Note note) {
@@ -39,9 +40,12 @@ public class CntrlPendingNotesItem implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (pendingNotesItemView.getBtnEditNote() == e.getSource()) {
-
+            
+            if(cntrlEditNote == null){
+                cntrlEditNote = new CntrlEditNote(cntrlMain,editNotePanel, note);
+            }
             cntrlMain.getMainView().getMainContent().removeAll();
-            cntrlMain.getMainView().getMainContent().add(addEditNote);
+            cntrlMain.getMainView().getMainContent().add(editNotePanel);
             cntrlMain.getMainView().getMainContent().repaint();
             cntrlMain.getMainView().getMainContent().revalidate();
 
