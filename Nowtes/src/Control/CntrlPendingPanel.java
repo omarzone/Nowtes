@@ -89,8 +89,8 @@ public class CntrlPendingPanel implements ActionListener {
         //Por cada item en el arraylist, agregamos un row al gridNotePanel
         for (Note note : notesList) {
             
-            PendingNotesItem noteItemView = new PendingNotesItem(note);
-            CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain,noteItemView);
+            PendingNotesItem noteItemView = new PendingNotesItem();
+            CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain,noteItemView,note);
             gridNotePanel.add(noteItemView);
         }
         
