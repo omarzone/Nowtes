@@ -74,6 +74,7 @@ public class CntrlPendingPanel implements ActionListener {
         scrollListNotes.setViewportBorder(null);
         scrollListNotes.setBorder(null);
         scrollListNotes.setVerticalScrollBar(new CustomScrollBar());
+        scrollListNotes.getVerticalScrollBar().setUnitIncrement(16);
 
         //Creamos el Panel y el gridLayout  que estara dentro del scroll
         JPanel gridNotePanel = new JPanel();

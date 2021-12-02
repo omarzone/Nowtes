@@ -21,20 +21,9 @@ public class DAONote extends DAOMain<Note> {
         Connection con = getConnection();
 
         String query = "INSERT INTO note (title, description, status, priority, autodelete, date)"
-                + "VALUES ("
-                + e.getTitle()
-                + ",'"
-                + e.getDescription()
-                + "',"
-                + e.getParseStatus()
-                + "',"
-                + e.getPriority()
-                + "',"
-                + e.getParseAutoDelete()
-                + "',"
-                + e.getDate()
-                + ")";
-
+                + "VALUES ('" + e.getTitle()+ "','"+ e.getDescription()+ "'," + e.isStatus() + ",'"+ e.getPriority()+ "',"+ e.isAutoDelete()+ ",'"+ e.getDate()+ "')";
+        
+        
         Statement statement = con.createStatement();
         numRows = statement.executeUpdate(query);
         statement.close();

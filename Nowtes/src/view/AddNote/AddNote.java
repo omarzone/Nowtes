@@ -4,6 +4,7 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -36,6 +37,10 @@ public class AddNote extends javax.swing.JPanel {
         cbEndedTask = new javax.swing.JCheckBox();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        txtErrTitleField = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtErrDescriptionField = new javax.swing.JLabel();
+        txtErrDateField = new javax.swing.JLabel();
 
         JPanelAddNote.setBackground(new java.awt.Color(130, 156, 188));
         JPanelAddNote.setPreferredSize(new java.awt.Dimension(1037, 714));
@@ -132,6 +137,16 @@ public class AddNote extends javax.swing.JPanel {
         btnCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
         roundedBorders1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 80, 30));
 
+        txtErrTitleField.setForeground(new java.awt.Color(255, 51, 51));
+        roundedBorders1.add(txtErrTitleField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 50, 90, 20));
+        roundedBorders1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 60, 50, 20));
+
+        txtErrDescriptionField.setForeground(new java.awt.Color(255, 0, 0));
+        roundedBorders1.add(txtErrDescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 90, 30));
+
+        txtErrDateField.setForeground(new java.awt.Color(255, 0, 0));
+        roundedBorders1.add(txtErrDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 20));
+
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
         ContentPanelLayout.setHorizontalGroup(
@@ -187,10 +202,14 @@ public class AddNote extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private com.toedter.calendar.JDateChooser optionDate;
     private view.components.RoundedBorders roundedBorders1;
     private javax.swing.JTextArea txtDescripcion;
+    private javax.swing.JLabel txtErrDateField;
+    private javax.swing.JLabel txtErrDescriptionField;
+    private javax.swing.JLabel txtErrTitleField;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 
@@ -222,7 +241,21 @@ public class AddNote extends javax.swing.JPanel {
         return txtTitulo;
     }
 
+    public JLabel getTxtErrDateField() {
+        return txtErrDateField;
+    }
+
+    public JLabel getTxtErrDescriptionField() {
+        return txtErrDescriptionField;
+    }
+
+    public JLabel getTxtErrTitleField() {
+        return txtErrTitleField;
+    }
+
     
 
+    
+    
 
 }

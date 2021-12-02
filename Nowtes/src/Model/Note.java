@@ -71,6 +71,15 @@ public class Note {
         }
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public boolean isAutoDelete() {
+        return autoDelete;
+    }
+
+
     public int getParseAutoDelete() {
         if (!autoDelete) {
             return 0;
