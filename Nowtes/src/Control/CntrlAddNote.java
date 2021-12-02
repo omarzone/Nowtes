@@ -36,9 +36,11 @@ public class CntrlAddNote implements ActionListener {
             cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
       }
       
+      /*
       if(addNotePanel.getBtnGuardar() == e.getSource()){
           note = new Note(addNotePanel.getTxtTitulo());
       }
+      */
     }
     
     
