@@ -2,10 +2,12 @@ package Control;
 
 import Model.Note;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import view.ViewCompleteNote.ViewCompleteNote;
 
 
-public class CntrlViewCompleteNote {
+public class CntrlViewCompleteNote implements ActionListener {
     private CntrlMain cntrlMain;
     private Note note;
     private ViewCompleteNote viewCompleteNote;
@@ -17,6 +19,18 @@ public class CntrlViewCompleteNote {
         
         
         //Seteamos la data en la vista
+        setData();
+        
+        
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void setData(){
         viewCompleteNote.getNote_title().setText(note.getTitle());
         viewCompleteNote.getNote_description().setText(note.getDescription());
         viewCompleteNote.getNote_id().setText("Nota #0000");
@@ -40,9 +54,6 @@ public class CntrlViewCompleteNote {
             viewCompleteNote.getNote_priority().setText("Alta");
             viewCompleteNote.getNote_priority().setBackground(new Color(246,91,93));
         }
-        
-        
-        
     }
     
 }

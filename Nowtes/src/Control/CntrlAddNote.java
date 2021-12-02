@@ -2,11 +2,15 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import view.AddNote.AddNote;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import view.PendingNotes.PendingNotesPanel;
 
 
 
@@ -34,7 +38,7 @@ public class CntrlAddNote implements ActionListener {
       if(addNotePanel.getBtnCancelar() == e.getSource()){
             
             cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
-            System.out.println("Acción Cancelar - Cambio a pantalla Home");
+            //System.out.println("Acción Cancelar - Cambio a pantalla Home");
             
             addNotePanel.getTxtDescripcion().setText(null);
             addNotePanel.getTxtTitulo().setText(null);
@@ -47,7 +51,14 @@ public class CntrlAddNote implements ActionListener {
             
       }
       if(addNotePanel.getBtnGuardar() == e.getSource()){
-          boolean hasTitle = false;
+          validateFields(addNotePanel);
+           
+      }
+    }
+    
+    
+    public void validateFields(AddNote addNotePanel){
+        boolean hasTitle = false;
           boolean hasDescription = false;
           boolean hasDeadLine = false;
           String title = "";
@@ -95,16 +106,19 @@ public class CntrlAddNote implements ActionListener {
                note = new Note(title, description, date, prioritySelected, deleteEndTaskOption, false);
                try{
                     DaoNote.add(note);
+                    
+                    PendingNotesPanel newPendingNotesPanel = new PendingNotesPanel();
+                    cntrlPendingPanel = new CntrlPendingPanel(cntrlMain, newPendingNotesPanel);
+                    
+                    cntrlMain.setPendingNotesView(newPendingNotesPanel);
+                    cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
+                    
                }catch(SQLException ex){
-                   //JOptionPane.showMessageDialog(addNotePanel, "Hubo un error con el guardado de la nota");
+                   JOptionPane.showMessageDialog(addNotePanel, "Hubo un error con el guardado de la nota");
                    System.err.println(ex);
-               }finally{
-                   
                }
                
            }
-           
-      }
     }
 }
 
