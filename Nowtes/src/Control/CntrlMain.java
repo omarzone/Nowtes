@@ -169,6 +169,10 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     public Settings getSettingsView() {
         return settingsView;
     }
+
+    public void setPendingNotesView(PendingNotesPanel pendingNotesView) {
+        this.pendingNotesView = pendingNotesView;
+    }
     
 
 }
