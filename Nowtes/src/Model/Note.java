@@ -87,14 +87,7 @@ public class Note {
         }
     }
 
-    public boolean isAutoDelete() {
-        return autoDelete;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
+ 
     @Override
     public String toString() {
         return title;
