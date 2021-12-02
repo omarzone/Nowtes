@@ -3,8 +3,6 @@ package Control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.AddNote.AddNote;
-import view.MainView;
-import view.PendingNotes.PendingNotesPanel;
 
 
 public class CntrlAddNote implements ActionListener {
@@ -20,6 +18,7 @@ public class CntrlAddNote implements ActionListener {
         this.addNotePanel = cntrlPendingPanel.getAddNotePanel();
         
         addNotePanel.getBtnCancelar().addActionListener(this);
+        addNotePanel.getBtnGuardar().addActionListener(this);
         
     }
 
@@ -29,6 +28,21 @@ public class CntrlAddNote implements ActionListener {
             cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
             System.out.println("Acción Cancelar - Cambio a pantalla Home");
       }
+      if(addNotePanel.getBtnGuardar() == e.getSource()){
+            
+            if(validateData()){
+                cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
+                System.out.println("Nota guardada");
+            }else{
+                System.out.println("No se pudo guardar, verificar datos de la nota");
+            }
+            
+      }
+    }
+    
+    
+    public boolean validateData(){
+        return false;
     }
     
     
