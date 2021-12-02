@@ -1,44 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.addNote.AddNote;
+import view.AddNote.AddNote;
 import view.MainView;
 import view.PendingNotes.PendingNotesPanel;
 
-/**
- *
- * @author polilxd
- */
-public class CntrlAddNote extends AddNote implements ActionListener {
+
+public class CntrlAddNote implements ActionListener {
     
-    private MainView mainView;
+    private CntrlMain cntrlMain;
     private CntrlPendingPanel cntrlPendingPanel;
-    private PendingNotesPanel pendingPanel;
+    private AddNote addNotePanel;
     
-    public CntrlAddNote (MainView mainView, CntrlPendingPanel cntrlPendingPanel, PendingNotesPanel pendingPanel){
+    public CntrlAddNote (CntrlPendingPanel pendingPanel, CntrlMain cntrlMain){
+        System.out.println("Controlador CntrlAddNote inicializado");
+        this.cntrlMain = cntrlMain;
+        this.cntrlPendingPanel = pendingPanel;
+        this.addNotePanel = cntrlPendingPanel.getAddNotePanel();
         
-        this.mainView = mainView;
-        this.cntrlPendingPanel = cntrlPendingPanel;
-        this.pendingPanel  = pendingPanel;
-        
-        cntrlPendingPanel.getAddNotePanel().getBtnCancelar().addActionListener(this);
+        addNotePanel.getBtnCancelar().addActionListener(this);
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-      if(cntrlPendingPanel.getAddNotePanel().getBtnCancelar() == e.getSource()){
-            mainView.getMainContent().removeAll();
-            mainView.getMainContent().add(this.pendingPanel);
-            mainView.getMainContent().repaint();
-            mainView.getMainContent().revalidate();
-            System.out.println("xd");
+      if(addNotePanel.getBtnCancelar() == e.getSource()){
+            cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
+            System.out.println("Acción Cancelar - Cambio a pantalla Home");
       }
     }
     

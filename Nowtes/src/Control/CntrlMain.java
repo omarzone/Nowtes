@@ -23,16 +23,16 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     private Settings settingsView = new Settings();
     
     private CntrlPendingPanel cntrlPendingPanel;
+    private CntrlSettings cntrlSettings;
     
-    public CntrlMain(){
-    
-    }
+
 
     public CntrlMain(MainView mainView) {
+        System.out.println("Controlador CntrlMain inicializado");
         this.mainView = mainView;
         
         if(cntrlPendingPanel == null){
-                System.out.println("Controlador CntrlPendingPanel inicializado");
+                
                 cntrlPendingPanel = new CntrlPendingPanel(this,pendingNotesView);
             
             }
@@ -66,7 +66,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
         if (mainView.getBtnHome() == e.getSource()) {
             if(cntrlPendingPanel == null){
-                System.out.println("Controlador CntrlPendingPanel inicializado");
+                
                 cntrlPendingPanel = new CntrlPendingPanel(this,pendingNotesView);
             
             }
@@ -83,6 +83,11 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         }
 
         if (mainView.getBtnSettings() == e.getSource()) {
+            if(cntrlSettings == null){
+                
+                cntrlSettings = new CntrlSettings(this);
+            
+            }
             switchPanels(settingsView);
         }
     }
@@ -160,5 +165,10 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     public MainView getMainView() {
         return mainView;
     }
+
+    public Settings getSettingsView() {
+        return settingsView;
+    }
+    
 
 }

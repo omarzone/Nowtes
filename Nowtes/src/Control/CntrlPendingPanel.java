@@ -14,9 +14,8 @@ import view.PendingNotes.PendingNotesItem;
 
 import view.PendingNotes.PendingNotesPanel;
 
-import view.addNote.AddNote;
+import view.AddNote.AddNote;
 import view.components.CustomScrollBar;
-import view.components.ScrollBarUI;
 
 public class CntrlPendingPanel implements ActionListener {
 
@@ -25,16 +24,19 @@ public class CntrlPendingPanel implements ActionListener {
     private CntrlMain cntrlMain;
 
     private CntrlPendingNotesItem cntrlPendingNotesItem;
-    //private DefaultListModel<Note> listModel = new DefaultListModel<>();
+    private CntrlAddNote cntrlAddNote;
     private ArrayList<Note> notesList = new ArrayList<Note>();
 
     public CntrlPendingPanel(CntrlMain cntrlMain, PendingNotesPanel pendingNotesView) {
-
+        System.out.println("Controlador CntrlPendingPanel inicializado");
         this.pendingNotesView = pendingNotesView;
         this.cntrlMain = cntrlMain;
+        
+        
+        this.cntrlAddNote = new  CntrlAddNote(this,cntrlMain);
+        
 
-        System.out.println("Controlador CntrlPendingNotesItem inicializado");
-        //this.cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain);
+        
         pendingNotesView.getBtnAddNote().addActionListener(this);
 
         //Nuevo
@@ -81,7 +83,6 @@ public class CntrlPendingPanel implements ActionListener {
         gridLayoutNotes.setVgap(15);
         gridLayoutNotes.setRows(notesList.size());
 
-        //gridNotePanel.setLayout(new GridLayout(notesList.size(), 1, 0, 15));
         gridNotePanel.setLayout(gridLayoutNotes);
 
         //Por cada item en el arraylist, agregamos un row al gridNotePanel

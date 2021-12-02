@@ -1,9 +1,5 @@
 package view.PendingNotes;
 
-import Model.Note;
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
 import DAONote.DAONote;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,35 +12,6 @@ public class PendingNotesPanel extends javax.swing.JPanel {
    
     public PendingNotesPanel() {
         initComponents();
-//        Note note7 = new Note();
-        
-//        xd.getData(note7);
-        
-        
-                
-        
-        
-//        //Test CustomRenderList
-//        Note note1 = new Note("Titulo", "Descripccion", "29/20/20",1,true,false); 
-//        Note note2 = new Note("Titulo2", "Descripccion", "29/20/20",1,true,false); 
-//        Note note3 = new Note("Titulo3", "Descripccion", "29/20/20",1,true,false);
-//        Note note4 = new Note("Titulo4", "Descripccion", "29/20/20",1,true,false); 
-//        Note note5 = new Note("Titulo5", "Descripccion", "29/20/20",1,true,false); 
-//        Note note6 = new Note("Titulo6", "Descripccion", "29/20/20",1,true,false); 
-//
-//        //Crear modelo y agregamos elementos
-//        DefaultListModel<Note> listModel = new DefaultListModel<>();
-//        listModel.addElement(note1);
-//        listModel.addElement(note2);
-//        listModel.addElement(note3);
-//        listModel.addElement(note4);
-//        listModel.addElement(note5);
-//        listModel.addElement(note6);
-////        listModel.addElement(note7);
-//        
-//        JList<Note> lista = new JList<>(listModel);
-//        lista.setCellRenderer(new PendingNotesItem());
-       // ContentPanel.add(new JScrollPane(lista));
     }
 
     @SuppressWarnings("unchecked")

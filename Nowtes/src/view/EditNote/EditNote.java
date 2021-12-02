@@ -78,7 +78,7 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1020, -1));
+        add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1020, -1));
 
         ContentPanel.setBackground(new java.awt.Color(255, 255, 255));
         ContentPanel.setOpaque(false);
@@ -86,7 +86,7 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Prioridad:");
-        roundedBorders1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+        roundedBorders1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -96,12 +96,12 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Descripción:");
-        roundedBorders1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        roundedBorders1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Fecha:");
-        roundedBorders1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+        roundedBorders1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
         jTextArea2.setBackground(new java.awt.Color(130, 156, 188));
         jTextArea2.setColumns(20);
@@ -111,7 +111,7 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
         jTextArea2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
         jScrollPane2.setViewportView(jTextArea2);
 
-        roundedBorders1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 680, 230));
+        roundedBorders1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 680, 230));
 
         jTextField3.setBackground(new java.awt.Color(130, 156, 188));
         jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -123,40 +123,42 @@ public class EditNote extends javax.swing.JPanel implements ActionListener{
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "baja", "media", "alta" }));
         jComboBox1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
-        roundedBorders1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, -1));
+        roundedBorders1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
 
         optionDate.setBackground(new java.awt.Color(130, 156, 188));
-        roundedBorders1.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, -1));
+        roundedBorders1.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
 
         jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBox1.setText("Borrar la tarea al cambiar el estado por \"Finalizada\"     ");
-        roundedBorders1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, -1, -1));
+        roundedBorders1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, -1, -1));
 
         btnSave.setBackground(new java.awt.Color(31, 72, 126));
         btnSave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Guardar");
         btnSave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedBorders1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 80, 30));
+        roundedBorders1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 80, 30));
 
         btnCancel.setBackground(new java.awt.Color(254, 91, 107));
         btnCancel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancelar");
         btnCancel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedBorders1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 560, 80, 30));
+        roundedBorders1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 80, 30));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
         ContentPanelLayout.setHorizontalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(roundedBorders1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContentPanelLayout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 1012, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ContentPanelLayout.setVerticalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentPanelLayout.createSequentialGroup()
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 79, Short.MAX_VALUE))
         );
 
         add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 1020, -1));
