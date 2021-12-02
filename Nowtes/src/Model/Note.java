@@ -8,7 +8,6 @@ public class Note {
     private int priority;
     private boolean autoDelete;
     private boolean status;
-    private String modDate;
 
     public Note() {
 
@@ -77,6 +76,14 @@ public class Note {
         } else {
             return 1;
         }
+    }
+
+    public boolean isAutoDelete() {
+        return autoDelete;
+    }
+
+    public boolean isStatus() {
+        return status;
     }
 
     @Override
