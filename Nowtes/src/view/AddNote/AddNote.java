@@ -42,7 +42,10 @@ public class AddNote extends javax.swing.JPanel {
         txtErrDescriptionField = new javax.swing.JLabel();
         txtErrDateField = new javax.swing.JLabel();
 
+        setOpaque(false);
+
         JPanelAddNote.setBackground(new java.awt.Color(130, 156, 188));
+        JPanelAddNote.setOpaque(false);
         JPanelAddNote.setPreferredSize(new java.awt.Dimension(1037, 714));
         JPanelAddNote.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -190,7 +193,7 @@ public class AddNote extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JPanel ContentPanel;
+    private javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
     private javax.swing.JPanel JPanelAddNote;
     private javax.swing.JButton btnCancelar;

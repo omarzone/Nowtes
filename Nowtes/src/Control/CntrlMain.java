@@ -1,5 +1,7 @@
 package Control;
 
+import Model.Theme;
+import domain.ThemeData;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -21,21 +23,39 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     private CompleteNotesPanel completeNotesView = new CompleteNotesPanel();
     private Help helpView = new Help();
     private Settings settingsView = new Settings();
-    
+    private ThemeData themeData = new ThemeData();
     private CntrlPendingPanel cntrlPendingPanel;
     private CntrlSettings cntrlSettings;
+    private Theme themeApp;
     
-
 
     public CntrlMain(MainView mainView) {
         System.out.println("Controlador CntrlMain inicializado");
         this.mainView = mainView;
+        
+        
+        
+        boolean themeDark = true;
+        
+        if(themeDark){
+            themeApp = themeData.getDarkTheme();
+        }else{
+            themeApp = themeData.getLightTheme();
+        }
+        
         
         if(cntrlPendingPanel == null){
                 
                 cntrlPendingPanel = new CntrlPendingPanel(this,pendingNotesView);
             
             }
+        
+        
+        mainView.getHeaderPanel().setBackground(themeApp.getHEADER_PANEL());
+        mainView.getContent().setBackground(themeApp.getBG());
+        mainView.getMenu().setBackground(themeApp.getMENU_BG());
+        
+        
         mainView.getMainContent().add(pendingNotesView);
         
         
@@ -142,6 +162,12 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         mainView.getMainContent().revalidate();
     }
 
+    public ThemeData getThemeData() {
+        return themeData;
+    }
+    
+    
+
     @Override
     public void mouseDragged(MouseEvent e) {
         if (mainView.getHeaderPanel() == e.getSource()) {
@@ -172,6 +198,10 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
     public void setPendingNotesView(PendingNotesPanel pendingNotesView) {
         this.pendingNotesView = pendingNotesView;
+    }
+
+    public Theme getThemeApp() {
+        return themeApp;
     }
     
 
