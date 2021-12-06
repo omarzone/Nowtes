@@ -11,12 +11,13 @@ import view.Help.Help;
 import view.MainView;
 import view.PendingNotes.PendingNotesPanel;
 import view.Settings.Settings;
+import DAONote.DAOSettings;
 
 public class CntrlMain implements MouseListener, MouseMotionListener {
 
     private int xMouse, yMouse;
     private MainView mainView;
-
+    private DAOSettings daoSettings = new DAOSettings();
     private PendingNotesPanel pendingNotesView = new PendingNotesPanel();
     private CompleteNotesPanel completeNotesView = new CompleteNotesPanel();
     private Help helpView = new Help();
@@ -28,6 +29,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
 
     public CntrlMain(MainView mainView) {
+        
         System.out.println("Controlador CntrlMain inicializado");
         this.mainView = mainView;
         
