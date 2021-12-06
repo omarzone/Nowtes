@@ -319,6 +319,14 @@ public class MainView extends javax.swing.JFrame {
         return HeaderPanel;
     }
 
+    public JPanel getContent() {
+        return Content;
+    }
+
+    public JPanel getMenu() {
+        return Menu;
+    }
+
     
     
 }

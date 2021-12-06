@@ -1,7 +1,7 @@
 package Model;
 
 public class Note {
-
+    private int id;
     private String title;
     private String description;
     private String date;
@@ -12,6 +12,17 @@ public class Note {
     public Note() {
 
     }
+
+    public Note(int id, String title, String description, String date, int priority, boolean autoDelete, boolean status) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.priority = priority;
+        this.autoDelete = autoDelete;
+        this.status = status;
+    }
+    
 
     public Note(String title, String description, String date, int priority, boolean autoDelete, boolean status) {
         this.title = title;
@@ -86,6 +97,16 @@ public class Note {
             return 1;
         }
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
 
 
     @Override

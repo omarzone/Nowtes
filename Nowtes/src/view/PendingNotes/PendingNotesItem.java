@@ -41,6 +41,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         btnViewNote = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setName("PendingNotesBG"); // NOI18N
         setOpaque(false);
 
         DataPanel.setOpaque(false);
@@ -52,7 +53,6 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         DataPanel.add(note_title);
 
         note_description.setEditable(false);
-        note_description.setBackground(new java.awt.Color(255, 255, 255));
         note_description.setColumns(45);
         note_description.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         note_description.setForeground(new java.awt.Color(31, 72, 126));
@@ -250,7 +250,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
     }
     
     
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ActionsPanel;
     private javax.swing.JPanel DataPanel;

@@ -2,6 +2,8 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -80,17 +82,25 @@ public class CntrlPendingPanel implements ActionListener {
         GridLayout gridLayoutNotes = new GridLayout();
         gridLayoutNotes.setColumns(1);
         gridLayoutNotes.setVgap(15);
+        
         gridLayoutNotes.setRows(notesList.size());
+        
+        
 
         gridNotePanel.setLayout(gridLayoutNotes);
+        
+        
 
         //Por cada item en el arraylist, agregamos un row al gridNotePanel
         for (Note note : notesList) {
             
             PendingNotesItem noteItemView = new PendingNotesItem();
+            noteItemView.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
             CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain,noteItemView,note);
             gridNotePanel.add(noteItemView);
+            
         }
+        
         
         
         //seteamos la vista que estara dentro del scroll

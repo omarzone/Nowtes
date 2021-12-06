@@ -33,7 +33,7 @@ public class CntrlViewCompleteNote implements ActionListener {
     public void setData(){
         viewCompleteNote.getNote_title().setText(note.getTitle());
         viewCompleteNote.getNote_description().setText(note.getDescription());
-        viewCompleteNote.getNote_id().setText("Nota #0000");
+        viewCompleteNote.getNote_id().setText("Nota #"+note.getId());
         viewCompleteNote.getNote_date().setText(note.getDate());
         
         if(note.isStatus()){
