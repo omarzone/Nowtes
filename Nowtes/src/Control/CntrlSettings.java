@@ -1,12 +1,16 @@
 package Control;
 
+import DAONote.DAOSettings;
+import java.sql.SQLDataException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 
 public class CntrlSettings implements ActionListener {
-
+    
     private CntrlMain cntrlMain;
-
+    private DAOSettings daoSetting = new DAOSettings();
     public CntrlSettings(CntrlMain cntrlMain) {
         System.out.println("Controlador CntrlSettings inicializado");
         this.cntrlMain = cntrlMain;
@@ -25,7 +29,23 @@ public class CntrlSettings implements ActionListener {
         }
 
         if (cntrlMain.getSettingsView().getBtnDarkTheme() == e.getSource()) {
-            System.out.println("Tema actualizado");
+           if(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected()){
+               cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");
+               
+               try{
+                   daoSetting.modify(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected());
+               }catch(Exception ex){
+                   System.out.println(ex);
+               }
+               
+           }else{
+               cntrlMain.getSettingsView().getBtnDarkTheme().setText("Desactivado");
+               try{
+                   daoSetting.modify(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected());
+               }catch(Exception ex){
+                   System.out.println(ex);
+               }
+           }
         }
 
         if (cntrlMain.getSettingsView().getCbmPriority() == e.getSource()) {
