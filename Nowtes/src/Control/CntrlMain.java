@@ -19,7 +19,8 @@ import javax.swing.ImageIcon;
 
 
 public class CntrlMain implements MouseListener, MouseMotionListener {
-
+    
+    private boolean darkThemeOn;
     private int xMouse, yMouse;
     private MainView mainView;
     private DAOSettings daoSettings = new DAOSettings();
@@ -35,6 +36,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
     public CntrlMain(MainView mainView){
         
+        
         System.out.println("Controlador CntrlMain inicializado");
         this.mainView = mainView;
         
@@ -46,6 +48,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
             }else{
                 themeApp = themeData.getLightTheme();
             }
+            darkThemeOn = themeDark;
         }catch(SQLException ex){
             System.err.println(ex);
         }
@@ -219,8 +222,11 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         mainView.getBtnHistory().setForeground(themeApp.getFONT());
         mainView.getBtnHome().setForeground(themeApp.getFONT());
         mainView.getBtnSettings().setForeground(themeApp.getFONT());
-        //mainView.getLogo().setIcon(new ImageIcon(getClass().getResource("C:\\Users\\PC GOOSE\\Desktop\\Proyecto POO\\Nowtes\\Nowtes\\src\\resources\\LogoMakr(1).png")));
         
+        if(darkThemeOn){
+            mainView.getLogo().setIcon(new ImageIcon(getClass().getResource("/resources/LogoMakr (1).png")));
+        }
+       
        
     }
 
