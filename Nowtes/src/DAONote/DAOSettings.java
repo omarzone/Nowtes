@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.ResultSet;
 
 
 /**
@@ -20,16 +21,32 @@ public  class DAOSettings extends DAOMain {
    
 
     public int modify(boolean isDarkThemeOn) throws SQLException {
+        System.out.println("Hola estoy entrando a modify de DAOSettings");
         int numRows = 0;
         Connection con = getConnection();
         
         String orden = "UPDATE settings SET darktheme = " + isDarkThemeOn;
-        System.out.println(orden);
         Statement sentencia = con.createStatement();
         numRows = sentencia.executeUpdate(orden);
         sentencia.close();
         closeConnection(con);
         return numRows;
+    }
+    
+    public boolean getTheme() throws SQLException {
+        Connection con = getConnection();
+        boolean isThemeDarkOn;
+        ResultSet rs = null;
+        
+        String orden = "SELECT * FROM settings WHERE id = 1";
+        try (Statement sentencia = con.createStatement()) {
+             rs = sentencia.executeQuery(orden);
+             if(rs.next()){
+                isThemeDarkOn = rs.getBoolean("darktheme");
+                 return isThemeDarkOn;
+             }
+        }
+        return false;
     }
 
     @Override
@@ -54,6 +71,5 @@ public  class DAOSettings extends DAOMain {
 
     }
     
-   // + " WHERE id = " + 1
-    
+   
 }
