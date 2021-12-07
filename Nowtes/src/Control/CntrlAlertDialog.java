@@ -9,7 +9,7 @@ public class CntrlAlertDialog implements ActionListener {
     
     
     private AlertDialog alertDialog;
-    public CntrlAlertDialog( AlertDialog alertDialog) {
+    public CntrlAlertDialog( AlertDialog alertDialog ) {
        System.out.println("Controlador CntrlAlertDialog inicializado");
        this.alertDialog = alertDialog;
 

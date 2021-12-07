@@ -1,5 +1,6 @@
 package Control;
 
+import DAONote.DAONote;
 import Model.Note;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -10,7 +11,7 @@ import view.EditNote.EditNote;
 import view.ViewCompleteNote.ViewCompleteNote;
 
 public class CntrlPendingNotesItem implements MouseListener {
-    
+
     private CntrlMain cntrlMain;
     private EditNote editNotePanel = new EditNote();
     private PendingNotesItem pendingNotesItemView;
@@ -20,7 +21,6 @@ public class CntrlPendingNotesItem implements MouseListener {
     private ViewCompleteNote viewCompleteNote = new ViewCompleteNote();
     private CntrlViewCompleteNote cntrlViewCompleteNote;
     private CntrlEditNote cntrlEditNote;
-    
 
     public CntrlPendingNotesItem(CntrlMain cntrlMain, PendingNotesItem pendingNotesItemView, Note note) {
         System.out.println("Controlador CntrlPendingNotesItem inicializado");
@@ -29,7 +29,7 @@ public class CntrlPendingNotesItem implements MouseListener {
         this.note = note;
         //Seteamos data en la vista
         setData();
-        
+
         //Inicializamos los listeners
         pendingNotesItemView.getBtnEditNote().addMouseListener(this);
         pendingNotesItemView.getBtnViewNote().addMouseListener(this);
@@ -40,9 +40,9 @@ public class CntrlPendingNotesItem implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (pendingNotesItemView.getBtnEditNote() == e.getSource()) {
-            
-            if(cntrlEditNote == null){
-                cntrlEditNote = new CntrlEditNote(cntrlMain,editNotePanel, note);
+
+            if (cntrlEditNote == null) {
+                cntrlEditNote = new CntrlEditNote(cntrlMain, editNotePanel, note);
             }
             cntrlMain.getMainView().getMainContent().removeAll();
             cntrlMain.getMainView().getMainContent().add(editNotePanel);
@@ -53,8 +53,8 @@ public class CntrlPendingNotesItem implements MouseListener {
 
         if (pendingNotesItemView.getBtnViewNote() == e.getSource()) {
 
-            if(cntrlViewCompleteNote == null){
-                cntrlViewCompleteNote = new CntrlViewCompleteNote(cntrlMain,viewCompleteNote, note);
+            if (cntrlViewCompleteNote == null) {
+                cntrlViewCompleteNote = new CntrlViewCompleteNote(cntrlMain, viewCompleteNote, note);
             }
             cntrlMain.getMainView().getMainContent().removeAll();
             cntrlMain.getMainView().getMainContent().add(viewCompleteNote);
@@ -66,10 +66,18 @@ public class CntrlPendingNotesItem implements MouseListener {
 
         if (pendingNotesItemView.getBtnDeleteNote() == e.getSource()) {
             if (cntrlAlertDialog == null) {
-                
+
                 cntrlAlertDialog = new CntrlAlertDialog(alertDialog);
 
             }
+            String condition;
+            condition = " id = " + note.getId();
+//            DAONote daoCliente = new DAONote();
+//            try {
+//                daoCliente.delete(condition);
+//            } catch (Exception exep) {
+//                exep.printStackTrace();
+//            }
 
             alertDialog.setVisible(true);
             alertDialog.setLocationRelativeTo(null);
@@ -77,19 +85,19 @@ public class CntrlPendingNotesItem implements MouseListener {
 
         }
     }
-    
-    public void setData(){
+
+    public void setData() {
         pendingNotesItemView.getNote_title().setText(note.getTitle());
         pendingNotesItemView.getNote_description().setText(note.getDescription());
-        
-        if(note.isStatus()){
+
+        if (note.isStatus()) {
             pendingNotesItemView.getNote_status().setText("En proceso");
-            pendingNotesItemView.getNote_status().setBackground(new Color(245,223,83));
-        }else{
+            pendingNotesItemView.getNote_status().setBackground(new Color(245, 223, 83));
+        } else {
             pendingNotesItemView.getNote_status().setText("Finalizado");
-            pendingNotesItemView.getNote_status().setBackground(new Color(153,212,172));
+            pendingNotesItemView.getNote_status().setBackground(new Color(153, 212, 172));
         }
-        
+
         pendingNotesItemView.getNote_date().setText(note.getDate());
     }
 

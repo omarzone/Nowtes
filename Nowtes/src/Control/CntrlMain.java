@@ -37,7 +37,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         
         
         
-        boolean themeDark = true;
+        boolean themeDark = false;
         
         if(themeDark){
             themeApp = themeData.getDarkTheme();
