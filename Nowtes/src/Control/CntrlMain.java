@@ -14,9 +14,13 @@ import view.MainView;
 import view.PendingNotes.PendingNotesPanel;
 import view.Settings.Settings;
 import DAONote.DAOSettings;
+import java.sql.SQLException;
+import javax.swing.ImageIcon;
+
 
 public class CntrlMain implements MouseListener, MouseMotionListener {
-
+    
+    private boolean darkThemeOn;
     private int xMouse, yMouse;
     private MainView mainView;
     private DAOSettings daoSettings = new DAOSettings();
@@ -30,20 +34,25 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     private Theme themeApp;
     
 
-    public CntrlMain(MainView mainView) {
+    public CntrlMain(MainView mainView){
+        
         
         System.out.println("Controlador CntrlMain inicializado");
         this.mainView = mainView;
         
         
-        
-        boolean themeDark = true;
-        
-        if(themeDark){
-            themeApp = themeData.getDarkTheme();
-        }else{
-            themeApp = themeData.getLightTheme();
+        try{
+            boolean themeDark = daoSettings.getTheme();
+            if(themeDark){
+                themeApp = themeData.getDarkTheme();
+            }else{
+                themeApp = themeData.getLightTheme();
+            }
+            darkThemeOn = themeDark;
+        }catch(SQLException ex){
+            System.err.println(ex);
         }
+        
         
         
         if(cntrlPendingPanel == null){
@@ -52,10 +61,8 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
             
             }
         
-        
-        mainView.getHeaderPanel().setBackground(themeApp.getHEADER_PANEL());
-        mainView.getContent().setBackground(themeApp.getBG());
-        mainView.getMenu().setBackground(themeApp.getMENU_BG());
+        setTheme();
+       
         
         
         mainView.getMainContent().add(pendingNotesView);
@@ -206,5 +213,21 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         return themeApp;
     }
     
+    
+    private void setTheme(){
+        mainView.getHeaderPanel().setBackground(themeApp.getHEADER_PANEL());
+        mainView.getContent().setBackground(themeApp.getBG());
+        mainView.getMenu().setBackground(themeApp.getMENU_BG());
+        mainView.getBtnHelp().setForeground(themeApp.getFONT());
+        mainView.getBtnHistory().setForeground(themeApp.getFONT());
+        mainView.getBtnHome().setForeground(themeApp.getFONT());
+        mainView.getBtnSettings().setForeground(themeApp.getFONT());
+        
+        if(darkThemeOn){
+            mainView.getLogo().setIcon(new ImageIcon(getClass().getResource("/resources/LogoMakr (1).png")));
+        }
+       
+       
+    }
 
 }

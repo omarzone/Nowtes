@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 
 public class MainView extends javax.swing.JFrame {
 
@@ -16,7 +17,7 @@ public class MainView extends javax.swing.JFrame {
 
         HeaderPanel = new javax.swing.JPanel();
         title_app = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        titleApp = new javax.swing.JLabel();
         WindowActions = new javax.swing.JPanel();
         MinimizeWindow = new javax.swing.JLabel();
         MaximizeWindow = new javax.swing.JLabel();
@@ -55,10 +56,10 @@ public class MainView extends javax.swing.JFrame {
         title_app.setOpaque(false);
         title_app.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 0));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nowtes");
-        title_app.add(jLabel5);
+        titleApp.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        titleApp.setForeground(new java.awt.Color(255, 255, 255));
+        titleApp.setText("Nowtes");
+        title_app.add(titleApp);
 
         HeaderPanel.add(title_app, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
 
@@ -275,11 +276,11 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel btnHistory;
     private javax.swing.JLabel btnHome;
     private javax.swing.JLabel btnSettings;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel titleApp;
     private javax.swing.JPanel title_app;
     // End of variables declaration//GEN-END:variables
 
@@ -327,6 +328,35 @@ public class MainView extends javax.swing.JFrame {
         return Menu;
     }
 
+    public JPanel getWindowActions() {
+        return WindowActions;
+    }
+
+    public JLabel getjLabel5() {
+        return titleApp;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public JSeparator getjSeparator3() {
+        return jSeparator3;
+    }
+
+    public JLabel getLogo() {
+        return logo;
+    }
+
+    public JPanel getTitle_app() {
+        return title_app;
+    }
+    
+    
     
     
 }
