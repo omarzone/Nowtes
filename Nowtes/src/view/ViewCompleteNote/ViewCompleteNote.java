@@ -2,6 +2,7 @@
 package view.ViewCompleteNote;
 
 import Model.Note;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
@@ -229,6 +230,10 @@ public class ViewCompleteNote extends javax.swing.JPanel {
         this.note_title = note_title;
     }
 
+    public JButton getBtnEditNote() {
+        return btnEditNote;
+    }
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
