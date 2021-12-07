@@ -4,6 +4,7 @@ import DAONote.DAONote;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 public class PendingNotesPanel extends javax.swing.JPanel {
@@ -55,6 +56,7 @@ public class PendingNotesPanel extends javax.swing.JPanel {
 
         btnSearch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/search (4).png"))); // NOI18N
+        btnSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSearch.setFocusable(false);
         btnSearch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SearchPanel.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
@@ -125,6 +127,10 @@ public class PendingNotesPanel extends javax.swing.JPanel {
 
     public JPanel getContentPanel() {
         return ContentPanel;
+    }
+
+    public JTextField getTxtSearch() {
+        return txtSearch;
     }
     
     

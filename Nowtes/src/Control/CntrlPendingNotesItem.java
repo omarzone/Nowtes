@@ -36,7 +36,19 @@ public class CntrlPendingNotesItem implements MouseListener {
         pendingNotesItemView.getBtnDeleteNote().addMouseListener(this);
 
     }
+    
+    public EditNote getEditNotePanel() {
+        return editNotePanel;
+    }
 
+    public void setCntrlEditNote(CntrlEditNote cntrlEditNote) {
+        this.cntrlEditNote = cntrlEditNote;
+    }
+
+    public CntrlEditNote getCntrlEditNote() {
+        return cntrlEditNote;
+    }
+    
     @Override
     public void mouseClicked(MouseEvent e) {
         if (pendingNotesItemView.getBtnEditNote() == e.getSource()) {
@@ -53,8 +65,9 @@ public class CntrlPendingNotesItem implements MouseListener {
 
         if (pendingNotesItemView.getBtnViewNote() == e.getSource()) {
 
-            if (cntrlViewCompleteNote == null) {
-                cntrlViewCompleteNote = new CntrlViewCompleteNote(cntrlMain, viewCompleteNote, note);
+
+            if(cntrlViewCompleteNote == null){
+                cntrlViewCompleteNote = new CntrlViewCompleteNote(cntrlMain,viewCompleteNote, note, this);
             }
             cntrlMain.getMainView().getMainContent().removeAll();
             cntrlMain.getMainView().getMainContent().add(viewCompleteNote);
