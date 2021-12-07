@@ -1,7 +1,7 @@
 package Control;
 
 import DAONote.DAOSettings;
-import java.sql.SQLDataException;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -34,7 +34,7 @@ public class CntrlSettings implements ActionListener {
                
                try{
                    daoSetting.modify(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected());
-               }catch(Exception ex){
+               }catch(SQLException ex){
                    System.out.println(ex);
                }
                
