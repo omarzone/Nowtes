@@ -11,16 +11,18 @@ public class CntrlViewCompleteNote implements ActionListener {
     private CntrlMain cntrlMain;
     private Note note;
     private ViewCompleteNote viewCompleteNote;
-    public CntrlViewCompleteNote(CntrlMain cntrolMain, ViewCompleteNote viewCompleteNote, Note note){
+    private CntrlPendingNotesItem cntrlPendingNotesItem;
+    public CntrlViewCompleteNote(CntrlMain cntrlMain, ViewCompleteNote viewCompleteNote, Note note, CntrlPendingNotesItem cntrlPendingNotesItem){
         System.out.println("Controlador CntrlViewCompleteNote inicializado");
         this.cntrlMain = cntrlMain;
         this.note = note;
         this.viewCompleteNote = viewCompleteNote;
+        this.cntrlPendingNotesItem = cntrlPendingNotesItem;
         
         
         //Seteamos la data en la vista
         setData();
-        
+        viewCompleteNote.getBtnEditNote().addActionListener(this);
         
         
     }
@@ -28,6 +30,17 @@ public class CntrlViewCompleteNote implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         if (viewCompleteNote.getBtnEditNote() == e.getSource()) {
+            if(cntrlPendingNotesItem.getCntrlEditNote() == null){
+                cntrlPendingNotesItem.setCntrlEditNote(new CntrlEditNote(cntrlMain,cntrlPendingNotesItem.getEditNotePanel(), note));
+            }
+            cntrlMain.getMainView().getMainContent().removeAll();
+            cntrlMain.getMainView().getMainContent().add(cntrlPendingNotesItem.getEditNotePanel());
+            cntrlMain.getMainView().getMainContent().repaint();
+            cntrlMain.getMainView().getMainContent().revalidate();
+
+        }
+        
     }
     
     public void setData(){

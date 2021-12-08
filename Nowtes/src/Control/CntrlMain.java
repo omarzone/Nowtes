@@ -41,7 +41,8 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         this.mainView = mainView;
         
         
-        try{
+
+       try{
             boolean themeDark = daoSettings.getTheme();
             if(themeDark){
                 themeApp = themeData.getDarkTheme();
@@ -63,7 +64,6 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         
         setTheme();
        
-        
         
         mainView.getMainContent().add(pendingNotesView);
         
@@ -212,6 +212,23 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     public Theme getThemeApp() {
         return themeApp;
     }
+
+    public CntrlPendingPanel getCntrlPendingPanel() {
+        return cntrlPendingPanel;
+    }
+
+    public void setCntrlPendingPanel(CntrlPendingPanel cntrlPendingPanel) {
+        this.cntrlPendingPanel = cntrlPendingPanel;
+    }
+
+    public boolean isDarkThemeOn() {
+        return darkThemeOn;
+    }
+
+    public void setDarkThemeOn(boolean darkThemeOn) {
+        this.darkThemeOn = darkThemeOn;
+    }
+    
     
     
     private void setTheme(){
