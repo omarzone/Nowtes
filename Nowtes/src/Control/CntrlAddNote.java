@@ -2,10 +2,9 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
-import java.awt.Panel;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import view.AddNote.AddNote;
 import java.sql.SQLException;
@@ -23,10 +22,12 @@ public class CntrlAddNote implements ActionListener {
     private AddNote addNotePanel;
     
     public CntrlAddNote (CntrlPendingPanel cntrlPendingPanel, CntrlMain cntrlMain){
+        
         System.out.println("Controlador CntrlAddNote inicializado");
         this.cntrlMain = cntrlMain;
         this.cntrlPendingPanel = cntrlPendingPanel;
         this.addNotePanel = cntrlPendingPanel.getAddNotePanel();
+        setTheme();
         
         addNotePanel.getBtnCancelar().addActionListener(this);
         addNotePanel.getBtnGuardar().addActionListener(this);
@@ -39,6 +40,7 @@ public class CntrlAddNote implements ActionListener {
             
             cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
             //System.out.println("Acción Cancelar - Cambio a pantalla Home");
+            
             
             addNotePanel.getTxtDescripcion().setText(null);
             addNotePanel.getTxtTitulo().setText(null);
@@ -119,6 +121,25 @@ public class CntrlAddNote implements ActionListener {
                }
                
            }
+    }
+    
+    
+    private void setTheme(){
+        this.addNotePanel.getRoundedInnerPanel().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        this.addNotePanel.getLblDate().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.addNotePanel.getLblTitle().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.addNotePanel.getLblDescription().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.addNotePanel.getLblPriority().setForeground(cntrlMain.getThemeApp().getFONT());
+        
+        if(cntrlMain.isDarkThemeOn()){
+            this.addNotePanel.getTxtTitulo().setBackground(new Color(48, 49, 52));
+            this.addNotePanel.getTxtDescripcion().setBackground(new Color(48, 49, 52));
+            this.addNotePanel.getCmbPriority().setBackground(new Color(48, 49, 52));
+        }
+       
+        this.addNotePanel.getCbEndedTask().setOpaque(false);
+        this.addNotePanel.getCbEndedTask().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.addNotePanel.getOptionDate().setOpaque(false);
     }
 }
 

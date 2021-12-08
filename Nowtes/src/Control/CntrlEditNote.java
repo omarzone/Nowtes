@@ -2,6 +2,7 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -23,7 +24,9 @@ public class CntrlEditNote implements ActionListener {
         System.out.println("Controlador CntrlAddNote inicializado");
         this.cntrlMain = cntrlMain;
         this.editNotePanel = editNotePanel;
-        this.note = note;
+        this.note = note;   
+        
+        setTheme();
 
         editNotePanel.getBtnCancel().addActionListener(this);
         editNotePanel.getBtnSave().addActionListener(this);
@@ -131,6 +134,26 @@ public class CntrlEditNote implements ActionListener {
                 System.err.println(ex);
             }
         }
+    }
+    
+    private void setTheme(){
+        this.editNotePanel.getLblDescription().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.editNotePanel.getRoundedInnerPanel().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        this.editNotePanel.getLblDate().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.editNotePanel.getLblTitle().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.editNotePanel.getLblDescription().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.editNotePanel.getLblPriority().setForeground(cntrlMain.getThemeApp().getFONT());
+        
+        if(cntrlMain.isDarkThemeOn()){
+           this.editNotePanel.getTxtTitulo().setBackground(new Color(48, 49, 52));
+           this.editNotePanel.getTxtDescripcion().setBackground(new Color(48, 49, 52));
+           this.editNotePanel.getCmbPriority().setBackground(new Color(48, 49, 52));
+        }
+        
+       
+        this.editNotePanel.getCbEndedTask().setOpaque(false);
+        this.editNotePanel.getCbEndedTask().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.editNotePanel.getOptionDate().setOpaque(false);
     }
 
 }

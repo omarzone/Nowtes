@@ -4,6 +4,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import view.components.RoundedBorders;
 
 /**
  *
@@ -29,7 +30,7 @@ public class Help extends javax.swing.JPanel {
 
         HeadPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        roundedBorders1 = new view.components.RoundedBorders();
+        roundedInnerPanel = new view.components.RoundedBorders();
         jLabel2 = new javax.swing.JLabel();
         txtVideo = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
@@ -50,12 +51,12 @@ public class Help extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Video_Ayuda.jpg"))); // NOI18N
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        roundedBorders1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 840, 420));
+        roundedInnerPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 840, 420));
 
         txtVideo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtVideo.setForeground(new java.awt.Color(0, 0, 0));
         txtVideo.setText("¿Como funciona Nowtes?");
-        roundedBorders1.add(txtVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        roundedInnerPanel.add(txtVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         javax.swing.GroupLayout HeadPanelLayout = new javax.swing.GroupLayout(HeadPanel);
         HeadPanel.setLayout(HeadPanelLayout);
@@ -65,7 +66,7 @@ public class Help extends javax.swing.JPanel {
                 .addGroup(HeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(HeadPanelLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(roundedInnerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(HeadPanelLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jLabel5)))
@@ -77,7 +78,7 @@ public class Help extends javax.swing.JPanel {
                 .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roundedInnerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
 
@@ -107,7 +108,19 @@ public class Help extends javax.swing.JPanel {
     private javax.swing.JPanel HeadPanel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    private view.components.RoundedBorders roundedBorders1;
+    private view.components.RoundedBorders roundedInnerPanel;
     private javax.swing.JLabel txtVideo;
     // End of variables declaration//GEN-END:variables
+
+    public RoundedBorders getRoundedInnerPanel() {
+        return roundedInnerPanel;
+    }
+
+    public JLabel getTxtVideo() {
+        return txtVideo;
+    }
+    
+    
+    
+    
 }

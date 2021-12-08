@@ -5,8 +5,8 @@ import Model.Note;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import view.AlertDialog.AlertDialog;
 import view.PendingNotes.PendingNotesItem;
 import view.EditNote.EditNote;
 import view.PendingNotes.PendingNotesPanel;
@@ -151,13 +151,21 @@ public class CntrlPendingNotesItem implements MouseListener {
     private void setTheme(){
         //Cambios relacionados con el tema de la aplicación de la vista principal
         this.pendingNotesItemView.getjScrollPane1().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
-        this.pendingNotesItemView.getNote_title().setForeground(cntrlMain.getThemeApp().getFONT());
         this.pendingNotesItemView.getNote_date().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
         this.pendingNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getMEDIUM_STATUS());
-        pendingNotesItemView.getjScrollPane1().setOpaque(false);
-        pendingNotesItemView.getjScrollPane1().getViewport().setOpaque(false);
-       
+        this.pendingNotesItemView.getjScrollPane1().setOpaque(false);
+        this.pendingNotesItemView.getjScrollPane1().getViewport().setOpaque(false);
+        this.pendingNotesItemView.getNote_description().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        this.pendingNotesItemView.getLblAction().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.pendingNotesItemView.getLblDate().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.pendingNotesItemView.getLblStatus().setForeground(cntrlMain.getThemeApp().getFONT());
         
-       
+        if(cntrlMain.isDarkThemeOn()){
+            this.pendingNotesItemView.getNote_title().setForeground(cntrlMain.getThemeApp().getWHITE());
+            this.pendingNotesItemView.getNote_description().setForeground(cntrlMain.getThemeApp().getWHITE());
+            this.pendingNotesItemView.getBtnEditNote().setIcon(new ImageIcon(getClass().getResource("/resources/edit_black.png")));
+            this.pendingNotesItemView.getBtnViewNote().setIcon(new ImageIcon(getClass().getResource("/resources/view_black.png")));
+        }
+        
     }
 }
