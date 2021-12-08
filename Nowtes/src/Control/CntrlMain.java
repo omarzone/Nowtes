@@ -41,7 +41,8 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         this.mainView = mainView;
         
         
-        try{
+
+       try{
             boolean themeDark = daoSettings.getTheme();
             if(themeDark){
                 themeApp = themeData.getDarkTheme();
@@ -63,7 +64,6 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         
         setTheme();
        
-        
         
         mainView.getMainContent().add(pendingNotesView);
         
@@ -212,21 +212,43 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     public Theme getThemeApp() {
         return themeApp;
     }
+
+    public CntrlPendingPanel getCntrlPendingPanel() {
+        return cntrlPendingPanel;
+    }
+
+    public void setCntrlPendingPanel(CntrlPendingPanel cntrlPendingPanel) {
+        this.cntrlPendingPanel = cntrlPendingPanel;
+    }
+
+    public boolean isDarkThemeOn() {
+        return darkThemeOn;
+    }
+
+    public void setDarkThemeOn(boolean darkThemeOn) {
+        this.darkThemeOn = darkThemeOn;
+    }
+    
     
     
     private void setTheme(){
-        mainView.getHeaderPanel().setBackground(themeApp.getHEADER_PANEL());
-        mainView.getContent().setBackground(themeApp.getBG());
-        mainView.getMenu().setBackground(themeApp.getMENU_BG());
-        mainView.getBtnHelp().setForeground(themeApp.getFONT());
-        mainView.getBtnHistory().setForeground(themeApp.getFONT());
-        mainView.getBtnHome().setForeground(themeApp.getFONT());
-        mainView.getBtnSettings().setForeground(themeApp.getFONT());
+        //Cambios relacionados con el tema de la aplicación de la vista principal
+        this.mainView.getHeaderPanel().setBackground(themeApp.getHEADER_PANEL());
+        this.mainView.getContent().setBackground(themeApp.getBG());
+        this.mainView.getMenu().setBackground(themeApp.getMENU_BG());
+        this.mainView.getBtnHelp().setForeground(themeApp.getFONT());
+        this.mainView.getBtnHistory().setForeground(themeApp.getFONT());
+        this.mainView.getBtnHome().setForeground(themeApp.getFONT());
+        this.mainView.getBtnSettings().setForeground(themeApp.getFONT());
+        this.mainView.getTitleApp().setForeground(themeApp.getTITLE_APP());
         
+        
+        //Comprobación para seleccionar que logo usar cuando se cambie el darktheme
         if(darkThemeOn){
-            mainView.getLogo().setIcon(new ImageIcon(getClass().getResource("/resources/LogoMakr (1).png")));
+            this.mainView.getLogo().setIcon(new ImageIcon(getClass().getResource("/resources/LogoMakr (1).png")));
         }
        
+        
        
     }
 

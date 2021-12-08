@@ -47,16 +47,16 @@ public class DAONote extends DAOMain<Note> {
     public int modify(Note e, String condition) throws SQLException {
         int numRows = 0;
         Connection con = getConnection();
-
+        
         String orden = "UPDATE note SET "
                 + " title='" + e.getTitle() + "',"
-                + "description " + e.getDescription() + "',"
-                + "status = " + e.getParseStatus() + "',"
-                + "priority = " + e.getPriority() + "',"
-                + "autodelete = " + e.getParseAutoDelete() + "',"
-                + "date = " + e.getDate()
+                + "description='" + e.getDescription() + "',"
+                + "status = " +  e.isStatus() +","
+                + "priority = " + e.getPriority() + ","
+                + "autodelete = " + e.isAutoDelete()+ ","
+                + "date = '" + e.getDate() + "'"
                 + " WHERE " + condition;
-
+        
         Statement sentencia = con.createStatement();
         numRows = sentencia.executeUpdate(orden);
         sentencia.close();
@@ -70,6 +70,7 @@ public class DAONote extends DAOMain<Note> {
         Connection con = getConnection();
         String orden = "SELECT * FROM note "
                 + (condition == null || condition.length() == 0 ? "" : "WHERE " + condition);
+        
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(orden);
         while (rs.next()) {

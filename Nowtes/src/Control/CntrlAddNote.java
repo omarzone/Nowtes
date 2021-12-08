@@ -22,10 +22,10 @@ public class CntrlAddNote implements ActionListener {
     private CntrlPendingPanel cntrlPendingPanel;
     private AddNote addNotePanel;
     
-    public CntrlAddNote (CntrlPendingPanel pendingPanel, CntrlMain cntrlMain){
+    public CntrlAddNote (CntrlPendingPanel cntrlPendingPanel, CntrlMain cntrlMain){
         System.out.println("Controlador CntrlAddNote inicializado");
         this.cntrlMain = cntrlMain;
-        this.cntrlPendingPanel = pendingPanel;
+        this.cntrlPendingPanel = cntrlPendingPanel;
         this.addNotePanel = cntrlPendingPanel.getAddNotePanel();
         
         addNotePanel.getBtnCancelar().addActionListener(this);
@@ -90,7 +90,7 @@ public class CntrlAddNote implements ActionListener {
            
            try{
                 date = dcn.format(addNotePanel.getOptionDate().getDate());
-                System.out.println(date);    
+                //System.out.println(date);    
                 hasDeadLine = true;
                 if(date != null){
                     addNotePanel.getTxtErrDateField().setText("");
@@ -100,7 +100,7 @@ public class CntrlAddNote implements ActionListener {
                hasDeadLine = false;
            }
            
-           System.out.println(date);
+           //System.out.println(date);
            
            if(hasTitle && hasDescription && hasDeadLine){
                note = new Note(title, description, date, prioritySelected, deleteEndTaskOption, false);

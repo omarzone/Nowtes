@@ -6,9 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
 import view.EditNote.EditNote;
+import view.PendingNotes.PendingNotesPanel;
 
 public class CntrlEditNote implements ActionListener {
 
@@ -22,6 +23,7 @@ public class CntrlEditNote implements ActionListener {
         System.out.println("Controlador CntrlAddNote inicializado");
         this.cntrlMain = cntrlMain;
         this.editNotePanel = editNotePanel;
+        this.note = note;
 
         editNotePanel.getBtnCancel().addActionListener(this);
         editNotePanel.getBtnSave().addActionListener(this);
@@ -34,10 +36,11 @@ public class CntrlEditNote implements ActionListener {
         } catch (ParseException ex) {
             //
         }
-        editNotePanel.getCmbPriority().setSelectedIndex(0);
+        editNotePanel.getCmbPriority().setSelectedIndex(note.getPriority());
         editNotePanel.getTxtErrTitleField().setText(null);
         editNotePanel.getTxtErrDescriptionField().setText(null);
         editNotePanel.getTxtErrDateField().setText(null);
+        editNotePanel.getCbEndedTask().setSelected(note.isAutoDelete());
 
     }
 
@@ -94,7 +97,7 @@ public class CntrlEditNote implements ActionListener {
 
         try {
             date = dcn.format(editNotePanel.getOptionDate().getDate());
-            System.out.println(date);
+            //System.out.println(date);
             hasDeadLine = true;
             if (date != null) {
                 editNotePanel.getTxtErrDateField().setText("");
@@ -104,19 +107,29 @@ public class CntrlEditNote implements ActionListener {
             hasDeadLine = false;
         }
 
-        System.out.println(date);
-
+        // System.out.println(date);
         if (hasTitle && hasDescription && hasDeadLine) {
 
-            System.out.println("Todo Oki para la BD");
+            //System.out.println("Todo Oki para la BD");
 
-//            note = new Note(title, description, date, prioritySelected, deleteEndTaskOption, false);
-//            try {
-//                DaoNote.add(note);
-//            } catch (SQLException ex) {
-//                JOptionPane.showMessageDialog(editNotePanel, "Hubo un error con el guardado de la nota");
-//                System.err.println(ex);
-//            }
+            note = new Note(note.getId(),title, description, date, prioritySelected, deleteEndTaskOption, false);
+            String condition;
+            condition = " id = " + this.note.getId();
+            
+            try {
+                DaoNote.modify(note, condition);
+                //Redibujamos el panel
+            PendingNotesPanel newPendingNotesPanel = new PendingNotesPanel();
+            cntrlPendingPanel = new CntrlPendingPanel(cntrlMain, newPendingNotesPanel);
+
+            //Cambiamos a la pantalla principal
+            cntrlMain.setPendingNotesView(newPendingNotesPanel);
+            cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
+            
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(editNotePanel, "Hubo un error al modificar la nota");
+                System.err.println(ex);
+            }
         }
     }
 
