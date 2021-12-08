@@ -12,26 +12,29 @@ import view.CompletedNotes.CompleteNotesPanel;
 import view.Help.Help;
 import view.MainView;
 import view.PendingNotes.PendingNotesPanel;
-import view.Settings.Settings;
+import view.Settings.SettingsView;
+import Model.Settings;
 import DAONote.DAOSettings;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 
 public class CntrlMain implements MouseListener, MouseMotionListener {
     
-    private boolean darkThemeOn;
     private int xMouse, yMouse;
     private MainView mainView;
-    private DAOSettings daoSettings = new DAOSettings();
+    //private DAOSettings daoSettings = new DAOSettings();
     private PendingNotesPanel pendingNotesView = new PendingNotesPanel();
+    private Settings settingsUser;
     private CompleteNotesPanel completeNotesView = new CompleteNotesPanel();
     private Help helpView = new Help();
-    private Settings settingsView = new Settings();
+    private SettingsView settingsView = new SettingsView();
     private ThemeData themeData = new ThemeData();
     private CntrlPendingPanel cntrlPendingPanel;
     private CntrlSettings cntrlSettings;
     private Theme themeApp;
+    private ArrayList<Settings> settingsList = new ArrayList<Settings>();
     
 
     public CntrlMain(MainView mainView){
@@ -41,19 +44,24 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         this.mainView = mainView;
         
         
-
-       try{
-            boolean themeDark = daoSettings.getTheme();
-            if(themeDark){
+       
+       DAOSettings daoSettings = new DAOSettings();
+        try {
+            settingsList = daoSettings.query(null);
+            settingsUser = settingsList.get(0);
+            if(settingsUser.isThemeDark()){
                 themeApp = themeData.getDarkTheme();
             }else{
                 themeApp = themeData.getLightTheme();
-            }
-            darkThemeOn = themeDark;
-        }catch(SQLException ex){
-            System.err.println(ex);
+           }
+            
+            System.out.println(settingsUser.getPriorityOrder() );
+            
+        } catch (SQLException ex) {
+            //Cuando ocurra cualquier error con la base de datos, que cree un objeto settings con estos valores
+            settingsUser = new Settings(true,0);
+            ex.printStackTrace();
         }
-        
         
         
         if(cntrlPendingPanel == null){
@@ -201,7 +209,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         return mainView;
     }
 
-    public Settings getSettingsView() {
+    public SettingsView getSettingsView() {
         return settingsView;
     }
 
@@ -221,13 +229,11 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         this.cntrlPendingPanel = cntrlPendingPanel;
     }
 
-    public boolean isDarkThemeOn() {
-        return darkThemeOn;
+    public Settings getSettingsUser() {
+        return settingsUser;
     }
 
-    public void setDarkThemeOn(boolean darkThemeOn) {
-        this.darkThemeOn = darkThemeOn;
-    }
+    
     
     
     
@@ -244,7 +250,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         
         
         //Comprobación para seleccionar que logo usar cuando se cambie el darktheme
-        if(darkThemeOn){
+        if(settingsUser.isThemeDark()){
             this.mainView.getLogo().setIcon(new ImageIcon(getClass().getResource("/resources/LogoMakr (1).png")));
         }
        

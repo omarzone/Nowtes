@@ -63,7 +63,7 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         //Realizamos la consulta a la base de datos
         DAONote daoNote = new DAONote();
         try {
-            notesList = daoNote.query(null);
+            notesList = daoNote.query("status = false");
         } catch (Exception e) {
             e.printStackTrace();
         }

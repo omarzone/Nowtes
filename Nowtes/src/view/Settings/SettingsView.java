@@ -13,12 +13,12 @@ import javax.swing.JRadioButton;
  *
  * @author polilxd
  */
-public class Settings extends javax.swing.JPanel {
+public class SettingsView extends javax.swing.JPanel {
 
     /**
      * Creates new form Settings
      */
-    public Settings() {
+    public SettingsView() {
         initComponents();
     }
 

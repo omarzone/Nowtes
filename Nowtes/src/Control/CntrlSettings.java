@@ -6,11 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-
 public class CntrlSettings implements ActionListener {
-    
+
     private CntrlMain cntrlMain;
     private DAOSettings daoSetting = new DAOSettings();
+
     public CntrlSettings(CntrlMain cntrlMain) {
         System.out.println("Controlador CntrlSettings inicializado");
         this.cntrlMain = cntrlMain;
@@ -18,15 +18,18 @@ public class CntrlSettings implements ActionListener {
         cntrlMain.getSettingsView().getBtnDeleteData().addActionListener(this);
         cntrlMain.getSettingsView().getBtnDarkTheme().addActionListener(this);
         cntrlMain.getSettingsView().getCbmPriority().addActionListener(this);
-        
-        cntrlMain.getSettingsView().getBtnDarkTheme().setSelected(cntrlMain.isDarkThemeOn());
-        
+
+        cntrlMain.getSettingsView().getBtnDarkTheme().setSelected(cntrlMain.getSettingsUser().isThemeDark());
+
         //seteamos el Texto del darkThemeSettings
-        if(cntrlMain.isDarkThemeOn()){
+        if (cntrlMain.getSettingsUser().isThemeDark()) {
             cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");
-        }else{
+        } else {
             cntrlMain.getSettingsView().getBtnDarkTheme().setText("Desactivado");
         }
+
+        //Seteamos el valor del priority
+        cntrlMain.getSettingsView().getCbmPriority().setSelectedIndex(cntrlMain.getSettingsUser().getPriorityOrder());
 
     }
 
@@ -34,32 +37,52 @@ public class CntrlSettings implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (cntrlMain.getSettingsView().getBtnDeleteData() == e.getSource()) {
-            System.out.println("Datos borrados");
+            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro de borrar todos los datos?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                
+                //Realizamos la consulta para borrar todos los elementos
+                try {
+                    daoSetting.DeleteAll();
+                } catch (Exception exep) {
+                    exep.printStackTrace();
+                }
+
+            }
         }
 
         if (cntrlMain.getSettingsView().getBtnDarkTheme() == e.getSource()) {
-            
-           if(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected()){
-               cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");
-               
-               try{
-                   daoSetting.modify(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected());
-               }catch(SQLException ex){
-                   System.out.println(ex);
-               }
-               
-           }else{
-               cntrlMain.getSettingsView().getBtnDarkTheme().setText("Desactivado");
-               try{
-                   daoSetting.modify(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected());
-               }catch(Exception ex){
-                   System.out.println(ex);
-               }
-           }
+
+            if (cntrlMain.getSettingsView().getBtnDarkTheme().isSelected()) {
+                cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");
+
+                try {
+                    daoSetting.modifySpecific("darktheme", cntrlMain.getSettingsView().getBtnDarkTheme().isSelected());
+                } catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+
+            } else {
+                cntrlMain.getSettingsView().getBtnDarkTheme().setText("Desactivado");
+                try {
+                    daoSetting.modifySpecific("darktheme", cntrlMain.getSettingsView().getBtnDarkTheme().isSelected());
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
+            }
         }
 
         if (cntrlMain.getSettingsView().getCbmPriority() == e.getSource()) {
-            System.out.println("Prioridad actualizada");
+           boolean value;
+           if(cntrlMain.getSettingsView().getCbmPriority().getSelectedIndex() == 0){
+               value = false;
+           }else{
+               value= true;
+           }
+            try {
+                daoSetting.modifySpecific("priorityorder",value);
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
         }
 
     }
