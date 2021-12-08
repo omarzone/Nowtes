@@ -18,6 +18,15 @@ public class CntrlSettings implements ActionListener {
         cntrlMain.getSettingsView().getBtnDeleteData().addActionListener(this);
         cntrlMain.getSettingsView().getBtnDarkTheme().addActionListener(this);
         cntrlMain.getSettingsView().getCbmPriority().addActionListener(this);
+        
+        cntrlMain.getSettingsView().getBtnDarkTheme().setSelected(cntrlMain.isDarkThemeOn());
+        
+        //seteamos el Texto del darkThemeSettings
+        if(cntrlMain.isDarkThemeOn()){
+            cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");
+        }else{
+            cntrlMain.getSettingsView().getBtnDarkTheme().setText("Desactivado");
+        }
 
     }
 
@@ -29,6 +38,7 @@ public class CntrlSettings implements ActionListener {
         }
 
         if (cntrlMain.getSettingsView().getBtnDarkTheme() == e.getSource()) {
+            
            if(cntrlMain.getSettingsView().getBtnDarkTheme().isSelected()){
                cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");
                

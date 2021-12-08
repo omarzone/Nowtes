@@ -153,10 +153,10 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
                 PendingNotesItem noteItemView = new PendingNotesItem();
                 CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain, noteItemView, note);
                 gridNotePanel.add(noteItemView);
-                System.out.println(note.getTitle());
+                //System.out.println(note.getTitle());
 
             }
-            System.out.println(searchResults.size());
+            //System.out.println(searchResults.size());
              //seteamos la vista que estara dentro del scroll
             scrollListNotes.setViewportView(gridNotePanel);
             this.searchPanelView = new SearchPanel(); 

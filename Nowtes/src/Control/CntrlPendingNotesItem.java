@@ -5,9 +5,11 @@ import Model.Note;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JOptionPane;
 import view.AlertDialog.AlertDialog;
 import view.PendingNotes.PendingNotesItem;
 import view.EditNote.EditNote;
+import view.PendingNotes.PendingNotesPanel;
 import view.ViewCompleteNote.ViewCompleteNote;
 
 public class CntrlPendingNotesItem implements MouseListener {
@@ -16,8 +18,6 @@ public class CntrlPendingNotesItem implements MouseListener {
     private EditNote editNotePanel = new EditNote();
     private PendingNotesItem pendingNotesItemView;
     private Note note;
-    private AlertDialog alertDialog = new AlertDialog();
-    private CntrlAlertDialog cntrlAlertDialog;
     private ViewCompleteNote viewCompleteNote = new ViewCompleteNote();
     private CntrlViewCompleteNote cntrlViewCompleteNote;
     private CntrlEditNote cntrlEditNote;
@@ -36,7 +36,7 @@ public class CntrlPendingNotesItem implements MouseListener {
         pendingNotesItemView.getBtnDeleteNote().addMouseListener(this);
 
     }
-    
+
     public EditNote getEditNotePanel() {
         return editNotePanel;
     }
@@ -48,7 +48,7 @@ public class CntrlPendingNotesItem implements MouseListener {
     public CntrlEditNote getCntrlEditNote() {
         return cntrlEditNote;
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent e) {
         if (pendingNotesItemView.getBtnEditNote() == e.getSource()) {
@@ -65,36 +65,44 @@ public class CntrlPendingNotesItem implements MouseListener {
 
         if (pendingNotesItemView.getBtnViewNote() == e.getSource()) {
 
-
-            if(cntrlViewCompleteNote == null){
-                cntrlViewCompleteNote = new CntrlViewCompleteNote(cntrlMain,viewCompleteNote, note, this);
+            if (cntrlViewCompleteNote == null) {
+                cntrlViewCompleteNote = new CntrlViewCompleteNote(cntrlMain, viewCompleteNote, note, this);
             }
             cntrlMain.getMainView().getMainContent().removeAll();
             cntrlMain.getMainView().getMainContent().add(viewCompleteNote);
             cntrlMain.getMainView().getMainContent().repaint();
             cntrlMain.getMainView().getMainContent().revalidate();
-            System.out.println("Accion del boton ViewNote: " + pendingNotesItemView.getNote_title().getText());
+            //System.out.println("Accion del boton ViewNote: " + pendingNotesItemView.getNote_title().getText());
 
         }
 
         if (pendingNotesItemView.getBtnDeleteNote() == e.getSource()) {
-            if (cntrlAlertDialog == null) {
-
-                cntrlAlertDialog = new CntrlAlertDialog(alertDialog);
-
-            }
+       
             String condition;
             condition = " id = " + note.getId();
-//            DAONote daoCliente = new DAONote();
-//            try {
-//                daoCliente.delete(condition);
-//            } catch (Exception exep) {
-//                exep.printStackTrace();
-//            }
 
-            alertDialog.setVisible(true);
-            alertDialog.setLocationRelativeTo(null);
-            System.out.println("Accion del boton DeleteNote: " + pendingNotesItemView.getNote_title().getText());;
+            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro de que quiere borrar esta nota?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                
+                //Realizamos la consulta para borrar el elemento
+                DAONote daoCliente = new DAONote();
+                try {
+                    daoCliente.delete(condition);
+                } catch (Exception exep) {
+                    exep.printStackTrace();
+                }
+                
+                //Regeneramos el panel
+                PendingNotesPanel newPendingNotesPanel = new PendingNotesPanel();
+                cntrlMain.setCntrlPendingPanel(new CntrlPendingPanel(cntrlMain, newPendingNotesPanel));
+                    
+                cntrlMain.setPendingNotesView(newPendingNotesPanel);
+                cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
+            }
+
+            //alertDialog.setVisible(true);
+            //alertDialog.setLocationRelativeTo(null);
+            //System.out.println("Accion del boton DeleteNote: " + pendingNotesItemView.getNote_title().getText());;
 
         }
     }

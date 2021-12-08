@@ -212,6 +212,23 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     public Theme getThemeApp() {
         return themeApp;
     }
+
+    public CntrlPendingPanel getCntrlPendingPanel() {
+        return cntrlPendingPanel;
+    }
+
+    public void setCntrlPendingPanel(CntrlPendingPanel cntrlPendingPanel) {
+        this.cntrlPendingPanel = cntrlPendingPanel;
+    }
+
+    public boolean isDarkThemeOn() {
+        return darkThemeOn;
+    }
+
+    public void setDarkThemeOn(boolean darkThemeOn) {
+        this.darkThemeOn = darkThemeOn;
+    }
+    
     
     
     private void setTheme(){

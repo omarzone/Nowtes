@@ -56,7 +56,6 @@ public class CntrlSearchPanel implements ActionListener, MouseListener {
     public void mouseClicked(MouseEvent e) {
          if (searchPanelView.getBtnBack() == e.getSource()) {
                 cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
-                System.out.println("xd");
         }
     }
 
