@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ListCellRenderer;
 
@@ -189,7 +190,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         add(ActionsPanel);
     }// </editor-fold>//GEN-END:initComponents
         @Override
-     protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Dimension arcs = new Dimension(15,15); //Border corners arcs {width,height}, change this to whatever you want
         int width = getWidth();
@@ -248,6 +249,11 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
     public JLabel getNote_title() {
         return note_title;
     }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+    
     
     
     

@@ -332,7 +332,7 @@ public class MainView extends javax.swing.JFrame {
         return WindowActions;
     }
 
-    public JLabel getjLabel5() {
+    public JLabel getTitleApp() {
         return titleApp;
     }
 
