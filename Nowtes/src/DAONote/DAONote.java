@@ -91,7 +91,7 @@ public class DAONote extends DAOMain<Note> {
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(orden);
         while (rs.next()) {
-            e = new Note(rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("autoDelete"),rs.getBoolean("status"));
+            e = new Note(rs.getInt("id"),rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("autoDelete"),rs.getBoolean("status"));
             list.add(e);
         }
         statement.close();

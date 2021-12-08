@@ -103,7 +103,7 @@ public class AddNote extends javax.swing.JPanel {
         txtDescripcion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
         txtDescripcion.setRows(5);
-        txtDescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
+        txtDescripcion.setBorder(null);
         jScrollPane2.setViewportView(txtDescripcion);
 
         roundedInnerPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 680, 230));

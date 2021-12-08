@@ -144,7 +144,13 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
             gridLayoutNotes.setColumns(1);
             gridLayoutNotes.setVgap(15);
             gridLayoutNotes.setRows(searchResults.size());
-
+            gridNotePanel.setOpaque(false);
+            
+            if(cntrlMain.isDarkThemeOn()){
+                gridNotePanel.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+                scrollListNotes.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+            }
+            
             gridNotePanel.setLayout(gridLayoutNotes);
             for (Note note : searchResults) {
 
