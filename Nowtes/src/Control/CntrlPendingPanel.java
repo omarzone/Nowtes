@@ -2,8 +2,6 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -189,7 +187,7 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
+     
     
 
 }

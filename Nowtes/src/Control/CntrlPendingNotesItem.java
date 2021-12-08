@@ -29,6 +29,9 @@ public class CntrlPendingNotesItem implements MouseListener {
         this.note = note;
         //Seteamos data en la vista
         setData();
+        //Seteamos el tema de la aplicación
+        setTheme();
+        
 
         //Inicializamos los listeners
         pendingNotesItemView.getBtnEditNote().addMouseListener(this);
@@ -142,4 +145,19 @@ public class CntrlPendingNotesItem implements MouseListener {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
+    
+    
+    private void setTheme(){
+        //Cambios relacionados con el tema de la aplicación de la vista principal
+        this.pendingNotesItemView.getjScrollPane1().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        this.pendingNotesItemView.getNote_title().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.pendingNotesItemView.getNote_date().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
+        this.pendingNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getMEDIUM_STATUS());
+        pendingNotesItemView.getjScrollPane1().setOpaque(false);
+        pendingNotesItemView.getjScrollPane1().getViewport().setOpaque(false);
+       
+        
+       
+    }
 }
