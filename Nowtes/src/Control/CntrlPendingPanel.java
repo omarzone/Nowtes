@@ -2,6 +2,7 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,12 +33,9 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         System.out.println("Controlador CntrlPendingPanel inicializado");
         this.pendingNotesView = pendingNotesView;
         this.cntrlMain = cntrlMain;
-        
-        
-        this.cntrlAddNote = new  CntrlAddNote(this,cntrlMain);
-        
 
-        
+        this.cntrlAddNote = new CntrlAddNote(this, cntrlMain);
+
         pendingNotesView.getBtnAddNote().addActionListener(this);
         pendingNotesView.getBtnSearch().addMouseListener(this);
         //Nuevo
@@ -67,7 +65,7 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         //Creamos el scroll y seteamos propiedades
         JScrollPane scrollListNotes = new JScrollPane();
         scrollListNotes.setOpaque(false);
@@ -83,30 +81,24 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         GridLayout gridLayoutNotes = new GridLayout();
         gridLayoutNotes.setColumns(1);
         gridLayoutNotes.setVgap(15);
-        
+
         gridLayoutNotes.setRows(notesList.size());
-        
-        
 
         gridNotePanel.setLayout(gridLayoutNotes);
-        
-        
 
         //Por cada item en el arraylist, agregamos un row al gridNotePanel
         for (Note note : notesList) {
-            
+
             PendingNotesItem noteItemView = new PendingNotesItem();
             noteItemView.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
-            CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain,noteItemView,note);
+            CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain, noteItemView, note);
             gridNotePanel.add(noteItemView);
-            
+
         }
-        
-        
-        
+
         //seteamos la vista que estara dentro del scroll
         scrollListNotes.setViewportView(gridNotePanel);
-        
+
         //Agregamos el scroll al ContentPanel
         pendingNotesView.getContentPanel().add(scrollListNotes);
     }
@@ -117,7 +109,7 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        
+
         if (pendingNotesView.getBtnSearch() == e.getSource()) {
 
             ArrayList<Note> searchResults = new ArrayList<Note>();
@@ -145,32 +137,35 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
             gridLayoutNotes.setVgap(15);
             gridLayoutNotes.setRows(searchResults.size());
             gridNotePanel.setOpaque(false);
-            
-            if(cntrlMain.isDarkThemeOn()){
+
+            if (cntrlMain.getSettingsUser().isThemeDark()) {
                 gridNotePanel.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
                 scrollListNotes.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
             }
-            
+
             gridNotePanel.setLayout(gridLayoutNotes);
             for (Note note : searchResults) {
 
                 PendingNotesItem noteItemView = new PendingNotesItem();
+                if (cntrlMain.getSettingsUser().isThemeDark()) {
+                    noteItemView.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+                }
                 CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain, noteItemView, note);
                 gridNotePanel.add(noteItemView);
                 //System.out.println(note.getTitle());
 
             }
             //System.out.println(searchResults.size());
-             //seteamos la vista que estara dentro del scroll
+            //seteamos la vista que estara dentro del scroll
             scrollListNotes.setViewportView(gridNotePanel);
-            this.searchPanelView = new SearchPanel(); 
+            this.searchPanelView = new SearchPanel();
             //Agregamos el scroll al ContentPanel
             searchPanelView.getContentPanel().add(scrollListNotes);
-            searchPanelView.getResultsLabel().setText("Resultados de: "+ searchTitle);
+            searchPanelView.getResultsLabel().setText("Resultados de: " + searchTitle);
             CntrlSearchPanel cntrlSearchPanel = new CntrlSearchPanel(cntrlMain, searchPanelView);
             cntrlMain.switchPanels(searchPanelView);
         }
-        
+
     }
 
     @Override
@@ -185,15 +180,12 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-     
-    
 
 }

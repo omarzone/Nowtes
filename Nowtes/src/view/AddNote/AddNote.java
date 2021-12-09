@@ -25,7 +25,7 @@ public class AddNote extends javax.swing.JPanel {
         HeadPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
-        roundedInnerPanel = new view.components.RoundedBorders();
+        roundedInnePanel = new view.components.RoundedBorders();
         lblPriority = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         lblDescription = new javax.swing.JLabel();
@@ -81,22 +81,22 @@ public class AddNote extends javax.swing.JPanel {
         lblPriority.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPriority.setForeground(new java.awt.Color(0, 0, 0));
         lblPriority.setText("Prioridad:");
-        roundedInnerPanel.add(lblPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+        roundedInnePanel.add(lblPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(0, 0, 0));
         lblTitle.setText("Título:");
-        roundedInnerPanel.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        roundedInnePanel.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         lblDescription.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(0, 0, 0));
         lblDescription.setText("Descripción:");
-        roundedInnerPanel.add(lblDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        roundedInnePanel.add(lblDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         lblDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblDate.setForeground(new java.awt.Color(0, 0, 0));
         lblDate.setText("Fecha:");
-        roundedInnerPanel.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
+        roundedInnePanel.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
         txtDescripcion.setBackground(new java.awt.Color(130, 156, 188));
         txtDescripcion.setColumns(20);
@@ -106,50 +106,50 @@ public class AddNote extends javax.swing.JPanel {
         txtDescripcion.setBorder(null);
         jScrollPane2.setViewportView(txtDescripcion);
 
-        roundedInnerPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 680, 230));
+        roundedInnePanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 680, 230));
 
         txtTitulo.setBackground(new java.awt.Color(130, 156, 188));
         txtTitulo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
         txtTitulo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
-        roundedInnerPanel.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 680, 40));
+        roundedInnePanel.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 680, 40));
 
         cmbPriority.setBackground(new java.awt.Color(130, 156, 188));
         cmbPriority.setForeground(new java.awt.Color(255, 255, 255));
         cmbPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "baja", "media", "alta" }));
         cmbPriority.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
-        roundedInnerPanel.add(cmbPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
+        roundedInnePanel.add(cmbPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
 
         optionDate.setBackground(new java.awt.Color(130, 156, 188));
-        roundedInnerPanel.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 110, -1));
+        roundedInnePanel.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 110, -1));
 
         cbEndedTask.setForeground(new java.awt.Color(0, 0, 0));
         cbEndedTask.setText("Borrar la tarea al cambiar el estado por \"Finalizada\"     ");
-        roundedInnerPanel.add(cbEndedTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, -1, -1));
+        roundedInnePanel.add(cbEndedTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, -1, -1));
 
         btnGuardar.setBackground(new java.awt.Color(31, 72, 126));
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
         btnGuardar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedInnerPanel.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 80, 30));
+        roundedInnePanel.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 80, 30));
 
         btnCancelar.setBackground(new java.awt.Color(254, 91, 107));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setText("Cancelar");
         btnCancelar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedInnerPanel.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 80, 30));
+        roundedInnePanel.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 80, 30));
 
         txtErrTitleField.setForeground(new java.awt.Color(255, 51, 51));
-        roundedInnerPanel.add(txtErrTitleField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 50, 90, 20));
-        roundedInnerPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 60, 50, 20));
+        roundedInnePanel.add(txtErrTitleField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 50, 90, 20));
+        roundedInnePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 60, 50, 20));
 
         txtErrDescriptionField.setForeground(new java.awt.Color(255, 0, 0));
-        roundedInnerPanel.add(txtErrDescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 90, 30));
+        roundedInnePanel.add(txtErrDescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 90, 30));
 
         txtErrDateField.setForeground(new java.awt.Color(255, 0, 0));
-        roundedInnerPanel.add(txtErrDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 20));
+        roundedInnePanel.add(txtErrDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 20));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
@@ -157,14 +157,14 @@ public class AddNote extends javax.swing.JPanel {
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContentPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(roundedInnerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1012, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roundedInnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1012, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         ContentPanelLayout.setVerticalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(roundedInnerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roundedInnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
@@ -209,7 +209,7 @@ public class AddNote extends javax.swing.JPanel {
     private javax.swing.JLabel lblPriority;
     private javax.swing.JLabel lblTitle;
     private com.toedter.calendar.JDateChooser optionDate;
-    private view.components.RoundedBorders roundedInnerPanel;
+    private view.components.RoundedBorders roundedInnePanel;
     private javax.swing.JTextArea txtDescripcion;
     private javax.swing.JLabel txtErrDateField;
     private javax.swing.JLabel txtErrDescriptionField;
@@ -258,7 +258,7 @@ public class AddNote extends javax.swing.JPanel {
     }
 
     public RoundedBorders getRoundedInnerPanel() {
-        return roundedInnerPanel;
+        return roundedInnePanel;
     }
 
     public JLabel getLblDate() {

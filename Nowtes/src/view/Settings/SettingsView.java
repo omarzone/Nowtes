@@ -7,7 +7,9 @@ package view.Settings;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import view.components.RoundedBorders;
 
 /**
  *
@@ -34,11 +36,11 @@ public class SettingsView extends javax.swing.JPanel {
         HeadPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
-        roundedBorders1 = new view.components.RoundedBorders();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        roundedInnePanel = new view.components.RoundedBorders();
+        txtDeleteData2 = new javax.swing.JLabel();
+        txtTheme = new javax.swing.JLabel();
+        txtMethod = new javax.swing.JLabel();
+        txtDeleteData = new javax.swing.JLabel();
         btnDeleteData = new javax.swing.JButton();
         cbmPriority = new javax.swing.JComboBox<>();
         btnDarkTheme = new javax.swing.JRadioButton();
@@ -76,27 +78,27 @@ public class SettingsView extends javax.swing.JPanel {
         ContentPanel.setBackground(new java.awt.Color(255, 255, 255));
         ContentPanel.setOpaque(false);
 
-        jLabel2.setText("Esta opcion eliminará todas las notas guardadas");
-        roundedBorders1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        txtDeleteData2.setText("Esta opcion eliminará todas las notas guardadas");
+        roundedInnePanel.add(txtDeleteData2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Tema oscuro");
-        roundedBorders1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        txtTheme.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtTheme.setText("Tema oscuro");
+        roundedInnePanel.add(txtTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Método para priorizar notas");
-        roundedBorders1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        txtMethod.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtMethod.setText("Método para priorizar notas");
+        roundedInnePanel.add(txtMethod, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Borrar datos");
-        roundedBorders1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        txtDeleteData.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtDeleteData.setText("Borrar datos");
+        roundedInnePanel.add(txtDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         btnDeleteData.setBackground(new java.awt.Color(254, 91, 107));
         btnDeleteData.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnDeleteData.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteData.setText("Borrar datos ");
         btnDeleteData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedBorders1.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 40));
+        roundedInnePanel.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 40));
 
         cbmPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prioridad", "Fecha" }));
         cbmPriority.addActionListener(new java.awt.event.ActionListener() {
@@ -104,10 +106,10 @@ public class SettingsView extends javax.swing.JPanel {
                 cbmPriorityActionPerformed(evt);
             }
         });
-        roundedBorders1.add(cbmPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        roundedInnePanel.add(cbmPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         btnDarkTheme.setText("Desactivado");
-        roundedBorders1.add(btnDarkTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        roundedInnePanel.add(btnDarkTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
@@ -115,13 +117,13 @@ public class SettingsView extends javax.swing.JPanel {
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roundedInnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         ContentPanelLayout.setVerticalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentPanelLayout.createSequentialGroup()
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roundedInnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(83, 83, 83))
         );
 
@@ -139,12 +141,12 @@ public class SettingsView extends javax.swing.JPanel {
     private javax.swing.JRadioButton btnDarkTheme;
     private javax.swing.JButton btnDeleteData;
     private javax.swing.JComboBox<String> cbmPriority;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private view.components.RoundedBorders roundedBorders1;
+    private view.components.RoundedBorders roundedInnePanel;
+    private javax.swing.JLabel txtDeleteData;
+    private javax.swing.JLabel txtDeleteData2;
+    private javax.swing.JLabel txtMethod;
+    private javax.swing.JLabel txtTheme;
     // End of variables declaration//GEN-END:variables
     
     public JRadioButton getBtnDarkTheme() {
@@ -157,6 +159,26 @@ public class SettingsView extends javax.swing.JPanel {
 
     public JComboBox<String> getCbmPriority() {
         return cbmPriority;
+    }
+
+    public RoundedBorders getRoundedInnePanel() {
+        return roundedInnePanel;
+    }
+
+    public JLabel getTxtDeleteData() {
+        return txtDeleteData;
+    }
+
+    public JLabel getTxtDeleteData2() {
+        return txtDeleteData2;
+    }
+
+    public JLabel getTxtMethod() {
+        return txtMethod;
+    }
+
+    public JLabel getTxtTheme() {
+        return txtTheme;
     }
 
     

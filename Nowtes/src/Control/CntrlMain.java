@@ -44,7 +44,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         this.mainView = mainView;
         
         
-       
+       //Inicializa los settings desde la base de datos
        DAOSettings daoSettings = new DAOSettings();
         try {
             settingsList = daoSettings.query(null);

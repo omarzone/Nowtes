@@ -115,10 +115,10 @@ public class CntrlPendingNotesItem implements MouseListener {
         pendingNotesItemView.getNote_description().setText(note.getDescription());
 
         if (note.isStatus()) {
-            pendingNotesItemView.getNote_status().setText("En proceso");
+            pendingNotesItemView.getNote_status().setText("Finalizado");
             pendingNotesItemView.getNote_status().setBackground(new Color(245, 223, 83));
         } else {
-            pendingNotesItemView.getNote_status().setText("Finalizado");
+            pendingNotesItemView.getNote_status().setText("En proceso");
             pendingNotesItemView.getNote_status().setBackground(new Color(153, 212, 172));
         }
 
@@ -160,7 +160,7 @@ public class CntrlPendingNotesItem implements MouseListener {
         this.pendingNotesItemView.getLblDate().setForeground(cntrlMain.getThemeApp().getFONT());
         this.pendingNotesItemView.getLblStatus().setForeground(cntrlMain.getThemeApp().getFONT());
         
-        if(cntrlMain.isDarkThemeOn()){
+        if(cntrlMain.getSettingsUser().isThemeDark()){
             this.pendingNotesItemView.getNote_title().setForeground(cntrlMain.getThemeApp().getWHITE());
             this.pendingNotesItemView.getNote_description().setForeground(cntrlMain.getThemeApp().getWHITE());
             this.pendingNotesItemView.getBtnEditNote().setIcon(new ImageIcon(getClass().getResource("/resources/edit_black.png")));
