@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import view.MainView;
 import view.SplashScreen.Splash;
+import Control.CntrlMain;
 
 /**
  *
@@ -19,10 +20,11 @@ public class CntrlSplashScreen implements Runnable{
     
     private Thread tiempo = null;
     private Splash splashScreen;
+    private CntrlMain cntrlMain;
     
-    public CntrlSplashScreen(Splash splashScreen){
+    public CntrlSplashScreen(Splash splashScreen, CntrlMain cntrlMain){
         this.splashScreen = splashScreen;
-        
+        this.cntrlMain = cntrlMain;
         splashScreen.setLocationRelativeTo(null);
         splashScreen.setVisible(true);
         tiempo = new Thread(this);
@@ -33,10 +35,9 @@ public class CntrlSplashScreen implements Runnable{
     public void run() {
        try {
                 Thread.sleep(750);
-                MainView mainView = new MainView();
-                CntrlMain cntrlMain = new CntrlMain(mainView);
-                mainView.setVisible(true);
-                mainView.setLocationRelativeTo(null);
+                
+                cntrlMain.getMainView().setVisible(true);
+                cntrlMain.getMainView().setLocationRelativeTo(null);
                 this.splashScreen.dispose();
             } catch (InterruptedException ex) {
                 Logger.getLogger(CntrlSplashScreen.class.getName()).log(Level.SEVERE, null, ex);

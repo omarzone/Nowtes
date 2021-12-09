@@ -8,6 +8,14 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import view.AddNote.AddNote;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import view.PendingNotes.PendingNotesPanel;
 
@@ -60,48 +68,69 @@ public class CntrlAddNote implements ActionListener {
     
     
     public void validateFields(AddNote addNotePanel){
-        boolean hasTitle = false;
-          boolean hasDescription = false;
-          boolean hasDeadLine = false;
-          String title = "";
-          String description = "";
-          SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
-          int prioritySelected =  addNotePanel.getCmbPriority().getSelectedIndex();
-          boolean deleteEndTaskOption = addNotePanel.getCbEndedTask().isSelected();
-          String date = "";
+        
+        int prioritySelected =  addNotePanel.getCmbPriority().getSelectedIndex();
+        boolean deleteEndTaskOption = addNotePanel.getCbEndedTask().isSelected();
           
           
           
-           if(addNotePanel.getTxtTitulo().getText().equals("")){
-               addNotePanel.getTxtErrTitleField().setText("Rellenar campo");
-               hasTitle = false;
-           }else{
-               title = addNotePanel.getTxtTitulo().getText();
-               addNotePanel.getTxtErrTitleField().setText(null);
-               hasTitle = true;
-           }
+            //Validate Title
+            boolean hasTitle = false;
+            String title = "";
+
+            if (addNotePanel.getTxtTitulo().getText().equals("")) {
+                addNotePanel.getTxtErrTitleField().setText("Rellenar campo");
+                hasTitle = false;
+            } else {
+                title = addNotePanel.getTxtTitulo().getText();
+                addNotePanel.getTxtErrTitleField().setText(null);
+                hasTitle = true;
+            }
+
+            //ValidateDescription
+            boolean hasDescription = false;
+            String description = "";
+
+            if (addNotePanel.getTxtDescripcion().getText().equals("")) {
+                addNotePanel.getTxtErrDescriptionField().setText("Rellenar campo");
+                hasDescription = false;
+            } else {
+                description = addNotePanel.getTxtDescripcion().getText();
+                addNotePanel.getTxtErrDescriptionField().setText(null);
+                hasDescription = true;
+            }
+
+            //ValidateDate
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String date = "";
+            Calendar cal = Calendar.getInstance();
+            Date actualDate;
+            Date realDate = new Date();
            
-           if(addNotePanel.getTxtDescripcion().getText().equals("")){
-               addNotePanel.getTxtErrDescriptionField().setText("Rellenar campo");
-               hasDescription = false;
-           }else{
-               description = addNotePanel.getTxtDescripcion().getText();
-               addNotePanel.getTxtErrDescriptionField().setText(null);
-               hasDescription = true;
-           }
-           
-           try{
-                date = dcn.format(addNotePanel.getOptionDate().getDate());
-                //System.out.println(date);    
+            
+            boolean hasDeadLine = false;
+
+            try {
+                actualDate = addNotePanel.getOptionDate().getDate();
+                date = dateFormat.format(addNotePanel.getOptionDate().getDate());
                 hasDeadLine = true;
-                if(date != null){
+                if (date != null) {
                     addNotePanel.getTxtErrDateField().setText("");
                 }
-           }catch(NullPointerException ex){
-               addNotePanel.getTxtErrDateField().setText("Rellenar campo");
-               hasDeadLine = false;
-           }
-           
+                if(actualDate.compareTo(realDate) < 0){
+                    hasDeadLine = false;
+                    addNotePanel.getTxtErrDateField().setText("No ingrese fechas antes de la actual");
+                 }
+            } catch (NullPointerException ex) {
+                addNotePanel.getTxtErrDateField().setText("Rellenar campo");
+                hasDeadLine = false;
+            }
+            
+            //Validar que no se ponga una fecha antes de la actual.
+            
+            
+            
+
            //System.out.println(date);
            
            if(hasTitle && hasDescription && hasDeadLine){
@@ -117,7 +146,6 @@ public class CntrlAddNote implements ActionListener {
                     
                }catch(SQLException ex){
                    JOptionPane.showMessageDialog(addNotePanel, "Hubo un error con el guardado de la nota");
-                   System.err.println(ex);
                }
                
            }
@@ -141,6 +169,10 @@ public class CntrlAddNote implements ActionListener {
         this.addNotePanel.getCbEndedTask().setForeground(cntrlMain.getThemeApp().getFONT());
         this.addNotePanel.getOptionDate().setOpaque(false);
     }
+    
+    
+    
+    
 }
 
 

@@ -34,7 +34,6 @@ public class CntrlSearchPanel implements ActionListener, MouseListener {
         
         
         searchPanelView.getBtnBack().addMouseListener(this);
-
         //Nuevo
         
     }

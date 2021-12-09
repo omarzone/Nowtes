@@ -71,6 +71,9 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
             }
         
         setTheme();
+        
+       
+        
        
         
         mainView.getMainContent().add(pendingNotesView);
