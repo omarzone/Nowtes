@@ -144,7 +144,7 @@ public class CntrlEditNote implements ActionListener {
         this.editNotePanel.getLblDescription().setForeground(cntrlMain.getThemeApp().getFONT());
         this.editNotePanel.getLblPriority().setForeground(cntrlMain.getThemeApp().getFONT());
         
-        if(cntrlMain.isDarkThemeOn()){
+        if(cntrlMain.getSettingsUser().isThemeDark()){
            this.editNotePanel.getTxtTitulo().setBackground(new Color(48, 49, 52));
            this.editNotePanel.getTxtDescripcion().setBackground(new Color(48, 49, 52));
            this.editNotePanel.getCmbPriority().setBackground(new Color(48, 49, 52));

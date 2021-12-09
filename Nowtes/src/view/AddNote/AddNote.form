@@ -126,7 +126,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="roundedInnerPanel" min="-2" pref="1012" max="-2" attributes="0"/>
+                      <Component id="roundedInnePanel" min="-2" pref="1012" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -135,14 +135,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="roundedInnerPanel" min="-2" pref="564" max="-2" attributes="0"/>
+                      <Component id="roundedInnePanel" min="-2" pref="564" max="-2" attributes="0"/>
                       <EmptySpace pref="73" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="view.components.RoundedBorders" name="roundedInnerPanel">
+            <Container class="view.components.RoundedBorders" name="roundedInnePanel">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>

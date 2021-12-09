@@ -1,44 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
-/**
- *
- * @author polilxd
- */
+
 public class Settings {
     
-    boolean Theme = false;
-    int priorityTask = 0;
+    boolean themeDark;
+    int priorityOrder;
+    
+    
+
+    public Settings(boolean themeDark, int priorityOrder) {
+        this.themeDark = themeDark;
+        this.priorityOrder = priorityOrder;
+    }
+    
+
+    public boolean isThemeDark() {
+        return themeDark;
+    }
+
+    public void setThemeDark(boolean themeDark) {
+        this.themeDark = themeDark;
+    }
+
+    public int getPriorityOrder() {
+        return priorityOrder;
+    }
+
+    public void setPriorityOrder(int priorityOrder) {
+        this.priorityOrder = priorityOrder;
+    }
    
     
-    public Settings(){
-          
-    }
-    
-    public boolean getTheme(){
-       
-        return this.Theme;
-    }
-    
-    public void setTheme(boolean Theme){
-       
-        this.Theme = Theme;
-        
-    }
-    
-    public void setPriorityTask(int priorityTask){
-        
-        this.priorityTask = priorityTask;
-        
-    }
-    
-    public int getPriorityTask(){
-      
-        return this.priorityTask;
-    }
+  
     
 }

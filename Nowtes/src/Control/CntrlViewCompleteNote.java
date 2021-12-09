@@ -71,7 +71,7 @@ public class CntrlViewCompleteNote implements ActionListener {
         
         
         
-        if(cntrlMain.isDarkThemeOn()){
+        if(cntrlMain.getSettingsUser().isThemeDark()){
            this.viewCompleteNote.getNote_date().setForeground(cntrlMain.getThemeApp().getWHITE());
            this.viewCompleteNote.getNote_title().setForeground(cntrlMain.getThemeApp().getWHITE());
            this.viewCompleteNote.getNote_id().setForeground(cntrlMain.getThemeApp().getWHITE());

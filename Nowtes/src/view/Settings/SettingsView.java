@@ -15,12 +15,12 @@ import view.components.RoundedBorders;
  *
  * @author polilxd
  */
-public class Settings extends javax.swing.JPanel {
+public class SettingsView extends javax.swing.JPanel {
 
     /**
      * Creates new form Settings
      */
-    public Settings() {
+    public SettingsView() {
         initComponents();
     }
 
@@ -98,7 +98,7 @@ public class Settings extends javax.swing.JPanel {
         btnDeleteData.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteData.setText("Borrar datos ");
         btnDeleteData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
-        roundedInnePanel.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 130, 40));
+        roundedInnePanel.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 40));
 
         cbmPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prioridad", "Fecha" }));
         cbmPriority.addActionListener(new java.awt.event.ActionListener() {
@@ -180,8 +180,6 @@ public class Settings extends javax.swing.JPanel {
     public JLabel getTxtTheme() {
         return txtTheme;
     }
-
-    
 
     
 

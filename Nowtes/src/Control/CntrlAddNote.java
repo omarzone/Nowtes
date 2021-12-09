@@ -159,7 +159,7 @@ public class CntrlAddNote implements ActionListener {
         this.addNotePanel.getLblDescription().setForeground(cntrlMain.getThemeApp().getFONT());
         this.addNotePanel.getLblPriority().setForeground(cntrlMain.getThemeApp().getFONT());
         
-        if(cntrlMain.isDarkThemeOn()){
+        if(cntrlMain.getSettingsUser().isThemeDark()){
             this.addNotePanel.getTxtTitulo().setBackground(new Color(48, 49, 52));
             this.addNotePanel.getTxtDescripcion().setBackground(new Color(48, 49, 52));
             this.addNotePanel.getCmbPriority().setBackground(new Color(48, 49, 52));
