@@ -29,13 +29,13 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         jScrollPane1 = new javax.swing.JScrollPane();
         note_description = new javax.swing.JTextArea();
         DatePanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
         note_date = new javax.swing.JLabel();
         StatusPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblStatus = new javax.swing.JLabel();
         note_status = new javax.swing.JLabel();
         ActionsPanel = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        lblAction = new javax.swing.JLabel();
         IconsRowPanel = new javax.swing.JPanel();
         btnEditNote = new javax.swing.JLabel();
         btnDeleteNote = new javax.swing.JLabel();
@@ -69,9 +69,9 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
 
         DatePanel.setOpaque(false);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel4.setText("Fecha");
+        lblDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(29, 52, 97));
+        lblDate.setText("Fecha");
 
         note_date.setBackground(new java.awt.Color(153, 212, 172));
         note_date.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -90,14 +90,14 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
                 .addContainerGap())
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jLabel4)
+                .addComponent(lblDate)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DatePanelLayout.setVerticalGroup(
             DatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel4)
+                .addComponent(lblDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(note_date, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -107,9 +107,9 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
 
         StatusPanel.setOpaque(false);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel2.setText("Estatus");
+        lblStatus.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblStatus.setForeground(new java.awt.Color(29, 52, 97));
+        lblStatus.setText("Estatus");
 
         note_status.setBackground(new java.awt.Color(245, 223, 83));
         note_status.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -128,14 +128,14 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
                 .addContainerGap())
             .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel2)
+                .addComponent(lblStatus)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         StatusPanelLayout.setVerticalGroup(
             StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(lblStatus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(note_status, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -145,22 +145,23 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
 
         ActionsPanel.setOpaque(false);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel6.setText("Acción");
+        lblAction.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAction.setForeground(new java.awt.Color(29, 52, 97));
+        lblAction.setText("Acción");
 
         IconsRowPanel.setOpaque(false);
         IconsRowPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
-        btnEditNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/baseline_edit_black_24dp.png"))); // NOI18N
+        btnEditNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/edit_light.png"))); // NOI18N
         btnEditNote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         IconsRowPanel.add(btnEditNote);
 
-        btnDeleteNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/baseline_delete_black_24dp.png"))); // NOI18N
+        btnDeleteNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Icons-1.png"))); // NOI18N
         btnDeleteNote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         IconsRowPanel.add(btnDeleteNote);
 
-        btnViewNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/iconmonstr-eye-9.png"))); // NOI18N
+        btnViewNote.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnViewNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/view_light.png"))); // NOI18N
         btnViewNote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         IconsRowPanel.add(btnViewNote);
 
@@ -175,14 +176,14 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
                         .addComponent(IconsRowPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ActionsPanelLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel6)))
+                        .addComponent(lblAction)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ActionsPanelLayout.setVerticalGroup(
             ActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ActionsPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
+                .addComponent(lblAction)
                 .addGap(8, 8, 8)
                 .addComponent(IconsRowPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -253,6 +254,19 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
+
+    public JLabel getLblAction() {
+        return lblAction;
+    }
+
+    public JLabel getLblDate() {
+        return lblDate;
+    }
+
+    public JLabel getLblStatus() {
+        return lblStatus;
+    }
+    
     
     
     
@@ -266,10 +280,10 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
     private javax.swing.JLabel btnDeleteNote;
     private javax.swing.JLabel btnEditNote;
     private javax.swing.JLabel btnViewNote;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAction;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblStatus;
     private javax.swing.JLabel note_date;
     private javax.swing.JTextArea note_description;
     private javax.swing.JLabel note_status;

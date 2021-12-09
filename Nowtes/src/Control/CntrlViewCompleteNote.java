@@ -22,6 +22,7 @@ public class CntrlViewCompleteNote implements ActionListener {
         
         //Seteamos la data en la vista
         setData();
+        setTheme();
         viewCompleteNote.getBtnEditNote().addActionListener(this);
         
         
@@ -57,15 +58,44 @@ public class CntrlViewCompleteNote implements ActionListener {
             viewCompleteNote.getNote_status().setBackground(new Color(153,212,172));
         }
         
-        if(note.getPriority() == 0){
+        this.setBGPriority(new Color(0, 187, 163), new Color(255, 163, 16), new Color(246, 91, 93));
+       
+    }
+    
+    
+    private void setTheme(){
+        this.viewCompleteNote.getRoundedInnerPanel().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        this.viewCompleteNote.getLblDate().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.viewCompleteNote.getLblPriority().setForeground(cntrlMain.getThemeApp().getFONT());
+        this.viewCompleteNote.getLblStatus().setForeground(cntrlMain.getThemeApp().getFONT());
+        
+        
+        
+        if(cntrlMain.isDarkThemeOn()){
+           this.viewCompleteNote.getNote_date().setForeground(cntrlMain.getThemeApp().getWHITE());
+           this.viewCompleteNote.getNote_title().setForeground(cntrlMain.getThemeApp().getWHITE());
+           this.viewCompleteNote.getNote_id().setForeground(cntrlMain.getThemeApp().getWHITE());
+           this.viewCompleteNote.getNote_description().setForeground(cntrlMain.getThemeApp().getWHITE());
+           this.viewCompleteNote.getNote_priority().setForeground(cntrlMain.getThemeApp().getWHITE());
+           this.viewCompleteNote.getNote_status().setForeground(cntrlMain.getThemeApp().getWHITE());
+           this.setBGPriority(cntrlMain.getThemeApp().getLOW_STATUS(),cntrlMain.getThemeApp().getMEDIUM_STATUS(), cntrlMain.getThemeApp().getHIGHT_STATUS());
+           this.viewCompleteNote.getNote_description().setBackground(new Color(48, 49, 52));
+
+        }
+        
+        
+    }
+    
+    public void setBGPriority(Color colorLOWP, Color colorMIP, Color colorHIGHP){
+        if(note.getPriority() == 0) {
             viewCompleteNote.getNote_priority().setText("Baja");
-            viewCompleteNote.getNote_priority().setBackground(new Color(0,187,163));
-        }else if(note.getPriority()== 1){
+            viewCompleteNote.getNote_priority().setBackground(colorLOWP);
+        }else if (note.getPriority() == 1) {
             viewCompleteNote.getNote_priority().setText("Media");
-            viewCompleteNote.getNote_priority().setBackground(new Color(255,163,16));
-        }else{
+            viewCompleteNote.getNote_priority().setBackground(colorMIP);
+        }else {
             viewCompleteNote.getNote_priority().setText("Alta");
-            viewCompleteNote.getNote_priority().setBackground(new Color(246,91,93));
+            viewCompleteNote.getNote_priority().setBackground(colorHIGHP);
         }
     }
     

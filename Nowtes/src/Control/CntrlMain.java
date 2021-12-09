@@ -242,20 +242,32 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         this.mainView.getHeaderPanel().setBackground(themeApp.getHEADER_PANEL());
         this.mainView.getContent().setBackground(themeApp.getBG());
         this.mainView.getMenu().setBackground(themeApp.getMENU_BG());
-        this.mainView.getBtnHelp().setForeground(themeApp.getFONT());
-        this.mainView.getBtnHistory().setForeground(themeApp.getFONT());
-        this.mainView.getBtnHome().setForeground(themeApp.getFONT());
-        this.mainView.getBtnSettings().setForeground(themeApp.getFONT());
+        
         this.mainView.getTitleApp().setForeground(themeApp.getTITLE_APP());
         
         
         //Comprobación para seleccionar que logo usar cuando se cambie el darktheme
         if(settingsUser.isThemeDark()){
             this.mainView.getLogo().setIcon(new ImageIcon(getClass().getResource("/resources/LogoMakr (1).png")));
+            this.mainView.getBtnHelp().setForeground(themeApp.getWHITE());
+            this.mainView.getBtnHistory().setForeground(themeApp.getWHITE());
+            this.mainView.getBtnHome().setForeground(themeApp.getWHITE());
+            this.mainView.getBtnSettings().setForeground(themeApp.getWHITE());
         }
        
-        
+        //Cambios relacionados con el tema de la vista settings.
+        this.settingsView.getRoundedInnePanel().setBackground(themeApp.getNOTE_BG());
+        this.settingsView.getTxtDeleteData().setForeground(themeApp.getFONT());
+        this.settingsView.getTxtDeleteData2().setForeground(themeApp.getFONT());
+        this.settingsView.getTxtMethod().setForeground(themeApp.getFONT());
+        this.settingsView.getTxtTheme().setForeground(themeApp.getFONT());
+        this.settingsView.getBtnDarkTheme().setOpaque(false);
+        this.settingsView.getBtnDarkTheme().setForeground(themeApp.getFONT());
        
+        //Cambios relacionados con el tema de la vista Ayuda
+        this.helpView.getRoundedInnerPanel().setBackground(themeApp.getNOTE_BG());
+        this.helpView.getTxtVideo().setForeground(themeApp.getFONT());
+        
     }
 
 }

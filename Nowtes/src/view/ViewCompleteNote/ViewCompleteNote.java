@@ -5,6 +5,7 @@ import Model.Note;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+import view.components.RoundedBorders;
 
 public class ViewCompleteNote extends javax.swing.JPanel {
 
@@ -23,15 +24,15 @@ public class ViewCompleteNote extends javax.swing.JPanel {
         btnEditNote = new javax.swing.JButton();
         btnDeleteNote = new javax.swing.JButton();
         ContentPanel = new javax.swing.JPanel();
-        roundedBorders1 = new view.components.RoundedBorders();
+        roundedInnerPanel = new view.components.RoundedBorders();
         note_priority = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblStatus = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         note_description = new javax.swing.JTextArea();
         note_title = new javax.swing.JLabel();
         note_date = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblPriority = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
         note_status = new javax.swing.JLabel();
 
         setOpaque(false);
@@ -106,12 +107,12 @@ public class ViewCompleteNote extends javax.swing.JPanel {
         note_priority.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         note_priority.setText("status");
         note_priority.setOpaque(true);
-        roundedBorders1.add(note_priority, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 130, 40));
+        roundedInnerPanel.add(note_priority, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 130, 40));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel3.setText("Estatus:");
-        roundedBorders1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, -1, -1));
+        lblStatus.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblStatus.setForeground(new java.awt.Color(29, 52, 97));
+        lblStatus.setText("Estatus:");
+        roundedInnerPanel.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, -1, -1));
 
         note_description.setEditable(false);
         note_description.setBackground(new java.awt.Color(255, 255, 255));
@@ -125,27 +126,27 @@ public class ViewCompleteNote extends javax.swing.JPanel {
         jScrollPane2.setViewportBorder(null);
         jScrollPane2.setViewportView(note_description);
 
-        roundedBorders1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 680, 230));
+        roundedInnerPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 680, 230));
 
         note_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         note_title.setForeground(new java.awt.Color(29, 52, 97));
         note_title.setText("Title");
-        roundedBorders1.add(note_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 680, -1));
+        roundedInnerPanel.add(note_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 680, -1));
 
         note_date.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         note_date.setForeground(new java.awt.Color(29, 52, 97));
         note_date.setText("00/00/0000");
-        roundedBorders1.add(note_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
+        roundedInnerPanel.add(note_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel7.setText("Prioridad:");
-        roundedBorders1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        lblPriority.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblPriority.setForeground(new java.awt.Color(29, 52, 97));
+        lblPriority.setText("Prioridad:");
+        roundedInnerPanel.add(lblPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel8.setText("Realizar antes de:");
-        roundedBorders1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+        lblDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(29, 52, 97));
+        lblDate.setText("Realizar antes de:");
+        roundedInnerPanel.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         note_status.setBackground(new java.awt.Color(245, 223, 83));
         note_status.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -153,7 +154,7 @@ public class ViewCompleteNote extends javax.swing.JPanel {
         note_status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         note_status.setText("status");
         note_status.setOpaque(true);
-        roundedBorders1.add(note_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 130, 40));
+        roundedInnerPanel.add(note_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 130, 40));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
@@ -161,13 +162,13 @@ public class ViewCompleteNote extends javax.swing.JPanel {
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roundedInnerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 989, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         ContentPanelLayout.setVerticalGroup(
             ContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentPanelLayout.createSequentialGroup()
-                .addComponent(roundedBorders1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roundedInnerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(83, 83, 83))
         );
 
@@ -233,6 +234,22 @@ public class ViewCompleteNote extends javax.swing.JPanel {
     public JButton getBtnEditNote() {
         return btnEditNote;
     }
+
+    public RoundedBorders getRoundedInnerPanel() {
+        return roundedInnerPanel;
+    }
+
+    public JLabel getLblDate() {
+        return lblDate;
+    }
+
+    public JLabel getLblPriority() {
+        return lblPriority;
+    }
+
+    public JLabel getLblStatus() {
+        return lblStatus;
+    }
     
     
 
@@ -241,16 +258,16 @@ public class ViewCompleteNote extends javax.swing.JPanel {
     private javax.swing.JPanel HeadPanel;
     private javax.swing.JButton btnDeleteNote;
     private javax.swing.JButton btnEditNote;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblPriority;
+    private javax.swing.JLabel lblStatus;
     private javax.swing.JLabel note_date;
     private javax.swing.JTextArea note_description;
     private javax.swing.JLabel note_id;
     private javax.swing.JLabel note_priority;
     private javax.swing.JLabel note_status;
     private javax.swing.JLabel note_title;
-    private view.components.RoundedBorders roundedBorders1;
+    private view.components.RoundedBorders roundedInnerPanel;
     // End of variables declaration//GEN-END:variables
 }
