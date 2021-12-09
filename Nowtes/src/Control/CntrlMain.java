@@ -54,7 +54,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
             System.err.println(ex);
         }
         
-        
+       
         
         if(cntrlPendingPanel == null){
                 
@@ -63,6 +63,9 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
             }
         
         setTheme();
+        
+       
+        
        
         
         mainView.getMainContent().add(pendingNotesView);

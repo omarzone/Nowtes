@@ -149,7 +149,7 @@ public class AddNote extends javax.swing.JPanel {
         roundedInnerPanel.add(txtErrDescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 90, 30));
 
         txtErrDateField.setForeground(new java.awt.Color(255, 0, 0));
-        roundedInnerPanel.add(txtErrDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 20));
+        roundedInnerPanel.add(txtErrDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 320, 20));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
