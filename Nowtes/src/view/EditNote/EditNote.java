@@ -83,7 +83,7 @@ public class EditNote extends javax.swing.JPanel {
             .addGroup(HeadPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1020, -1));
@@ -92,22 +92,18 @@ public class EditNote extends javax.swing.JPanel {
         ContentPanel.setOpaque(false);
 
         lblPriority.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblPriority.setForeground(new java.awt.Color(0, 0, 0));
         lblPriority.setText("Prioridad:");
         roundedInnerPanel.add(lblPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(0, 0, 0));
         lblTitle.setText("Título:");
         roundedInnerPanel.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         lblDescription.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblDescription.setForeground(new java.awt.Color(0, 0, 0));
         lblDescription.setText("Descripción:");
         roundedInnerPanel.add(lblDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         lblDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblDate.setForeground(new java.awt.Color(0, 0, 0));
         lblDate.setText("Fecha:");
         roundedInnerPanel.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
@@ -115,7 +111,10 @@ public class EditNote extends javax.swing.JPanel {
         txtDescripcion.setColumns(20);
         txtDescripcion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
+        txtDescripcion.setLineWrap(true);
         txtDescripcion.setRows(5);
+        txtDescripcion.setWrapStyleWord(true);
+        txtDescripcion.setAutoscrolls(false);
         txtDescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 72, 126), 1, true));
         jScrollPane2.setViewportView(txtDescripcion);
 
@@ -134,7 +133,6 @@ public class EditNote extends javax.swing.JPanel {
         roundedInnerPanel.add(cmbPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
 
         optionDate.setBackground(new java.awt.Color(130, 156, 188));
-        optionDate.setForeground(new java.awt.Color(0, 0, 0));
         roundedInnerPanel.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 110, -1));
 
         btnSave.setBackground(new java.awt.Color(31, 72, 126));

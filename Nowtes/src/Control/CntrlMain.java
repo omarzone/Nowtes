@@ -258,7 +258,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     public CompleteNotesPanel getCompleteNotesView() {
         return completeNotesView;
     }
-
+    
     public void setCompleteNotesView(CompleteNotesPanel completeNotesView) {
         this.completeNotesView = completeNotesView;
     }

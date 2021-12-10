@@ -93,7 +93,7 @@ public class ViewCompleteNote extends javax.swing.JPanel {
                     .addComponent(note_id)
                     .addComponent(btnEditNote)
                     .addComponent(btnDeleteNote, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(HeadPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1020, -1));
@@ -115,12 +115,14 @@ public class ViewCompleteNote extends javax.swing.JPanel {
         roundedInnerPanel.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, -1, -1));
 
         note_description.setEditable(false);
-        note_description.setBackground(new java.awt.Color(255, 255, 255));
         note_description.setColumns(20);
         note_description.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         note_description.setForeground(new java.awt.Color(31, 72, 126));
+        note_description.setLineWrap(true);
         note_description.setRows(5);
         note_description.setText("Description");
+        note_description.setWrapStyleWord(true);
+        note_description.setAutoscrolls(false);
         note_description.setBorder(null);
         jScrollPane2.setBorder(null);
         jScrollPane2.setViewportBorder(null);

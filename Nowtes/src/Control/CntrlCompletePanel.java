@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import view.CompletedNotes.CompleteNotesItem;
 import view.CompletedNotes.CompleteNotesPanel;
 import view.PendingNotes.PendingNotesItem;
 import view.components.CustomScrollBar;
@@ -74,10 +75,10 @@ public class CntrlCompletePanel {
         //Por cada item en el arraylist, agregamos un row al gridNotePanel
         for (Note note : notesList) {
 
-            PendingNotesItem noteItemView = new PendingNotesItem();
-            noteItemView.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
-            //CntrlPendingNotesItem cntrlPendingNotesItem = new CntrlPendingNotesItem(cntrlMain, noteItemView, note);
-            gridNotePanel.add(noteItemView);
+            CompleteNotesItem completeNoteItemView = new CompleteNotesItem();
+            completeNoteItemView.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+            CntrlCompleteNotesItem cntrlPendingNotesItem = new CntrlCompleteNotesItem(cntrlMain, completeNoteItemView, note);
+            gridNotePanel.add(completeNoteItemView);
 
         }
 

@@ -15,6 +15,7 @@ public class CntrlViewCompleteNote implements ActionListener {
     private Note note;
     private ViewCompleteNote viewCompleteNote;
     private CntrlPendingNotesItem cntrlPendingNotesItem;
+    private CntrlCompleteNotesItem cntrlCompleteNotesItem;
     public CntrlViewCompleteNote(CntrlMain cntrlMain, ViewCompleteNote viewCompleteNote, Note note, CntrlPendingNotesItem cntrlPendingNotesItem){
         System.out.println("Controlador CntrlViewCompleteNote inicializado");
         this.cntrlMain = cntrlMain;
@@ -25,6 +26,24 @@ public class CntrlViewCompleteNote implements ActionListener {
         
         //Seteamos la data en la vista
         setData();
+        setTheme();
+        viewCompleteNote.getBtnEditNote().addActionListener(this);
+        viewCompleteNote.getBtnDeleteNote().addActionListener(this);
+        
+        
+    }
+    
+    public CntrlViewCompleteNote(CntrlMain cntrlMain, ViewCompleteNote viewCompleteNote, Note note, CntrlCompleteNotesItem cntrlCompleteNotesItem){
+        System.out.println("Controlador CntrlViewCompleteNote inicializado");
+        this.cntrlMain = cntrlMain;
+        this.note = note;
+        this.viewCompleteNote = viewCompleteNote;
+        this.cntrlCompleteNotesItem = cntrlCompleteNotesItem;
+        
+        
+        //Seteamos la data en la vista
+        setData();
+        this.viewCompleteNote.getBtnEditNote().setVisible(false);
         setTheme();
         viewCompleteNote.getBtnEditNote().addActionListener(this);
         viewCompleteNote.getBtnDeleteNote().addActionListener(this);
@@ -110,6 +129,16 @@ public class CntrlViewCompleteNote implements ActionListener {
            this.viewCompleteNote.getNote_description().setForeground(cntrlMain.getThemeApp().getWHITE());
            this.viewCompleteNote.getNote_priority().setForeground(cntrlMain.getThemeApp().getWHITE());
            this.viewCompleteNote.getNote_status().setForeground(cntrlMain.getThemeApp().getWHITE());
+           if(note.isStatus()){
+               
+               this.viewCompleteNote.getNote_status().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
+               
+           }else{
+               
+               this.viewCompleteNote.getNote_status().setBackground(cntrlMain.getThemeApp().getMEDIUM_STATUS());
+               
+           }
+           
            this.setBGPriority(cntrlMain.getThemeApp().getLOW_STATUS(),cntrlMain.getThemeApp().getMEDIUM_STATUS(), cntrlMain.getThemeApp().getHIGHT_STATUS());
            this.viewCompleteNote.getNote_description().setBackground(new Color(48, 49, 52));
 

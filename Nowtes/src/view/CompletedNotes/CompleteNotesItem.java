@@ -5,6 +5,9 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 
 public class CompleteNotesItem extends javax.swing.JPanel {
@@ -23,13 +26,13 @@ public class CompleteNotesItem extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         note_description = new javax.swing.JTextArea();
         DatePanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
         note_date = new javax.swing.JLabel();
         StatusPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblStatus = new javax.swing.JLabel();
         note_status = new javax.swing.JLabel();
         ActionsPanel = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        lblAction = new javax.swing.JLabel();
         IconsRowPanel = new javax.swing.JPanel();
         btnDeleteNote = new javax.swing.JLabel();
         btnViewNote = new javax.swing.JLabel();
@@ -42,16 +45,15 @@ public class CompleteNotesItem extends javax.swing.JPanel {
 
         note_title.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         note_title.setForeground(new java.awt.Color(29, 52, 97));
-        note_title.setText("Diseñar el prototipo de la app");
+        note_title.setText("Title");
         DataPanel.add(note_title);
 
         note_description.setEditable(false);
-        note_description.setBackground(new java.awt.Color(255, 255, 255));
         note_description.setColumns(45);
         note_description.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         note_description.setForeground(new java.awt.Color(31, 72, 126));
         note_description.setRows(2);
-        note_description.setText("La tarea consiste en dibujar los primeros diseños de nuestra app para entregársela\nal profesor. El diseño se deberá guardar en PDF y enviárselo por correo sin olvidar..");
+        note_description.setText("Description");
         note_description.setBorder(null);
         jScrollPane1.setViewportView(note_description);
         note_description.setHighlighter(null);
@@ -62,15 +64,15 @@ public class CompleteNotesItem extends javax.swing.JPanel {
 
         DatePanel.setOpaque(false);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel4.setText("Fecha");
+        lblDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(29, 52, 97));
+        lblDate.setText("Fecha");
 
         note_date.setBackground(new java.awt.Color(153, 212, 172));
         note_date.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         note_date.setForeground(new java.awt.Color(29, 52, 97));
         note_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        note_date.setText("28/abril/2021");
+        note_date.setText("Date");
         note_date.setOpaque(true);
 
         javax.swing.GroupLayout DatePanelLayout = new javax.swing.GroupLayout(DatePanel);
@@ -83,14 +85,14 @@ public class CompleteNotesItem extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jLabel4)
+                .addComponent(lblDate)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DatePanelLayout.setVerticalGroup(
             DatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DatePanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel4)
+                .addComponent(lblDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(note_date, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -100,15 +102,15 @@ public class CompleteNotesItem extends javax.swing.JPanel {
 
         StatusPanel.setOpaque(false);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel2.setText("Estatus");
+        lblStatus.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblStatus.setForeground(new java.awt.Color(29, 52, 97));
+        lblStatus.setText("Estatus");
 
         note_status.setBackground(new java.awt.Color(153, 212, 172));
         note_status.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         note_status.setForeground(new java.awt.Color(29, 52, 97));
         note_status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        note_status.setText("Finalizado");
+        note_status.setText("Status");
         note_status.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         note_status.setOpaque(true);
 
@@ -122,14 +124,14 @@ public class CompleteNotesItem extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel2)
+                .addComponent(lblStatus)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         StatusPanelLayout.setVerticalGroup(
             StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(lblStatus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(note_status, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -139,14 +141,14 @@ public class CompleteNotesItem extends javax.swing.JPanel {
 
         ActionsPanel.setOpaque(false);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(29, 52, 97));
-        jLabel6.setText("Acción");
+        lblAction.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAction.setForeground(new java.awt.Color(29, 52, 97));
+        lblAction.setText("Acción");
 
         IconsRowPanel.setOpaque(false);
         IconsRowPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 19, 0));
 
-        btnDeleteNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/baseline_delete_black_24dp.png"))); // NOI18N
+        btnDeleteNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Icons-1.png"))); // NOI18N
         btnDeleteNote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         IconsRowPanel.add(btnDeleteNote);
 
@@ -165,14 +167,14 @@ public class CompleteNotesItem extends javax.swing.JPanel {
                         .addComponent(IconsRowPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ActionsPanelLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel6)))
+                        .addComponent(lblAction)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ActionsPanelLayout.setVerticalGroup(
             ActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ActionsPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
+                .addComponent(lblAction)
                 .addGap(8, 8, 8)
                 .addComponent(IconsRowPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -203,13 +205,77 @@ public class CompleteNotesItem extends javax.swing.JPanel {
     private javax.swing.JPanel StatusPanel;
     private javax.swing.JLabel btnDeleteNote;
     private javax.swing.JLabel btnViewNote;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAction;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblStatus;
     private javax.swing.JLabel note_date;
     private javax.swing.JTextArea note_description;
     private javax.swing.JLabel note_status;
     private javax.swing.JLabel note_title;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getBtnDeleteNote() {
+        return btnDeleteNote;
+    }
+
+    public JLabel getNote_date() {
+        return note_date;
+    }
+
+    public JTextArea getNote_description() {
+        return note_description;
+    }
+
+    public JLabel getNote_status() {
+        return note_status;
+    }
+
+    public JLabel getNote_title() {
+        return note_title;
+    }
+
+    public JLabel getBtnViewNote() {
+        return btnViewNote;
+    }
+    
+    //Setters
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public void setNote_date(JLabel note_date) {
+        this.note_date = note_date;
+    }
+
+    public void setNote_description(JTextArea note_description) {
+        this.note_description = note_description;
+    }
+
+    public void setNote_status(JLabel note_status) {
+        this.note_status = note_status;
+    }
+
+    public void setNote_title(JLabel note_title) {
+        this.note_title = note_title;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JLabel getLblAction() {
+        return lblAction;
+    }
+
+    public JLabel getLblDate() {
+        return lblDate;
+    }
+
+    public JLabel getLblStatus() {
+        return lblStatus;
+    }
+    
+    
 }
