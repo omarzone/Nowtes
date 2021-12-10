@@ -64,6 +64,7 @@
                 </Property>
                 <Property name="rows" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Description"/>
+                <Property name="autoscrolls" type="boolean" value="false"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>

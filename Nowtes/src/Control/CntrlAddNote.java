@@ -8,17 +8,11 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import view.AddNote.AddNote;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import view.PendingNotes.PendingNotesPanel;
-
+import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 
 
 public class CntrlAddNote implements ActionListener {
@@ -144,6 +138,8 @@ public class CntrlAddNote implements ActionListener {
                     cntrlMain.setPendingNotesView(newPendingNotesPanel);
                     cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
                     
+               }catch(MysqlDataTruncation ex){
+                   JOptionPane.showMessageDialog(addNotePanel, "El titulo ingresado es demasiado largo");
                }catch(SQLException ex){
                    JOptionPane.showMessageDialog(addNotePanel, "Hubo un error con el guardado de la nota");
                }

@@ -102,6 +102,7 @@ public class AddNote extends javax.swing.JPanel {
         txtDescripcion.setColumns(20);
         txtDescripcion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
+        txtDescripcion.setLineWrap(true);
         txtDescripcion.setRows(5);
         txtDescripcion.setBorder(null);
         jScrollPane2.setViewportView(txtDescripcion);
@@ -149,8 +150,7 @@ public class AddNote extends javax.swing.JPanel {
         roundedInnePanel.add(txtErrDescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 90, 30));
 
         txtErrDateField.setForeground(new java.awt.Color(255, 0, 0));
-        roundedInnePanel.add(txtErrDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 20));
-
+        roundedInnePanel.add(txtErrDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 390, 20));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);

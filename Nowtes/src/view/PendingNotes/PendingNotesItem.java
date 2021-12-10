@@ -59,6 +59,7 @@ public class PendingNotesItem extends javax.swing.JPanel  implements ListCellRen
         note_description.setForeground(new java.awt.Color(31, 72, 126));
         note_description.setRows(2);
         note_description.setText("Description");
+        note_description.setAutoscrolls(false);
         note_description.setBorder(null);
         jScrollPane1.setViewportView(note_description);
         note_description.setHighlighter(null);
