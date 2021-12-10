@@ -34,7 +34,7 @@ public class CntrlSplashScreen implements Runnable{
     @Override
     public void run() {
        try {
-                Thread.sleep(750);
+                Thread.sleep(2500);
                 
                 cntrlMain.getMainView().setVisible(true);
                 cntrlMain.getMainView().setLocationRelativeTo(null);
