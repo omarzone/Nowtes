@@ -1,9 +1,12 @@
 package Control;
 
+import DAONote.DAONote;
 import Model.Note;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import view.PendingNotes.PendingNotesPanel;
 import view.ViewCompleteNote.ViewCompleteNote;
 
 
@@ -24,6 +27,7 @@ public class CntrlViewCompleteNote implements ActionListener {
         setData();
         setTheme();
         viewCompleteNote.getBtnEditNote().addActionListener(this);
+        viewCompleteNote.getBtnDeleteNote().addActionListener(this);
         
         
     }
@@ -41,6 +45,34 @@ public class CntrlViewCompleteNote implements ActionListener {
             cntrlMain.getMainView().getMainContent().revalidate();
 
         }
+         
+         
+         if (viewCompleteNote.getBtnDeleteNote() == e.getSource()) {
+         
+             String condition;
+            condition = " id = " + note.getId();
+
+            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro de que quiere borrar esta nota?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                
+                //Realizamos la consulta para borrar el elemento
+                DAONote daoCliente = new DAONote();
+                try {
+                    daoCliente.delete(condition);
+                } catch (Exception exep) {
+                    exep.printStackTrace();
+                }
+                
+                //Regeneramos el panel
+                PendingNotesPanel newPendingNotesPanel = new PendingNotesPanel();
+                cntrlMain.setCntrlPendingPanel(new CntrlPendingPanel(cntrlMain, newPendingNotesPanel));
+                    
+                cntrlMain.setPendingNotesView(newPendingNotesPanel);
+                cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
+            }
+
+         
+         }
         
     }
     
@@ -51,10 +83,10 @@ public class CntrlViewCompleteNote implements ActionListener {
         viewCompleteNote.getNote_date().setText(note.getDate());
         
         if(note.isStatus()){
-            viewCompleteNote.getNote_status().setText("En proceso");
+            viewCompleteNote.getNote_status().setText("Finalizado");
             viewCompleteNote.getNote_status().setBackground(new Color(245,223,83));
         }else{
-            viewCompleteNote.getNote_status().setText("Finalizado");
+            viewCompleteNote.getNote_status().setText("En Proceso");
             viewCompleteNote.getNote_status().setBackground(new Color(153,212,172));
         }
         

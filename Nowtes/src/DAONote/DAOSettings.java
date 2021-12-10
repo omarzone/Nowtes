@@ -93,7 +93,7 @@ public class DAOSettings extends DAOMain<Settings> {
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(orden);
         while (rs.next()) {
-            e = new Settings(rs.getBoolean("darktheme"),rs.getInt("priorityorder"));
+            e = new Settings(rs.getBoolean("darktheme"),rs.getBoolean("priorityorder"));
             list.add(e);
         }
         statement.close();

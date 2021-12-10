@@ -2,7 +2,6 @@ package Control;
 
 import DAONote.DAONote;
 import Model.Note;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,12 +11,13 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import view.PendingNotes.PendingNotesItem;
-
+import view.components.NoData;
 import view.PendingNotes.PendingNotesPanel;
 
 import view.AddNote.AddNote;
 import view.PendingNotes.SearchPanel;
 import view.components.CustomScrollBar;
+import view.components.NoData;
 
 public class CntrlPendingPanel implements ActionListener, MouseListener {
 
@@ -61,7 +61,11 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         //Realizamos la consulta a la base de datos
         DAONote daoNote = new DAONote();
         try {
-            notesList = daoNote.query("status = false");
+            if(cntrlMain.getSettingsUser().isPriorityOrder()){
+                notesList = daoNote.queryDate("status = false");
+            }else{
+                notesList = daoNote.query("status = false");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -82,7 +86,14 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         gridLayoutNotes.setColumns(1);
         gridLayoutNotes.setVgap(15);
 
-        gridLayoutNotes.setRows(notesList.size());
+        //Validacion para evitar que las notas se hagan muy grandes cuando son pocas
+        if (notesList.size() < 5) {
+            gridLayoutNotes.setRows(notesList.size() + 3);
+            scrollListNotes.setHorizontalScrollBarPolicy(scrollListNotes.HORIZONTAL_SCROLLBAR_NEVER);
+            scrollListNotes.setVerticalScrollBarPolicy(scrollListNotes.VERTICAL_SCROLLBAR_NEVER);
+        } else {
+            gridLayoutNotes.setRows(notesList.size());
+        }
 
         gridNotePanel.setLayout(gridLayoutNotes);
 
@@ -100,7 +111,15 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
         scrollListNotes.setViewportView(gridNotePanel);
 
         //Agregamos el scroll al ContentPanel
-        pendingNotesView.getContentPanel().add(scrollListNotes);
+        if (notesList.size() < 1) {
+            NoData noDataPanel = new NoData();
+            setNoDataTheme(noDataPanel, "No se han encontrado notas");
+            pendingNotesView.getContentPanel().add(noDataPanel);
+
+        } else {
+            pendingNotesView.getContentPanel().add(scrollListNotes);
+        }
+
     }
 
     public void setPendingNotesView(PendingNotesPanel pendingNotesView) {
@@ -135,7 +154,17 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
             GridLayout gridLayoutNotes = new GridLayout();
             gridLayoutNotes.setColumns(1);
             gridLayoutNotes.setVgap(15);
-            gridLayoutNotes.setRows(searchResults.size());
+            gridLayoutNotes.setRows(5);
+            //Validacion para evitar que las notas se hagan muy grandes cuando son pocas
+            System.out.println(searchResults.size());
+            if (searchResults.size() < 5) {
+                gridLayoutNotes.setRows(searchResults.size()+3);
+                scrollListNotes.setHorizontalScrollBarPolicy(scrollListNotes.HORIZONTAL_SCROLLBAR_NEVER);
+                scrollListNotes.setVerticalScrollBarPolicy(scrollListNotes.VERTICAL_SCROLLBAR_NEVER);
+            } else {
+                gridLayoutNotes.setRows(searchResults.size());
+            }
+
             gridNotePanel.setOpaque(false);
 
             if (cntrlMain.getSettingsUser().isThemeDark()) {
@@ -160,6 +189,15 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
             scrollListNotes.setViewportView(gridNotePanel);
             this.searchPanelView = new SearchPanel();
             //Agregamos el scroll al ContentPanel
+
+            if (searchResults.size() < 1) {
+                NoData noDataPanel = new NoData();
+                setNoDataTheme(noDataPanel, "No se han encontrado resultados");
+                searchPanelView.getContentPanel().add(noDataPanel);
+
+            } else {
+                searchPanelView.getContentPanel().add(scrollListNotes);
+            }
             searchPanelView.getContentPanel().add(scrollListNotes);
             searchPanelView.getResultsLabel().setText("Resultados de: " + searchTitle);
             CntrlSearchPanel cntrlSearchPanel = new CntrlSearchPanel(cntrlMain, searchPanelView);
@@ -186,6 +224,14 @@ public class CntrlPendingPanel implements ActionListener, MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setNoDataTheme(NoData noDataPanel, String message) {
+
+        noDataPanel.setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        noDataPanel.getRoundedBorders1().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        noDataPanel.getLblMessage().setText(message);
+        noDataPanel.getLblMessage().setForeground(cntrlMain.getThemeApp().getFONT());
     }
 
 }
