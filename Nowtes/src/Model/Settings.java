@@ -4,15 +4,14 @@ package Model;
 public class Settings {
     
     boolean themeDark;
-    int priorityOrder;
+    boolean priorityOrder;
     
     
 
-    public Settings(boolean themeDark, int priorityOrder) {
+    public Settings(boolean themeDark, boolean priorityOrder) {
         this.themeDark = themeDark;
         this.priorityOrder = priorityOrder;
     }
-    
 
     public boolean isThemeDark() {
         return themeDark;
@@ -22,14 +21,23 @@ public class Settings {
         this.themeDark = themeDark;
     }
 
-    public int getPriorityOrder() {
+    public boolean isPriorityOrder() {
         return priorityOrder;
     }
 
-    public void setPriorityOrder(int priorityOrder) {
+    public void setPriorityOrder(boolean priorityOrder) {
         this.priorityOrder = priorityOrder;
     }
-   
+    
+    public int getPriorityOrder(){
+        if(priorityOrder){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    
+
     
   
     

@@ -36,7 +36,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     private CntrlHelp cntrlHelp;
     private Theme themeApp;
     private ArrayList<Settings> settingsList = new ArrayList<Settings>();
-    
+    private CntrlCompletePanel cntrlCompletePanel;
 
     public CntrlMain(MainView mainView){
         
@@ -60,7 +60,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
             
         } catch (SQLException ex) {
             //Cuando ocurra cualquier error con la base de datos, que cree un objeto settings con estos valores
-            settingsUser = new Settings(true,0);
+            settingsUser = new Settings(true,false);
             ex.printStackTrace();
         }
         
@@ -127,6 +127,11 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         }
 
         if (mainView.getBtnHistory() == e.getSource()) {
+            
+            if(cntrlCompletePanel == null){
+                cntrlCompletePanel = new CntrlCompletePanel(this,completeNotesView);
+            }
+            
             switchPanels(completeNotesView);
         }
 
@@ -248,6 +253,22 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
 
     public Settings getSettingsUser() {
         return settingsUser;
+    }
+
+    public CompleteNotesPanel getCompleteNotesView() {
+        return completeNotesView;
+    }
+
+    public void setCompleteNotesView(CompleteNotesPanel completeNotesView) {
+        this.completeNotesView = completeNotesView;
+    }
+
+    public CntrlCompletePanel getCntrlCompletePanel() {
+        return cntrlCompletePanel;
+    }
+
+    public void setCntrlCompletePanel(CntrlCompletePanel cntrlCompletePanel) {
+        this.cntrlCompletePanel = cntrlCompletePanel;
     }
 
     
