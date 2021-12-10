@@ -98,9 +98,11 @@ public class SettingsView extends javax.swing.JPanel {
         btnDeleteData.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteData.setText("Borrar datos ");
         btnDeleteData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(112, 112, 112), 1, true));
+        btnDeleteData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         roundedInnePanel.add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 40));
 
         cbmPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prioridad", "Fecha" }));
+        cbmPriority.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbmPriority.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbmPriorityActionPerformed(evt);
@@ -109,6 +111,7 @@ public class SettingsView extends javax.swing.JPanel {
         roundedInnePanel.add(cbmPriority, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         btnDarkTheme.setText("Desactivado");
+        btnDarkTheme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         roundedInnePanel.add(btnDarkTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
