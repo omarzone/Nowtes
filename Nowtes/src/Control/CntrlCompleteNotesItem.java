@@ -141,7 +141,7 @@ public class CntrlCompleteNotesItem implements MouseListener {
         //Cambios relacionados con el tema de la aplicación de la vista principal
         this.completeNotesItemView.getjScrollPane1().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
         this.completeNotesItemView.getNote_date().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
-        this.completeNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getMEDIUM_STATUS());
+        this.completeNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
         this.completeNotesItemView.getjScrollPane1().setOpaque(false);
         this.completeNotesItemView.getjScrollPane1().getViewport().setOpaque(false);
         this.completeNotesItemView.getjScrollPane1().setHorizontalScrollBarPolicy(this.completeNotesItemView.getjScrollPane1().HORIZONTAL_SCROLLBAR_NEVER);
