@@ -173,8 +173,14 @@ public class CntrlPendingNotesItem implements MouseListener {
     private void setTheme() {
         //Cambios relacionados con el tema de la aplicación de la vista principal
         this.pendingNotesItemView.getjScrollPane1().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
+        
+        if(note.isStatus()){
+            this.pendingNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
+        }else{
+           this.pendingNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getMEDIUM_STATUS());
+        }
+        
         this.pendingNotesItemView.getNote_date().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
-        this.pendingNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getMEDIUM_STATUS());
         this.pendingNotesItemView.getjScrollPane1().setOpaque(false);
         this.pendingNotesItemView.getjScrollPane1().getViewport().setOpaque(false);
         this.pendingNotesItemView.getjScrollPane1().setHorizontalScrollBarPolicy(this.pendingNotesItemView.getjScrollPane1().HORIZONTAL_SCROLLBAR_NEVER);

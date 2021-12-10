@@ -111,7 +111,7 @@ public class CompleteNotesItem extends javax.swing.JPanel {
         note_status.setForeground(new java.awt.Color(29, 52, 97));
         note_status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         note_status.setText("Status");
-        note_status.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        note_status.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         note_status.setOpaque(true);
 
         javax.swing.GroupLayout StatusPanelLayout = new javax.swing.GroupLayout(StatusPanel);

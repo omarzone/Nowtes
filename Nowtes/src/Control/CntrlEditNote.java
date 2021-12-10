@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import view.EditNote.EditNote;
 import view.PendingNotes.PendingNotesPanel;
 import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class CntrlEditNote implements ActionListener {
@@ -78,6 +80,9 @@ public class CntrlEditNote implements ActionListener {
         String description = "";
         SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
         int prioritySelected = editNotePanel.getCmbPriority().getSelectedIndex();
+        Calendar cal = Calendar.getInstance();
+        Date actualDate;
+        Date realDate = new Date();
         
         String date = "";
 
@@ -100,12 +105,19 @@ public class CntrlEditNote implements ActionListener {
         }
 
         try {
+            actualDate = editNotePanel.getOptionDate().getDate();
+            date = dcn.format(editNotePanel.getOptionDate().getDate());
+
             date = dcn.format(editNotePanel.getOptionDate().getDate());
             //System.out.println(date);
             hasDeadLine = true;
             if (date != null) {
                 editNotePanel.getTxtErrDateField().setText("");
             }
+             if(actualDate.compareTo(realDate) < 0){
+                    hasDeadLine = false;
+                    editNotePanel.getTxtErrDateField().setText("No ingrese fechas antes de la actual");
+                }
         } catch (NullPointerException ex) {
             editNotePanel.getTxtErrDateField().setText("Rellenar campo");
             hasDeadLine = false;

@@ -129,6 +129,7 @@ public class CntrlViewCompleteNote implements ActionListener {
            this.viewCompleteNote.getNote_description().setForeground(cntrlMain.getThemeApp().getWHITE());
            this.viewCompleteNote.getNote_priority().setForeground(cntrlMain.getThemeApp().getWHITE());
            this.viewCompleteNote.getNote_status().setForeground(cntrlMain.getThemeApp().getWHITE());
+           
            if(note.isStatus()){
                
                this.viewCompleteNote.getNote_status().setBackground(cntrlMain.getThemeApp().getLOW_STATUS());
