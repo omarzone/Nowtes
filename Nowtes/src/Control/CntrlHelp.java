@@ -31,7 +31,7 @@ public class CntrlHelp implements MouseListener{
                 if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
                     
                     try{
-                        java.net.URI uri = new java.net.URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                        java.net.URI uri = new java.net.URI("https://www.youtube.com/watch?v=aeETyNTebnA&feature=youtu.be");
                         desktop.browse(uri);
                     }catch(URISyntaxException | IOException ex){}
                     
