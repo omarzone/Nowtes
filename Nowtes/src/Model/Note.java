@@ -6,30 +6,27 @@ public class Note {
     private String description;
     private String date;
     private int priority;
-    private boolean autoDelete;
     private boolean status;
 
     public Note() {
 
     }
 
-    public Note(int id, String title, String description, String date, int priority, boolean autoDelete, boolean status) {
+    public Note(int id, String title, String description, String date, int priority, boolean status) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.date = date;
         this.priority = priority;
-        this.autoDelete = autoDelete;
         this.status = status;
     }
     
 
-    public Note(String title, String description, String date, int priority, boolean autoDelete, boolean status) {
+    public Note(String title, String description, String date, int priority, boolean status) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.priority = priority;
-        this.autoDelete = autoDelete;
         this.status = status;
     }
 
@@ -65,9 +62,6 @@ public class Note {
         this.priority = priority;
     }
 
-    public void setAutoDelete(boolean autoDelete) {
-        this.autoDelete = autoDelete;
-    }
 
     public void setStatus(boolean status) {
         this.status = status;
@@ -85,18 +79,8 @@ public class Note {
         return status;
     }
 
-    public boolean isAutoDelete() {
-        return autoDelete;
-    }
 
 
-    public int getParseAutoDelete() {
-        if (!autoDelete) {
-            return 0;
-        } else {
-            return 1;
-        }
-    }
 
     public int getId() {
         return id;

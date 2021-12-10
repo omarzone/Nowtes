@@ -19,7 +19,7 @@ public class DAONote extends DAOMain<Note> {
         Connection con = getConnection();
 
         String query = "INSERT INTO note (title, description, status, priority, autodelete, date)"
-                + "VALUES ('" + e.getTitle() + "','" + e.getDescription() + "'," + e.isStatus() + ",'" + e.getPriority() + "'," + e.isAutoDelete() + ",'" + e.getDate() + "')";
+                + "VALUES ('" + e.getTitle() + "','" + e.getDescription() + "'," + e.isStatus() + ",'" + e.getPriority() + "'," + false + ",'" + e.getDate() + "')";
 
         Statement statement = con.createStatement();
         numRows = statement.executeUpdate(query);
@@ -50,7 +50,7 @@ public class DAONote extends DAOMain<Note> {
                 + "description='" + e.getDescription() + "',"
                 + "status = " + e.isStatus() + ","
                 + "priority = " + e.getPriority() + ","
-                + "autodelete = " + e.isAutoDelete() + ","
+                + "autodelete = " + false + ","
                 + "date = '" + e.getDate() + "'"
                 + " WHERE " + condition;
 
@@ -86,7 +86,7 @@ public class DAONote extends DAOMain<Note> {
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(orden);
         while (rs.next()) {
-            e = new Note(rs.getInt("id"), rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("autoDelete"), rs.getBoolean("status"));
+            e = new Note(rs.getInt("id"), rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("status"));
             list.add(e);
         }
         statement.close();
@@ -105,7 +105,7 @@ public class DAONote extends DAOMain<Note> {
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(orden);
         while (rs.next()) {
-            e = new Note(rs.getInt("id"), rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("autoDelete"), rs.getBoolean("status"));
+            e = new Note(rs.getInt("id"), rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("status"));
             list.add(e);
         }
         statement.close();
@@ -122,7 +122,7 @@ public class DAONote extends DAOMain<Note> {
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(orden);
         while (rs.next()) {
-            e = new Note(rs.getInt("id"), rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("autoDelete"), rs.getBoolean("status"));
+            e = new Note(rs.getInt("id"), rs.getString("title"), rs.getString("description"), rs.getString("date"), rs.getInt("priority"), rs.getBoolean("status"));
             list.add(e);
         }
         statement.close();

@@ -2,7 +2,6 @@ package view.AddNote;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
@@ -35,7 +34,6 @@ public class AddNote extends javax.swing.JPanel {
         txtTitulo = new javax.swing.JTextField();
         cmbPriority = new javax.swing.JComboBox<>();
         optionDate = new com.toedter.calendar.JDateChooser();
-        cbEndedTask = new javax.swing.JCheckBox();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtErrTitleField = new javax.swing.JLabel();
@@ -124,10 +122,6 @@ public class AddNote extends javax.swing.JPanel {
         optionDate.setBackground(new java.awt.Color(130, 156, 188));
         roundedInnePanel.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 110, -1));
 
-        cbEndedTask.setForeground(new java.awt.Color(0, 0, 0));
-        cbEndedTask.setText("Borrar la tarea al cambiar el estado por \"Finalizada\"     ");
-        roundedInnePanel.add(cbEndedTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, -1, -1));
-
         btnGuardar.setBackground(new java.awt.Color(31, 72, 126));
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
@@ -200,7 +194,6 @@ public class AddNote extends javax.swing.JPanel {
     private javax.swing.JPanel JPanelAddNote;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JCheckBox cbEndedTask;
     private javax.swing.JComboBox<String> cmbPriority;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -226,9 +219,7 @@ public class AddNote extends javax.swing.JPanel {
         return btnGuardar;
     }
 
-    public JCheckBox getCbEndedTask() {
-        return cbEndedTask;
-    }
+    
 
     public JComboBox<String> getCmbPriority() {
         return cmbPriority;

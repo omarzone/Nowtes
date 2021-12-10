@@ -42,7 +42,6 @@ public class EditNote extends javax.swing.JPanel {
         txtTitulo = new javax.swing.JTextField();
         cmbPriority = new javax.swing.JComboBox<>();
         optionDate = new com.toedter.calendar.JDateChooser();
-        cbEndedTask = new javax.swing.JCheckBox();
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         txtErrTitleField = new javax.swing.JLabel();
@@ -138,10 +137,6 @@ public class EditNote extends javax.swing.JPanel {
         optionDate.setForeground(new java.awt.Color(0, 0, 0));
         roundedInnerPanel.add(optionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 110, -1));
 
-        cbEndedTask.setForeground(new java.awt.Color(0, 0, 0));
-        cbEndedTask.setText("Borrar la tarea al cambiar el estado por \"Finalizada\"     ");
-        roundedInnerPanel.add(cbEndedTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, -1, -1));
-
         btnSave.setBackground(new java.awt.Color(31, 72, 126));
         btnSave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
@@ -190,7 +185,6 @@ public class EditNote extends javax.swing.JPanel {
     private javax.swing.JPanel HeadPanel;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnSave;
-    private javax.swing.JCheckBox cbEndedTask;
     private javax.swing.JComboBox<String> cmbPriority;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -217,9 +211,7 @@ public class EditNote extends javax.swing.JPanel {
     
    
 
-    public JCheckBox getCbEndedTask() {
-        return cbEndedTask;
-    }
+  
 
     public JComboBox<String> getCmbPriority() {
         return cmbPriority;

@@ -46,7 +46,6 @@ public class CntrlAddNote implements ActionListener {
             
             addNotePanel.getTxtDescripcion().setText(null);
             addNotePanel.getTxtTitulo().setText(null);
-            addNotePanel.getCbEndedTask().setSelected(false);
             addNotePanel.getOptionDate().setDate(null);
             addNotePanel.getCmbPriority().setSelectedIndex(0);
             addNotePanel.getTxtErrTitleField().setText(null);
@@ -64,7 +63,7 @@ public class CntrlAddNote implements ActionListener {
     public void validateFields(AddNote addNotePanel){
         
         int prioritySelected =  addNotePanel.getCmbPriority().getSelectedIndex();
-        boolean deleteEndTaskOption = addNotePanel.getCbEndedTask().isSelected();
+        
           
           
           
@@ -128,7 +127,7 @@ public class CntrlAddNote implements ActionListener {
            //System.out.println(date);
            
            if(hasTitle && hasDescription && hasDeadLine){
-               note = new Note(title, description, date, prioritySelected, deleteEndTaskOption, false);
+               note = new Note(title, description, date, prioritySelected, false);
                try{
                     DaoNote.add(note);
                     
@@ -161,8 +160,7 @@ public class CntrlAddNote implements ActionListener {
             this.addNotePanel.getCmbPriority().setBackground(new Color(48, 49, 52));
         }
        
-        this.addNotePanel.getCbEndedTask().setOpaque(false);
-        this.addNotePanel.getCbEndedTask().setForeground(cntrlMain.getThemeApp().getFONT());
+       
         this.addNotePanel.getOptionDate().setOpaque(false);
     }
     

@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import view.EditNote.EditNote;
 import view.PendingNotes.PendingNotesPanel;
+import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
+
 
 public class CntrlEditNote implements ActionListener {
 
@@ -33,7 +35,7 @@ public class CntrlEditNote implements ActionListener {
 
         editNotePanel.getTxtDescripcion().setText(note.getDescription());
         editNotePanel.getTxtTitulo().setText(note.getTitle());
-        editNotePanel.getCbEndedTask().setSelected(note.isStatus());
+        
         try {
             editNotePanel.getOptionDate().setDate(new SimpleDateFormat("yyyy-MM-dd").parse(note.getDate()));
         } catch (ParseException ex) {
@@ -43,7 +45,6 @@ public class CntrlEditNote implements ActionListener {
         editNotePanel.getTxtErrTitleField().setText(null);
         editNotePanel.getTxtErrDescriptionField().setText(null);
         editNotePanel.getTxtErrDateField().setText(null);
-        editNotePanel.getCbEndedTask().setSelected(note.isAutoDelete());
 
     }
 
@@ -77,7 +78,7 @@ public class CntrlEditNote implements ActionListener {
         String description = "";
         SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
         int prioritySelected = editNotePanel.getCmbPriority().getSelectedIndex();
-        boolean deleteEndTaskOption = editNotePanel.getCbEndedTask().isSelected();
+        
         String date = "";
 
         if (editNotePanel.getTxtTitulo().getText().equals("")) {
@@ -115,7 +116,7 @@ public class CntrlEditNote implements ActionListener {
 
             //System.out.println("Todo Oki para la BD");
 
-            note = new Note(note.getId(),title, description, date, prioritySelected, deleteEndTaskOption, false);
+            note = new Note(note.getId(),title, description, date, prioritySelected, false);
             String condition;
             condition = " id = " + this.note.getId();
             
@@ -129,7 +130,9 @@ public class CntrlEditNote implements ActionListener {
             cntrlMain.setPendingNotesView(newPendingNotesPanel);
             cntrlMain.switchPanels(cntrlMain.getPendingNotesPanel());
             
-            } catch (SQLException ex) {
+            }catch(MysqlDataTruncation ex){
+                JOptionPane.showMessageDialog(editNotePanel, "El texto del titulo es demasiado grande");
+            }catch (SQLException ex) {
                 JOptionPane.showMessageDialog(editNotePanel, "Hubo un error al modificar la nota");
                 System.err.println(ex);
             }
@@ -151,8 +154,7 @@ public class CntrlEditNote implements ActionListener {
         }
         
        
-        this.editNotePanel.getCbEndedTask().setOpaque(false);
-        this.editNotePanel.getCbEndedTask().setForeground(cntrlMain.getThemeApp().getFONT());
+
         this.editNotePanel.getOptionDate().setOpaque(false);
     }
 

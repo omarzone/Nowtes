@@ -4,6 +4,7 @@ import DAONote.DAONote;
 import Model.Note;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import view.CompletedNotes.CompleteNotesPanel;
@@ -17,6 +18,7 @@ public class CntrlCompletePanel {
     private CntrlMain cntrlMain;
     private CntrlPendingNotesItem cntrlPendingNotesItem;
     private ArrayList<Note> notesList = new ArrayList<Note>();
+    
 
     public CntrlCompletePanel(CntrlMain cntrlMain, CompleteNotesPanel completeNotesView) {
         System.out.println("Controlador CntrlPendingPanel inicializado");
@@ -25,6 +27,7 @@ public class CntrlCompletePanel {
 
         //Nuevo
         generateData();
+        
     }
 
 
