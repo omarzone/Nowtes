@@ -37,6 +37,8 @@ public class CntrlPendingNotesItem implements MouseListener {
         pendingNotesItemView.getBtnEditNote().addMouseListener(this);
         pendingNotesItemView.getBtnViewNote().addMouseListener(this);
         pendingNotesItemView.getBtnDeleteNote().addMouseListener(this);
+        
+        
 
     }
 
@@ -155,6 +157,8 @@ public class CntrlPendingNotesItem implements MouseListener {
         this.pendingNotesItemView.getNote_status().setBackground(cntrlMain.getThemeApp().getMEDIUM_STATUS());
         this.pendingNotesItemView.getjScrollPane1().setOpaque(false);
         this.pendingNotesItemView.getjScrollPane1().getViewport().setOpaque(false);
+        this.pendingNotesItemView.getjScrollPane1().setHorizontalScrollBarPolicy(this.pendingNotesItemView.getjScrollPane1().HORIZONTAL_SCROLLBAR_NEVER);
+        this.pendingNotesItemView.getjScrollPane1().setVerticalScrollBarPolicy(this.pendingNotesItemView.getjScrollPane1().VERTICAL_SCROLLBAR_NEVER);
         this.pendingNotesItemView.getNote_description().setBackground(cntrlMain.getThemeApp().getNOTE_BG());
         this.pendingNotesItemView.getLblAction().setForeground(cntrlMain.getThemeApp().getFONT());
         this.pendingNotesItemView.getLblDate().setForeground(cntrlMain.getThemeApp().getFONT());

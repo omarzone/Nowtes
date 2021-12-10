@@ -250,6 +250,14 @@ public class ViewCompleteNote extends javax.swing.JPanel {
     public JLabel getLblStatus() {
         return lblStatus;
     }
+
+    public JButton getBtnDeleteNote() {
+        return btnDeleteNote;
+    }
+
+    public void setBtnDeleteNote(JButton btnDeleteNote) {
+        this.btnDeleteNote = btnDeleteNote;
+    }
     
     
 
