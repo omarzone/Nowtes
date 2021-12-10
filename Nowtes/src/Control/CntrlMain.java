@@ -33,6 +33,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     private ThemeData themeData = new ThemeData();
     private CntrlPendingPanel cntrlPendingPanel;
     private CntrlSettings cntrlSettings;
+    private CntrlHelp cntrlHelp;
     private Theme themeApp;
     private ArrayList<Settings> settingsList = new ArrayList<Settings>();
     
@@ -55,7 +56,7 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
                 themeApp = themeData.getLightTheme();
            }
             
-            System.out.println(settingsUser.getPriorityOrder() );
+            
             
         } catch (SQLException ex) {
             //Cuando ocurra cualquier error con la base de datos, que cree un objeto settings con estos valores
@@ -115,6 +116,13 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
         }
 
         if (mainView.getBtnHelp() == e.getSource()) {
+           
+            if(cntrlHelp == null){
+                
+                cntrlHelp = new CntrlHelp(this);
+                
+            }
+            
             switchPanels(helpView);
         }
 
@@ -215,6 +223,12 @@ public class CntrlMain implements MouseListener, MouseMotionListener {
     public SettingsView getSettingsView() {
         return settingsView;
     }
+
+    public Help getHelpView() {
+        return helpView;
+    }
+    
+    
 
     public void setPendingNotesView(PendingNotesPanel pendingNotesView) {
         this.pendingNotesView = pendingNotesView;

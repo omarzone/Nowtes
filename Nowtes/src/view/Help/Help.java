@@ -31,7 +31,7 @@ public class Help extends javax.swing.JPanel {
         HeadPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         roundedInnerPanel = new view.components.RoundedBorders();
-        jLabel2 = new javax.swing.JLabel();
+        btnVideo = new javax.swing.JLabel();
         txtVideo = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
 
@@ -48,13 +48,12 @@ public class Help extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ayuda");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Video_Ayuda.jpg"))); // NOI18N
-        jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        roundedInnerPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 840, 420));
+        btnVideo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Video_Ayuda.jpg"))); // NOI18N
+        btnVideo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        btnVideo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        roundedInnerPanel.add(btnVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 840, 420));
 
         txtVideo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtVideo.setForeground(new java.awt.Color(0, 0, 0));
         txtVideo.setText("¿Como funciona Nowtes?");
         roundedInnerPanel.add(txtVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
@@ -106,7 +105,7 @@ public class Help extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel btnVideo;
     private javax.swing.JLabel jLabel5;
     private view.components.RoundedBorders roundedInnerPanel;
     private javax.swing.JLabel txtVideo;
@@ -118,6 +117,10 @@ public class Help extends javax.swing.JPanel {
 
     public JLabel getTxtVideo() {
         return txtVideo;
+    }
+
+    public JLabel getBtnVideo() {
+        return btnVideo;
     }
     
     

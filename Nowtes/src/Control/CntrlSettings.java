@@ -10,7 +10,7 @@ public class CntrlSettings implements ActionListener {
 
     private CntrlMain cntrlMain;
     private DAOSettings daoSetting = new DAOSettings();
-
+    private int MensajeEmergenteSolucion = 0;
     public CntrlSettings(CntrlMain cntrlMain) {
         System.out.println("Controlador CntrlSettings inicializado");
         this.cntrlMain = cntrlMain;
@@ -37,7 +37,7 @@ public class CntrlSettings implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (cntrlMain.getSettingsView().getBtnDeleteData() == e.getSource()) {
-            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro de borrar todos los datos?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            int dialogResult = JOptionPane.showConfirmDialog(null, "¿Esta seguro de borrar todos los datos?\n (Es necesario reiniciar la aplicacion para ver los cambios)", "Confirmación", JOptionPane.YES_NO_OPTION);
             if (dialogResult == JOptionPane.YES_OPTION) {
                 
                 //Realizamos la consulta para borrar todos los elementos
@@ -51,7 +51,9 @@ public class CntrlSettings implements ActionListener {
         }
 
         if (cntrlMain.getSettingsView().getBtnDarkTheme() == e.getSource()) {
-
+            
+            
+            JOptionPane.showMessageDialog(null,"Es necesario reiniciar la aplicacion para ver los cambios");
             if (cntrlMain.getSettingsView().getBtnDarkTheme().isSelected()) {
                 cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");
 
@@ -72,6 +74,13 @@ public class CntrlSettings implements ActionListener {
         }
 
         if (cntrlMain.getSettingsView().getCbmPriority() == e.getSource()) {
+            
+            
+            if (MensajeEmergenteSolucion > 0){
+                JOptionPane.showMessageDialog(null,"Es necesario reiniciar la aplicacion para ver los cambios");
+                
+            }
+            MensajeEmergenteSolucion++;
            boolean value;
            if(cntrlMain.getSettingsView().getCbmPriority().getSelectedIndex() == 0){
                value = false;
@@ -80,6 +89,8 @@ public class CntrlSettings implements ActionListener {
            }
             try {
                 daoSetting.modifySpecific("priorityorder",value);
+                
+               
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
