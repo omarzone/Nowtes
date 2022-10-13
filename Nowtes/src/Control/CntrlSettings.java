@@ -51,8 +51,6 @@ public class CntrlSettings implements ActionListener {
         }
 
         if (cntrlMain.getSettingsView().getBtnDarkTheme() == e.getSource()) {
-            
-            
             JOptionPane.showMessageDialog(null,"Es necesario reiniciar la aplicacion para ver los cambios");
             if (cntrlMain.getSettingsView().getBtnDarkTheme().isSelected()) {
                 cntrlMain.getSettingsView().getBtnDarkTheme().setText("Activado");

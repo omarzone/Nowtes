@@ -16,10 +16,10 @@ import java.util.ArrayList;
  */
 public abstract class DAOMain<T> {
 
-    private String host =" sql5.freemysqlhosting.net:3306";
-    private String bd=" sql5456965";
-    private String login="sql5456965";
-    private String password="cKJ2Rjcy7z";
+    private String host ="sql5.freemysqlhosting.net:3306";
+    private String bd="sql5526146";
+    private String login="sql5526146";
+    private String password="drvjCIh2uH";
     private boolean readyDriver;
 
     public DAOMain() {

@@ -17,7 +17,7 @@ public class AddNote extends javax.swing.JPanel {
 
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         JPanelAddNote = new javax.swing.JPanel();
@@ -185,10 +185,10 @@ public class AddNote extends javax.swing.JPanel {
                     .addComponent(JPanelAddNote, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     public javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HeadPanel;
     private javax.swing.JPanel JPanelAddNote;
@@ -209,7 +209,7 @@ public class AddNote extends javax.swing.JPanel {
     private javax.swing.JLabel txtErrDescriptionField;
     private javax.swing.JLabel txtErrTitleField;
     private javax.swing.JTextField txtTitulo;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 
     public JButton getBtnCancelar() {
         return btnCancelar;

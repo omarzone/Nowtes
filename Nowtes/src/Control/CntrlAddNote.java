@@ -13,8 +13,6 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import view.PendingNotes.PendingNotesPanel;
 import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
-
-
 public class CntrlAddNote implements ActionListener {
     
     private Note note;
